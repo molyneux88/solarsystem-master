@@ -1,0 +1,468 @@
+/* Circles containing the numbers*/
+.color {
+  display: block;
+  width: 0;
+  height:0;
+  position: fixed;
+  top: 50%;
+  right: 50%;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.8s ease;
+  border-radius: 50%;
+  background-color: transparent;
+  z-index:1;
+}
+
+/* Font size per user device screen size*/
+@media screen and (min-width: 1200px) {
+  .expanded {
+    width: 15vw;
+    height: 15vw;
+  }
+
+  .boTextDesignExpanded {
+    font-size: 10vw;
+    transition: 0.4s ease;
+  }
+  
+  .bobTextDesignExpanded {
+    font-size: 10vw;
+    transition: 0.4s ease;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .expanded {
+    width: 20vw;
+    height: 20vw;
+  }
+
+  .boTextDesignExpanded {
+    font-size: 10vw;
+    transition: 0.4s ease;
+  }
+  
+  .bobTextDesignExpanded {
+    font-size: 10vw;
+    transition: 0.4s ease;
+  }
+}
+@media screen and (max-width: 960px) {
+  .expanded {
+    width: 25vw;
+    height: 25vw;
+  }
+
+  .boTextDesignExpanded {
+    font-size: 20vw;
+    transition: 0.4s ease;
+  }
+  
+  .bobTextDesignExpanded {
+    font-size: 17vw;
+    transition: 0.4s ease;
+  }
+}
+@media screen and (max-width: 640px) {
+  .expanded {
+    width: 25vw;
+    height: 25vw;
+  }
+
+  .boTextDesignExpanded {
+    font-size: 18vw;
+    transition: 0.4s ease;
+  }
+  
+  .bobTextDesignExpanded {
+    font-size: 16vw;
+    transition: 0.4s ease;
+  }
+}
+
+.color--blue {
+  background-color: #ff3838;
+  transition-delay: 0s;
+}
+
+.color--orange {
+  background-color: #ff9f32;
+  transition-delay: 1s;
+}
+
+.color--grey {
+  background-color: #fcff33;
+  transition-delay: 2s;
+}
+
+.color--white {
+  background-color: #51ff2e;
+  transition-delay: 3s;
+}
+
+/* Countdown text*/
+.boTextDesign {
+  color:black;
+  font-family: 'Roboto', sans-serif;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  z-index: -100;
+}
+
+
+
+/* Home screen background and sizing*/
+.mainTakeOff{
+  max-width:1260px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background gradients */
+.background{
+  color: #999999;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -50;
+
+  background-color: black;
+}
+
+.backgroundimg{
+  position: absolute;
+  width:100%;
+  height:100%;
+  z-index: -50;
+}
+
+.bgone{
+  z-index: 1;
+  top:0px;
+  -webkit-transition:  top 5s ease;
+  -moz-transition:  top 5s ease;
+  -o-transition:  top 5s ease;
+  transition:  top 5s ease;
+  object-fit: cover;
+}
+
+.bgtwo{
+  z-index: 0;
+  top: -100%;
+  -webkit-transition:  top 5s ease;
+  -moz-transition:  top 5s ease;
+  -o-transition:  top 5s ease;
+  transition:  top 5s ease;
+}
+
+.bgthree{
+  z-index: -1;
+  top: -100%;
+  -webkit-transition:  top 5s ease;
+  -moz-transition:  top 5s ease;
+  -o-transition:  top 5s ease;
+  transition:  top 5s ease;
+}
+
+.bgfour{
+  z-index: -2;
+  top: -100%;
+  -webkit-transition:  top 5s ease;
+  -moz-transition:  top 5s ease;
+  -o-transition:  top 5s ease;
+  transition:  top 5s ease;
+}
+
+.bgfive{
+  z-index: -3;
+  top: -100%;
+  -webkit-transition:   top 5s ease, opacity 5s ease;
+  -moz-transition:  top 5s ease, opacity 5s ease;
+  -o-transition:  top 5s ease, opacity 5s ease;
+  transition: top 5s ease, opacity 5s ease;
+}
+
+.bgsix{
+  z-index: -4;
+  top: -100%;
+  opacity: 1;
+  -webkit-transition:   top 5s ease, opacity 5s ease;
+  -moz-transition:  top 5s ease, opacity 5s ease;
+  -o-transition:  top 5s ease, opacity 5s ease;
+  transition: top 5s ease, opacity 5s ease;
+  object-fit: cover;
+}
+
+/* Start button*/
+.rocketBtn
+{
+  font-family:sans-serif;
+  color:white;
+  text-decoration:none;
+  text-transform:uppercase;
+  letter-spacing:2.8px;
+  background-color: #f91b1b;
+  padding:15px 50px;
+  border-radius:5rem;
+  box-shadow: 1px 2.9px 16px                 rgba(255, 255, 255, 0.4);
+  transition:0.6s cubic-bezier(0.01, 1.69,    0.99, 0.94); 
+}
+
+.rocketBtn:hover
+{box-shadow: 3px 4.9px 16px rgba(255, 255, 255, 0.6);
+ letter-spacing:3px;
+ text-decoration:none;
+ color:#ffffff;
+}
+
+/* Skip button*/
+.skipBtnDiv
+{
+  z-index: -1;
+}
+
+.skipBtn
+{
+  font-family:sans-serif;
+  color:white;
+  text-decoration: underline;
+}
+
+.continueBtn
+{
+  font-family:sans-serif;
+  color:white;
+  text-decoration:none;
+  text-transform:uppercase;
+  letter-spacing:2.8px;
+  background-color: #f91b1b;
+  padding:15px 50px;
+  border-radius:5rem;
+  box-shadow: 1px 2.9px 16px                 rgba(255, 255, 255, 0.4);
+  transition:0.6s cubic-bezier(0.01, 1.69,    0.99, 0.94); 
+}
+
+.continueBtn:hover
+{box-shadow: 3px 4.9px 16px rgba(255, 255, 255, 0.6);
+ letter-spacing:3px;
+ text-decoration:none;
+ color:#ffffff;
+}
+
+.arrivedText{
+  -webkit-transition: 5s ease;
+  -moz-transition: 5s ease;
+  -o-transition: 5s ease;
+  transition: 5s ease;
+  opacity: 0;
+  z-index: -10;
+}
+
+/* Rocket*/
+#rocketOne {
+  min-width:200px;
+  position: fixed;
+  bottom: -18px;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, 0);
+  z-index: 3;
+  -webkit-transition: width 0.1s, bottom 8s;
+  -moz-transition: width 0.1s, bottom 8s;
+       transition: width 0.1s, bottom 8s;
+}
+
+/* Rocket exhaust flames*/
+#rocketTwo {
+  max-height:200px;
+  min-width:200px;
+  position: fixed;
+  bottom: -18px;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, 0);
+  z-index: 1;
+  -webkit-transition: width 0.5s, bottom 8s, opacity 4s;
+  -moz-transition: width 0.5s, bottom 8s, opacity 4s;
+       transition: width 0.5s, bottom 8s, opacity 4s;
+  opacity: 0;
+}
+
+/* launchpad*/
+#launchpad {
+  position: fixed;
+  min-width:300px;
+  bottom: 10px;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  z-index: 2;
+  -webkit-transition: width 0.1s, bottom 8s;
+  -moz-transition: width 0.1s, bottom 8s;
+       transition: width 0.1s, bottom 8s;
+}
+
+#smoke {
+  position: fixed;
+  min-width:300px;
+  bottom: 10px;
+  opacity: 0;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  z-index: 2;
+  -webkit-transition: width 0.1s, bottom 8s, opacity 2s;
+  -moz-transition: width 0.1s, bottom 8s, opacity 2s;
+       transition: width 0.1s, bottom 8s, opacity 2s;
+}
+
+#sun {
+  position: fixed;
+  min-width:300px;
+  top: -300px;
+  opacity: 1;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  z-index: -1;
+  -webkit-transition: width 0.1s, top 8s;
+  -moz-transition: width 0.1s, top 8s;
+       transition: width 0.1s, top 8s;
+}
+
+#ground {
+  position: absolute;
+  min-width:300px;
+  bottom: -3%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  z-index: 1.5;
+  -webkit-transition: width 0.1s, bottom 8s, opacity 2s;
+  -moz-transition: width 0.1s, bottom 8s, opacity 2s;
+       transition: width 0.1s, bottom 8s, opacity 2s;
+}
+
+#satelliteOne {
+  position: absolute;
+  bottom: 70%;
+  transform: translate(-50%, 0%);
+  z-index: 2;
+  animation: satelliteOne 60s;
+  animation-iteration-count: infinite;
+  animation-delay: 30s;
+  opacity:0;
+}
+
+@keyframes satelliteOne {
+  from {left:150%}
+  to {left:-150%;}
+}
+
+@keyframes satelliteTwo {
+  from {left:-150%}
+  to {left:150%;}
+}
+
+#satelliteTwo {
+  position: absolute;
+  bottom: 70%;
+  transform: translate(-50%, 0%);
+  z-index: 2;
+  animation: satelliteTwo 60s;
+  animation-iteration-count: infinite;
+  animation-delay: 36s;
+  opacity:0;
+}
+
+@keyframes satelliteOne {
+  from {left:150%}
+  to {left:-150%;}
+}
+
+#satelliteTwo {
+  position: absolute;
+  bottom: 70%;
+  transform: translate(-50%, 0%);
+  z-index: 2;
+  -webkit-transition: left 8s, bottom 8s;
+  -moz-transition: left 8s, bottom 8s;
+       transition: left 8s, bottom 8s;
+}
+
+#cloud {
+  position: absolute;
+  transform: translate(-50%, 0%);
+  z-index: 1;
+  -webkit-transition: left 2s ease, bottom 8s ease;
+  -moz-transition: left 2s ease, bottom 8s ease;
+       transition: left 2s ease, bottom 8s ease;
+}
+
+.cloudOne{
+  animation: cloudOne 10s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+@keyframes cloudOne {
+  from {left:15%;}
+  to {left:12%;}
+}
+
+.cloudTwo{
+  animation: cloudTwo 9s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+@keyframes cloudTwo {
+  from {left:30%;}
+  to {left:34%;}
+}
+
+.cloudThree{
+  animation: cloudThree 7s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+@keyframes cloudThree {
+  from {left:55%;}
+  to {left:48%;}
+}
+
+.cloudFour{
+  animation: cloudFour 6s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+@keyframes cloudFour {
+  from {left:68%;}
+  to {left:70%;}
+}
+
+.cloudFive{
+  animation: cloudFour 4s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+@keyframes cloudFive {
+  from {left:72%;}
+  to {left:68%;}
+}
+
+.cloudSix{
+  animation: cloudSix 8s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+@keyframes cloudSix {
+  from {left:87%;}
+  to {left:91%;}
+}

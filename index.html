@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CWSS - Home</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!--Link to uikit css-->
+        <link rel="stylesheet" type="text/css" href="/css/uikit.css" />
+
+        <!--Link to uikit css-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+        
+        <!--Link to custom css-->
+        <link rel="stylesheet" type="text/css" href="/css/homePage.css" />
+        <link rel="stylesheet" type="text/css" href="/css/planetsStylesheet.css" />
+        <link rel="stylesheet" type="text/css" href="/css/PlanetsColourSchemes/mars.css" />
+
+    </head>
+    <body>
+        
+        <!-- Start of Header-->
+        <nav class="uk-navbar-container" uk-navbar style="z-index: 51;">
+            <div class="uk-navbar-left" style="max-width:1260px;">
+                <a class="uk-navbar-item uk-logo uk-margin-large-left uk-visible@s" href="/"><img src="/images/Logo.png" width="200px"></a>
+                <ul class="uk-navbar-nav uk-visible@s">
+                    <li class="uk-visible@m uk-margin-large-left"><a href="#"></a></li>
+                    <li><a href="#">Home</a></li>
+                    <li>
+                        <a href="#">Planets</a>
+                        <div class="uk-navbar-dropdown">
+                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                <li><a href="/planets/sun.html">The Sun</a></li>
+                                <li><a href="/planets/mercury.html">Mercury</a></li>
+                                <li><a href="/planets/venus.html">Venus</a></li>
+                                <li><a href="/planets/earth.html">Earth</a></li>
+                                <li><a href="/planets/mars.html">Mars</a></li>
+                                <li><a href="/planets/jupiter.html">Jupiter</a></li>
+                                <li><a href="/planets/saturn.html">Saturn</a></li>
+                                <li><a href="/planets/uranus.html">Uranus</a></li>
+                                <li><a href="/planets/neptune.html">Neptune</a></li>
+                                <li><a href="/planets/pluto.html">Pluto</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="/route.html">Route</a></li>
+                </ul>
+                
+                <a href="#mobilemenu" class="uk-navbar-toggle uk-hidden@s" uk-navbar-toggle-icon uk-toggle></a>
+                <div class="uk-navbar-center uk-hidden@s">                    
+                    <div class="uk-navbar-center"><img src="/images/Logo.png" width="200px"></div>
+                </div> 
+            </div>
+        </nav>
+        
+        <div id="mobilemenu" uk-offcanvas="overlay: true">
+            <div class="uk-offcanvas-bar">
+                <button class="uk-offcanvas-close" type="button" uk-close></button>
+                <ul class="uk-nav uk-nav-primary uk-nav-left uk-margin-small-left uk-margin-auto-vertical">
+                    <li class="uk-active"><a href="#">Home</a></li>
+                    <li class="uk-parent">
+                        <a href="#">Planets</a>
+                        <ul class="uk-nav uk-navbar-dropdown-nav">
+                            <li><a href="/planets/sun.html">The Sun</a></li>
+                            <li><a href="/planets/mercury.html">Mercury</a></li>
+                            <li><a href="/planets/venus.html">Venus</a></li>
+                            <li><a href="/planets/earth.html">Earth</a></li>
+                            <li><a href="/planets/mars.html">Mars</a></li>
+                            <li><a href="/planets/jupiter.html">Jupiter</a></li>
+                            <li><a href="/planets/saturn.html">Saturn</a></li>
+                            <li><a href="/planets/uranus.html">Uranus</a></li>
+                            <li><a href="/planets/neptune.html">Neptune</a></li>
+                            <li><a href="/planets/pluto.html">Pluto</a></li>
+                            </ul>
+                    </li>
+                    <li><a href="/route.html">Route</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- End of Header-->
+        
+        <div class="mainTakeOff uk-align-center uk-margin-remove-bottom" uk-height-viewport="expand: true">
+            <div class="background" uk-height-viewport="expand: true">
+                <img id="bgone" class="backgroundimg bgone" src="/images/grad1.png">
+                <img id="bgtwo" class="backgroundimg bgtwo" src="/images/grad2.png">
+                <img id="bgthree" class="backgroundimg bgthree" src="/images/grad3.png">
+                <img id="bgfour" class="backgroundimg bgfour" src="/images/grad4.png">
+                <img id="bgfive" class="backgroundimg bgfive" src="/images/grad5.png">
+                <img id="bgsix" class="backgroundimg bgsix" src="/images/starBackground.jpg">
+            </div>
+            <div id="rocketButton" class="uk-position-relative uk-block uk-text-center uk-padding" style="z-index: 50;">
+                <a class='rocketBtn' href="#" title=''>Start</a> 
+            </div>
+            <div><img id="launchpad" src="/images/launchpad.png" width="300px"></div>
+            <div><img id="smoke" src="/images/smoke.png" width="300px"></div>
+            <div><img id="rocketOne" src="/images/rocket.png" width="200px"></div>
+            <div><img id="rocketTwo" src="/images/rocket2.png" width="200px"></div>
+            <div><img id="sun" src="/images/sunPlanet.png" width="150px"></div>
+            <div><img id="ground" src="/images/ground.png" width="100%"></div>
+            <div><img id="cloud" class="cloudOne" src="/images/clouds/Png/1.png" width="100px" style="left:15%; bottom:54%;"></div>
+            <div><img id="cloud" class="cloudTwo"src="/images/clouds/Png/2.png" width="150px" style="left:32%; bottom:62%;"></div>
+            <div><img id="cloud" class="cloudThree"src="/images/clouds/Png/3.png" width="110px" style="left:48%; bottom:60%;"></div>
+            <div><img id="cloud" class="cloudFour"src="/images/clouds/Png/4.png" width="175px" style="left:70%; bottom:64%;"></div>
+            <div><img id="cloud" class="cloudFive"src="/images/clouds/Png/5.png" width="95px" style="left:70%; bottom:56%;"></div>
+            <div><img id="cloud" class="cloudSix"src="/images/clouds/Png/6.png" width="130px" style="left:90%; bottom:59%;"></div>
+            <div><img id="satelliteOne" class="satelliteOne" src="/images/satellite.png" width="75px" style="left:120%;"></div>
+            <div><img id="satelliteTwo" class="satelliteTwo" src="/images/iss.png" width="130px" style="left:-20%;"></div>
+            <div class="uk-position-center "> 
+                <div class="arrivedText uk-padding uk-text-center">We have arrived at our destination. Click next to begin the journey along the Centurion Way Model Solar System</div>
+                <div class="arrivedText uk-block uk-text-center uk-padding"><a class='continueBtn' href="/planets/sun.html" title=''>Next</a></div>
+            </div>
+            <div class="uk-block uk-text-center">
+                <span class='color color--blue' data-value='1'></span>
+                <span class='color color--orange' data-value='1'></span>
+                <span class='color color--grey' data-value='1'></span>
+                <span class='color color--white' data-value='1'></span>
+                
+            </div>   
+            
+            <div class="uk-text-center">
+                <div id="one" class="boTextDesign">3</div>
+                <div id="two" class="boTextDesign">2</div>
+                <div id="three" class="boTextDesign">1</div>
+                <div id="four" class="boTextDesign">Go!</div>
+            </div>
+            <div class="skipBtnDiv uk-block uk-text-center uk-position-bottom uk-padding"><a class='skipBtn' href="/planets/sun.html" title=''>Skip >>></a></div>
+            
+        </div>
+
+
+
+
+        <!--Link to JQuery-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        
+        <!--Link to uikit js-->
+        <script type="text/javascript" src="/js/uikit.min.js"></script>
+        <script type="text/javascript" src="/js/uikit-icons.min.js"></script>
+        <script type="text/javascript" src="/js/homePageAnimation.js"></script>
+
+        <!--Link to dpi js-->
+        <script type="module" src="/js/dpijs/androidDeviceFinder.js"></script>
+    </body>
+</html>

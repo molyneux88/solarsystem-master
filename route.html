@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CWSS - Earth</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!--Link to uikit css-->
+        <link rel="stylesheet" type="text/css" href="/css/uikit.css" />
+
+        <!--Link to uikit css-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+        
+        <!--Link to custom css-->
+        <link rel="stylesheet" type="text/css" href="/css/homePage.css" />
+        <link rel="stylesheet" type="text/css" href="/css/planetsStylesheet.css" />
+        <link rel="stylesheet" type="text/css" href="/css/PlanetsColourSchemes/mars.css" />
+
+    </head>
+    <body>
+        
+        <!-- Start of Header-->
+        <nav class="uk-navbar-container" uk-navbar>
+            <div class="uk-navbar-left" style="max-width:1260px;">
+                <a class="uk-navbar-item uk-logo uk-margin-large-left uk-visible@s" href="/"><img src="/images/Logo.png" width="200px"></a>
+                <ul class="uk-navbar-nav uk-visible@s">
+                    <li class="uk-visible@m uk-margin-large-left"><a href="#"></a></li>
+                    <li><a href="/">Home</a></li>
+                    <li>
+                        <a href="#">Planets</a>
+                        <div class="uk-navbar-dropdown">
+                            <ul class="uk-nav uk-navbar-dropdown-nav">
+                                <li><a href="/planets/sun.html">The Sun</a></li>
+                                <li><a href="/planets/mercury.html">Mercury</a></li>
+                                <li><a href="/planets/venus.html">Venus</a></li>
+                                <li><a href="/planets/earth.html">Earth</a></li>
+                                <li><a href="/planets/mars.html">Mars</a></li>
+                                <li><a href="/planets/jupiter.html">Jupiter</a></li>
+                                <li><a href="/planets/saturn.html">Saturn</a></li>
+                                <li><a href="/planets/uranus.html">Uranus</a></li>
+                                <li><a href="/planets/neptune.html">Neptune</a></li>
+                                <li><a href="/planets/pluto.html">Pluto</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#">Route</a></li>
+                </ul>
+                
+                <a href="#mobilemenu" class="uk-navbar-toggle uk-hidden@s" uk-navbar-toggle-icon uk-toggle></a>
+                <div class="uk-navbar-center uk-hidden@s">                    
+                    <div class="uk-navbar-center"><img src="/images/Logo.png" width="200px"></div>
+                </div> 
+            </div>
+        </nav>
+        
+        <div id="mobilemenu" uk-offcanvas="overlay: true">
+            <div class="uk-offcanvas-bar">
+                <button class="uk-offcanvas-close" type="button" uk-close></button>
+                <ul class="uk-nav uk-nav-primary uk-nav-left uk-margin-small-left uk-margin-auto-vertical">
+                    <li><a href="/">Home</a></li>
+                    <li class="uk-parent">
+                        <a href="#">Planets</a>
+                        <ul class="uk-nav uk-navbar-dropdown-nav">
+                            <li><a href="/planets/sun.html">The Sun</a></li>
+                            <li><a href="/planets/mercury.html">Mercury</a></li>
+                            <li><a href="/planets/venus.html">Venus</a></li>
+                            <li><a href="/planets/earth.html">Earth</a></li>
+                            <li><a href="/planets/mars.html">Mars</a></li>
+                            <li><a href="/planets/jupiter.html">Jupiter</a></li>
+                            <li><a href="/planets/saturn.html">Saturn</a></li>
+                            <li><a href="/planets/uranus.html">Uranus</a></li>
+                            <li><a href="/planets/neptune.html">Neptune</a></li>
+                            <li><a href="/planets/pluto.html">Pluto</a></li>
+                            </ul>
+                    </li>
+                    <li class="uk-active"><a href="#">Route</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- End of Header-->
+        
+        <div id="main" class="uk-align-center uk-margin-remove-bottom">
+            
+        
+            <div  uk-height-viewport="expand: true">
+                
+                <div class="uk-align-center uk-margin-remove-bottom" style="width:95%">
+                    <div class="uk-heading-divider uk-padding uk-padding-remove-bottom uk-padding-remove-top uk-text-large" style="position:relative;">The Route</div>
+
+                </div>
+                <div style= "height:20px;"></div>
+
+                <!-- All other screens Map-->
+                <div class="uk-width-1-1 uk-visible@s uk-visible@m uk-visible@l" uk-height-match="target: > div > *" style="width:100%; display:inline-block; overflow:hidden;">
+                    <div class="uk-block uk-light uk-text-center " style="min-height:300px;width:100%">
+                        <div class="uk-padding uk-padding-remove-top uk-padding-remove-bottom">
+                            <iframe                          
+                                src="https://www.google.com/maps/d/embed?mid=15vPD9BOf82-cwpwzSqVQAI5jTJQnB5ll"
+                                width="95%"
+                                frameborder="0" 
+                                style="position:relative; top:-54px; border:none;"
+                                height="480">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Large Tablet Map-->
+                <div class="uk-width-1-1 uk-visible@s uk-visible@m uk-hidden@l" uk-height-match="target: > div > *" style="width:100%; display:inline-block; overflow:hidden;">
+                    <div class="uk-block uk-light uk-text-center " style="min-height:300px;width:100%">
+                        <div class="uk-padding uk-padding-remove-top uk-padding-remove-bottom">
+                            <iframe                          
+                                src="https://www.google.com/maps/d/embed?mid=15vPD9BOf82-cwpwzSqVQAI5jTJQnB5ll"
+                                width="95%"
+                                frameborder="0" 
+                                style="position:relative; top:-54px; border:none;"
+                                height="480">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Small Tablet Map-->
+                <div class="uk-grid-collapse uk-text-center uk-visible@s uk-hidden@m" uk-grid uk-height-match="target: > div > *" style="width:100%; display:inline-block; overflow:hidden;">
+                    <div class="uk-block uk-width-1-1 uk-light">
+                        <div class="uk-padding uk-padding-remove-top uk-padding-remove-bottom">
+                            <iframe                          
+                                src="https://www.google.com/maps/d/embed?mid=15vPD9BOf82-cwpwzSqVQAI5jTJQnB5ll"
+                                width="95%"
+                                height="400"
+                                frameborder="0" 
+                                style="position:relative; top:-54px; border:none;">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Map-->
+                <div class="uk-grid-collapse uk-text-center uk-hidden@s" uk-grid uk-height-match="target: > div > *" style="width:100%; display:inline-block; overflow:hidden;">
+                    <div class="uk-block uk-width-1-1 uk-light">
+                        <div class="uk-padding uk-padding-remove-top uk-padding-remove-bottom">
+                            <iframe                          
+                                src="https://www.google.com/maps/d/embed?mid=15vPD9BOf82-cwpwzSqVQAI5jTJQnB5ll"
+                                width="95%"
+                                height="400"
+                                frameborder="0" 
+                                style="position:relative; top:-54px; border:none;">
+                            </iframe>
+                        </div> 
+                    </div>
+                </div>
+
+                <div class="uk-align-center uk-margin-remove-bottom" style="width:95%">
+                    <div class="uk-padding" style="position:relative; top:-54px; border:none;">
+                        <p>
+                        The route travels from Brandy Hole Copse in North Chichester to West Dean, covering over 6km. It is mostly gentle slopes, paved and off road, apart from a
+                         quiet road section in Lavant. Making it perfect for families and beginners.
+                        </p>
+                        <p>
+                        An easy access trail also runs on a section of the route, close to West Dean with a wheelchair ramp for
+                        to access the village.
+                        </p>
+                        <p>
+                        The route follows the old Chichester to Midhurst railway line, the starting point is at the edge of the woodlands at Brandy Hole Copse Local Nature Reserve.
+                        </p>
+                        <p>
+                        The spot where a Roman road crosses the route is marked by a sculpture depicting an army of spade-wielding
+                         Roman workers called the Chichester Road Gang.
+                        </p>
+                        <p>
+                        After passing through Lavant the route then rejoins the old railway line to West Dean where it finishes 
+                        and gives access to the village of West Dean with its whitewashed pub, thatched cottages, village store and café.
+                        </p>
+                        <p>
+                        Enjoy and have fun!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!--Link to JQuery-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        
+        <!--Link to uikit js-->
+        <script type="text/javascript" src="/js/uikit.min.js"></script>
+        <script type="text/javascript" src="/js/uikit-icons.min.js"></script>
+        <script type="text/javascript" src="/js/customScripts.js"></script>
+
+        <!--Link to dpi js-->
+        <script type="module" src="/js/dpijs/androidDeviceFinder.js"></script>
+    </body>
+</html>
