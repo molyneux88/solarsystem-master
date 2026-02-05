@@ -14,6 +14,9 @@
 
 .planet-facts .fact-card {
   border-left: 4px solid #2e3a92;
+  box-shadow:
+  0 4px 12px rgba(0,0,0,0.15),
+  0 0 0 1px rgba(46,58,146,0.4);
 }
 
 .planet-facts {

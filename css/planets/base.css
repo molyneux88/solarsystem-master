@@ -42,7 +42,7 @@ h2 {
 }
 
 .planet-facts h2 {
-  color: #ffffff;
+  color: rgba(255,255,255,0.9);
   font-weight: 400;
   letter-spacing: 0.04em;
   margin-bottom: 2rem;
@@ -109,16 +109,26 @@ h2 {
 
 .planet-facts .fact-card {
   padding: 1.25rem 1.75rem;
-  border-radius: 12px;
-  font-size: 1.05rem;
   max-width: 720px;
   margin: 0 auto;
+
+  font-size: 1.05rem;
   line-height: 1.5;
 
-  background: rgba(255,255,255,0.9);
-  color: #1b1b1b;
+  color: #ffffff;
 
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(8px);
+
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 18px;
+
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.uk-slider-items > li {
+  display: flex;
+  align-items: center;
 }
 
 /* =========================
