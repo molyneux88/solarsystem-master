@@ -1,26 +1,18 @@
-// Load a partial into an element by ID
-function loadPartial(id, file) {
-  fetch(file)
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById(id).innerHTML = html;
-    })
-    .catch(err => console.error(`Error loading ${file}`, err));
-}
-
 document.addEventListener("DOMContentLoaded", () => {
-  // Use repo-root paths to ensure it works from any page
-  const repoRoot = "/solarsystem-master";
+  const root = "/solarsystem-master";
 
-  if (document.getElementById("site-head")) {
-    loadPartial("site-head", `${repoRoot}/partials/head.html`);
-  }
+  const load = (id, file) => {
+    fetch(file)
+      .then(r => r.text())
+      .then(html => document.getElementById(id).innerHTML = html)
+      .catch(err => console.error(`Failed to load ${file}`, err));
+  };
 
   if (document.getElementById("site-header")) {
-    loadPartial("site-header", `${repoRoot}/partials/header.html`);
+    load("site-header", `${root}/partials/header.html`);
   }
 
   if (document.getElementById("planet-slider")) {
-    loadPartial("planet-slider", `${repoRoot}/partials/planet-slider.html`);
+    load("planet-slider", `${root}/partials/planet-slider.html`);
   }
 });
