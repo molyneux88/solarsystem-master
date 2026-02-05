@@ -132,13 +132,14 @@ h2 {
   padding-bottom: 1rem;
 }
 
-.planet-facts .uk-slider-items {
+.planet-facts .uk-slider-items > li {
   padding-left: 1rem;
   padding-right: 1rem;
+  box-sizing: border-box;
 }
 
 @media (min-width: 640px) {
-  .planet-facts .uk-slider-items {
+  .planet-facts .uk-slider-items > li {
     padding-left: 2rem;
     padding-right: 2rem;
   }
@@ -148,20 +149,21 @@ h2 {
    Footer Navigation
 ========================= */
 
-.planet-footer-nav {
-  background: rgba(255,255,255,0.04);
-  padding: 2rem 0;
-}
-
 .planet-footer-card {
-  display: block;
-  padding: 2rem 1.5rem;
-  text-decoration: none;
-  color: inherit;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 
-  border-radius: 20px;
-  background: rgba(255,255,255,0.06);
-  backdrop-filter: blur(6px);
+  padding: 1.5rem;
+  text-decoration: none;
+  color: #ffffff;
+
+  border-radius: 24px;
+  background: linear-gradient(
+    to right,
+    rgba(255,255,255,0.08),
+    rgba(255,255,255,0.02)
+  );
 
   transition:
     transform 0.25s ease,
@@ -169,30 +171,42 @@ h2 {
 }
 
 .planet-footer-card:hover {
+  transform: translateY(-3px);
   background: rgba(255,255,255,0.12);
-  transform: translateY(-4px);
 }
 
-.planet-footer-label {
-  display: block;
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  opacity: 0.7;
+.planet-footer-card img {
+  width: 48px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.planet-footer-text {
+  display: flex;
+  flex-direction: column;
 }
 
 .planet-footer-name {
-  display: block;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 300;
-  margin-top: 0.25rem;
 }
 
 .planet-footer-distance {
-  display: block;
   font-size: 0.9rem;
-  opacity: 0.85;
-  margin-top: 0.25rem;
+  opacity: 0.8;
 }
 
+.planet-footer-arrow {
+  font-size: 1.5rem;
+  opacity: 0.6;
+}
+
+.planet-footer-prev {
+  justify-content: flex-start;
+}
+
+.planet-footer-next {
+  justify-content: flex-end;
+  text-align: right;
+}
 

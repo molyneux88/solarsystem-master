@@ -35,3 +35,7 @@
 .planet-footer-next {
   box-shadow: inset -6px 0 0 rgba(46,58,146,0.6);
 }
+
+.planet-footer-card {
+  box-shadow: 0 0 0 1px rgba(46,58,146,0.4);
+}
