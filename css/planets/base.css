@@ -129,6 +129,19 @@ h2 {
 .uk-slider-items > li {
   display: flex;
   align-items: center;
+  padding-bottom: 1rem;
+}
+
+.planet-facts .uk-slider-items {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .planet-facts .uk-slider-items {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }
 
 /* =========================
@@ -142,36 +155,44 @@ h2 {
 
 .planet-footer-card {
   display: block;
-  padding: 1.5rem;
+  padding: 2rem 1.5rem;
   text-decoration: none;
   color: inherit;
-  transition: background 0.3s ease;
+
+  border-radius: 20px;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(6px);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
 }
 
 .planet-footer-card:hover {
-  background: rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.12);
+  transform: translateY(-4px);
 }
 
 .planet-footer-label {
   display: block;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   text-transform: uppercase;
+  letter-spacing: 0.12em;
   opacity: 0.7;
 }
 
 .planet-footer-name {
   display: block;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
+  font-weight: 300;
   margin-top: 0.25rem;
 }
 
 .planet-footer-distance {
   display: block;
   font-size: 0.9rem;
-  opacity: 0.8;
+  opacity: 0.85;
+  margin-top: 0.25rem;
 }
 
 
-.uk-slider-items > li {
-  padding-bottom: 1rem;
-}
