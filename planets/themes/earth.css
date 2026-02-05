@@ -1,0 +1,26 @@
+:root {
+  --planet-primary: #0a1474;
+  --fact-ocean: #2e3a92;
+  --fact-land: #406735;
+  --fact-atmosphere: #1b4f72;
+}
+
+/* Hero + accents */
+.planet-hero {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(10,20,116,0.6), transparent 70%),
+    linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.9));
+}
+
+/* Fact colours */
+.fact-card--ocean {
+  background: var(--fact-ocean);
+}
+
+.fact-card--land {
+  background: var(--fact-land);
+}
+
+.fact-card--atmosphere {
+  background: var(--fact-atmosphere);
+}
