@@ -11,9 +11,21 @@ body.planet-page {
 
 /* Sections */
 .uk-section {
-  padding-top: clamp(3rem, 6vw, 5rem);
-  padding-bottom: clamp(3rem, 6vw, 5rem);
+  padding-top: clamp(2rem, 4vw, 3.5rem);
+  padding-bottom: clamp(2rem, 4vw, 3.5rem);
 }
+
+/* Section density modifiers */
+.section-tight {
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important;
+}
+
+.section-loose {
+  padding-top: 4rem !important;
+  padding-bottom: 4rem !important;
+}
+
 
 /* Headings */
 .planet-name {
@@ -81,11 +93,13 @@ h2 {
 ========================= */
 
 .fact-card {
-  padding: 2.5rem 2rem;
-  border-radius: 12px;
-  font-size: 1.1rem;
-  max-width: 800px;
+  padding: 1.5rem 1.75rem;
+  border-radius: 999px;
+  font-size: 1.05rem;
+  max-width: 720px;
   margin: 0 auto;
+  line-height: 1.5;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
 }
 
 /* =========================
@@ -126,4 +140,9 @@ h2 {
   display: block;
   font-size: 0.9rem;
   opacity: 0.8;
+}
+
+
+.uk-slider-items > li {
+  padding-bottom: 1rem;
 }
