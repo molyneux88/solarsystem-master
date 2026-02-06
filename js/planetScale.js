@@ -21,18 +21,30 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!img || !button) return;
 
   let scaled = false;
-  const planet = img.dataset.planet;
-  const baseWidth = img.offsetWidth;
-  const baseHeight = img.offsetHeight;
+  let baseWidth;
+  let baseHeight;
 
-  // Lock initial dimensions so first animation behaves correctly
-  img.style.width = `${baseWidth}px`;
-  img.style.height = `${baseHeight}px`;
+  function initBaseSize() {
+    baseWidth = img.offsetWidth;
+    baseHeight = img.offsetHeight;
+
+    // Lock initial size AFTER image has loaded
+    img.style.width = `${baseWidth}px`;
+    img.style.height = `${baseHeight}px`;
+  }
+
+  if (img.complete) {
+    initBaseSize();
+  } else {
+    img.addEventListener("load", initBaseSize, { once: true });
+  }
 
   button.addEventListener("click", () => {
+    if (!baseWidth || !baseHeight) return;
+
     if (!scaled) {
       const pxPerCm = getPixelsPerCm();
-      const sizeCm = PLANET_DIAMETERS_CM[planet];
+      const sizeCm = PLANET_DIAMETERS_CM[img.dataset.planet];
       const sizePx = pxPerCm * sizeCm;
 
       img.style.width = `${sizePx}px`;
