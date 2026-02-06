@@ -25,6 +25,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const baseWidth = img.offsetWidth;
   const baseHeight = img.offsetHeight;
 
+  // Lock initial dimensions so first animation behaves correctly
+  img.style.width = `${baseWidth}px`;
+  img.style.height = `${baseHeight}px`;
+
   button.addEventListener("click", () => {
     if (!scaled) {
       const pxPerCm = getPixelsPerCm();
