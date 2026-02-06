@@ -206,6 +206,11 @@ h2 {
 }
 
 .planet-footer-next {
+  background: linear-gradient(
+    to left,
+    rgba(255,255,255,0.08),
+    rgba(255,255,255,0.02)
+    );
   justify-content: flex-end;
   text-align: right;
 }
