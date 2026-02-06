@@ -82,25 +82,46 @@ h2 {
    Scale Section
 ========================= */
 
-.planet-scale-caption {
-  max-width: 600px;
-  margin: 0 auto 1rem;
-  font-size: 1.1rem;
+.planet-scale-section {
+  text-align: center;
+  padding: 2rem 1rem 1.5rem;
 }
 
-.planet-scale-toggle {
-  margin-bottom: 2rem;
-  color: #9fd3ff;
-}
-
-.planet-image-wrapper {
-  position: relative;
+.planet-scale-frame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-height: 220px;
 }
 
 .planet-image {
-  width: 150px;
-  transition: width 0.6s ease;
+  width: 140px;
+  height: auto;
+  transition: width 0.9s ease, height 0.9s ease;
+  will-change: width, height;
+}
+
+.planet-scale-toggle {
+  margin-top: 1rem;
+  padding: 0.6rem 1.4rem;
+  font-size: 0.95rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.4);
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.planet-scale-toggle:hover {
+  background: rgba(255,255,255,0.18);
+  transform: translateY(-1px);
+}
+
+.planet-scale-caption {
+  margin-top: 0.75rem;
+  font-size: 0.85rem;
+  opacity: 0.85;
 }
 
 /* =========================

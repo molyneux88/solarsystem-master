@@ -47,25 +47,27 @@
   <!-- =========================
        Scale Visual
   ========================== -->
-  <section class="planet-scale uk-section uk-text-center">
+    <section class="planet-scale-section">
+        <div class="planet-scale-frame">
+            <img
+            src="/solarsystem-master/images/earthPlanet.png"
+            alt="Earth"
+            class="planet-image"
+            data-planet="earth"
+            >
+        </div>
 
-    <p class="planet-scale-caption">
-      To scale, Earth is <strong>13.7 mm</strong> in diameter
-    </p>
+        <button
+            class="planet-scale-toggle"
+            aria-pressed="false"
+        >
+            Tap to show true size
+        </button>
 
-    <button class="planet-scale-toggle uk-button uk-button-text">
-      Tap to scale
-    </button>
-
-    <div class="planet-image-wrapper">
-      <img
-        class="planet-image"
-        src="/solarsystem-master/images/earthPlanet.png"
-        alt="Earth"
-      />
-    </div>
-
-  </section>
+        <p class="planet-scale-caption">
+            At this scale, Earth is <strong>13.7 mm</strong> across
+        </p>
+    </section>
 
   <!-- =========================
        Did You Know
@@ -137,6 +139,7 @@
   <script src="/solarsystem-master/js/uikit.min.js"></script>
   <script src="/solarsystem-master/js/uikit-icons.min.js"></script>
   <script src="/solarsystem-master/js/partials.js"></script>
+  <script src="/solarsystem-master/js/planetScale.js"></script>
 
 </body>
 </html>
