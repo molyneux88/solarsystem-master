@@ -126,6 +126,43 @@ h2 {
   opacity: 0.85;
 }
 
+.planet-scale-frame {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 220px;
+}
+
+.planet-image {
+  display: block;
+  width: 140px;
+  height: auto;
+  transition: width 0.9s ease, height 0.9s ease;
+  will-change: width, height;
+}
+
+.planet-measurement-overlay {
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.75rem;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.75rem;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+/* Visible only when scaled */
+.planet-scale--active .planet-measurement-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 
 /* =========================

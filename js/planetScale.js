@@ -1,65 +1,70 @@
-const PLANET_DIAMETERS_CM = {
-  earth: 1.37 // 13.7 mm
-};
+export default class PlanetScale {
+  constructor(section) {
+    this.section = section;
+    this.img = section.querySelector(".planet-image");
+    this.button = section.querySelector(".planet-scale-toggle");
 
-function getPixelsPerCm() {
-  const el = document.createElement("div");
-  el.style.width = "1cm";
-  el.style.position = "absolute";
-  el.style.visibility = "hidden";
-  document.body.appendChild(el);
+    if (!this.img || !this.button) return;
 
-  const px = el.offsetWidth;
-  document.body.removeChild(el);
-  return px;
-}
+    this.scaled = false;
+    this.baseWidth = 0;
+    this.baseHeight = 0;
 
-document.addEventListener("DOMContentLoaded", () => {
-  const img = document.querySelector(".planet-image");
-  const button = document.querySelector(".planet-scale-toggle");
-
-  if (!img || !button) return;
-
-  let scaled = false;
-  let baseWidth;
-  let baseHeight;
-
-  function initBaseSize() {
-    baseWidth = img.offsetWidth;
-    baseHeight = img.offsetHeight;
-
-    // Lock initial size AFTER image has loaded
-    img.style.width = `${baseWidth}px`;
-    img.style.height = `${baseHeight}px`;
+    this.init();
   }
 
-  if (img.complete) {
-    initBaseSize();
-  } else {
-    img.addEventListener("load", initBaseSize, { once: true });
+  getPixelsPerCm() {
+    const el = document.createElement("div");
+    el.style.width = "1cm";
+    el.style.position = "absolute";
+    el.style.visibility = "hidden";
+    document.body.appendChild(el);
+    const px = el.offsetWidth;
+    document.body.removeChild(el);
+    return px;
   }
 
-  button.addEventListener("click", () => {
-    if (!baseWidth || !baseHeight) return;
+  init() {
+    const onReady = () => {
+      this.baseWidth = this.img.offsetWidth;
+      this.baseHeight = this.img.offsetHeight;
 
-    if (!scaled) {
-      const pxPerCm = getPixelsPerCm();
-      const sizeCm = PLANET_DIAMETERS_CM[img.dataset.planet];
-      const sizePx = pxPerCm * sizeCm;
+      this.img.style.width = `${this.baseWidth}px`;
+      this.img.style.height = `${this.baseHeight}px`;
 
-      img.style.width = `${sizePx}px`;
-      img.style.height = `${sizePx}px`;
+      this.bind();
+    };
 
-      button.textContent = "Tap to reset";
-      button.setAttribute("aria-pressed", "true");
+    if (this.img.complete) onReady();
+    else this.img.addEventListener("load", onReady, { once: true });
+  }
+
+  bind() {
+    this.button.addEventListener("click", () => this.toggle());
+  }
+
+  toggle() {
+    if (!this.scaled) {
+      const mm = parseFloat(this.img.dataset.diameterMm);
+      const cm = mm / 10;
+      const pxPerCm = this.getPixelsPerCm();
+      const sizePx = pxPerCm * cm;
+
+      this.img.style.width = `${sizePx}px`;
+      this.img.style.height = `${sizePx}px`;
+
+      this.section.classList.add("planet-scale--active");
+      this.button.textContent = "Tap to reset";
+      this.button.setAttribute("aria-pressed", "true");
     } else {
-      img.style.width = `${baseWidth}px`;
-      img.style.height = `${baseHeight}px`;
+      this.img.style.width = `${this.baseWidth}px`;
+      this.img.style.height = `${this.baseHeight}px`;
 
-      button.textContent = "Tap to show true size";
-      button.setAttribute("aria-pressed", "false");
+      this.section.classList.remove("planet-scale--active");
+      this.button.textContent = "Tap to show true size";
+      this.button.setAttribute("aria-pressed", "false");
     }
 
-    scaled = !scaled;
-  });
-});
+    this.scaled = !this.scaled;
+  }
+}

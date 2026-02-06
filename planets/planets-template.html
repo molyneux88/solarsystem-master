@@ -54,19 +54,17 @@
             alt="Earth"
             class="planet-image"
             data-planet="earth"
+            data-diameter-mm="13.7"
             >
+
+            <div class="planet-measurement-overlay" aria-hidden="true">
+            13.7 mm
+            </div>
         </div>
 
-        <button
-            class="planet-scale-toggle"
-            aria-pressed="false"
-        >
+        <button class="planet-scale-toggle" aria-pressed="false">
             Tap to show true size
         </button>
-
-        <p class="planet-scale-caption">
-            At this scale, Earth is <strong>13.7 mm</strong> across
-        </p>
     </section>
 
   <!-- =========================
@@ -140,6 +138,14 @@
   <script src="/solarsystem-master/js/uikit-icons.min.js"></script>
   <script src="/solarsystem-master/js/partials.js"></script>
   <script src="/solarsystem-master/js/planetScale.js"></script>
+
+  <script type="module">
+    import PlanetScale from "/solarsystem-master/js/modules/PlanetScale.js";
+
+    document.querySelectorAll(".planet-scale-section").forEach(section => {
+        new PlanetScale(section);
+    });
+    </script>
 
 </body>
 </html>
