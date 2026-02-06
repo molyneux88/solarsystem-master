@@ -23,6 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let scaled = false;
   const planet = img.dataset.planet;
   const baseWidth = img.offsetWidth;
+  const baseHeight = img.offsetHeight;
 
   button.addEventListener("click", () => {
     if (!scaled) {
@@ -37,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
       button.setAttribute("aria-pressed", "true");
     } else {
       img.style.width = `${baseWidth}px`;
-      img.style.height = "auto";
+      img.style.height = `${baseHeight}px`;
 
       button.textContent = "Tap to show true size";
       button.setAttribute("aria-pressed", "false");
