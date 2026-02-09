@@ -10,5 +10,5 @@ export function mmToPx(mm) {
       : 1) ||
     1;
 
-  return (dpi / dppx) * (mm / 25.4);
+  return (dpi / dppx) *0.5393701;
 }
