@@ -137,15 +137,23 @@
   <script src="/solarsystem-master/js/uikit.min.js"></script>
   <script src="/solarsystem-master/js/uikit-icons.min.js"></script>
   <script src="/solarsystem-master/js/partials.js"></script>
-  <script src="/solarsystem-master/js/planetScale.js"></script>
+  <script type="module" src="/solarsystem-master/js/dpijs/calcDPI.js"></script>
 
   <script type="module">
-    import PlanetScale from "/solarsystem-master/js/modules/PlanetScale.js";
+  import { bindPlanetScale } from "/solarsystem-master/js/modules/planetScaleInteraction.js";
 
-    document.querySelectorAll(".planet-scale-section").forEach(section => {
-        new PlanetScale(section);
-    });
-    </script>
+  // Desktop
+  bindPlanetScale({
+    triggerSelector: ".planet-scale-toggle",
+    imageSelector: ".planet-image",
+    imagePositionerSelector: ".planet-scale-frame",
+    planetKey: "earth",
+    resetSize: {
+      width: "150px",
+      height: "150px"
+    }
+  });
+</script>
 
 </body>
 </html>
