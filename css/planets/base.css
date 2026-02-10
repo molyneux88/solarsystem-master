@@ -134,13 +134,7 @@ h2 {
   min-height: 220px;
 }
 
-.planet-image {
-  display: block;
-  width: 140px;
-  height: auto;
-  transition: width 0.9s ease, height 0.9s ease;
-  will-change: width, height;
-}
+
 
 .planet-measurement-overlay {
   position: absolute;
