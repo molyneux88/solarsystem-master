@@ -142,20 +142,12 @@
   <script type="module" src="/solarsystem-master/js/dpijs/calcDPI.js"></script>
 
   <script type="module">
-  import { bindPlanetScale } from "/solarsystem-master/js/modules/planetScaleInteraction.js";
+    import { bindPlanetScale } from "/solarsystem-master/js/modules/planetScaleInteraction.js";
 
-  // Desktop
-  bindPlanetScale({
-    triggerSelector: ".planet-scale-toggle",
-    imageSelector: ".planet-image",
-    imagePositionerSelector: ".planet-scale-frame",
-    planetKey: "earth",
-    resetSize: {
-      width: "150px",
-      height: "150px"
-    }
-  });
-</script>
+    document.querySelectorAll(".planet-scale-section").forEach(section => {
+        bindPlanetScale(section);
+    });
+  </script>
 
 </body>
 </html>

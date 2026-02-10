@@ -1,47 +1,84 @@
 import { PLANET_PHYSICS } from "./planetPhysicalData.js";
 import { mmToPx } from "./dpiToPx.js";
 
-export function bindPlanetScale({
-  triggerSelector,
-  imageSelector,
-  imagePositionerSelector,
-  planetKey,
-  resetSize
-}) {
-  const planet = PLANET_PHYSICS[planetKey];
+export function bindPlanetScale(section) {
+  const img = section.querySelector(".planet-image");
+  const button = section.querySelector(".planet-scale-toggle");
+  const overlay = section.querySelector(".planet-measurement-overlay");
 
-  $(triggerSelector).click(function () {
-    const $img = $(imageSelector);
-    const $pos = $(imagePositionerSelector);
+  if (!img || !button) return;
 
-    if ($img.hasClass("enlarged")) {
-      $img.removeClass("enlarged");
+  const mm = parseFloat(img.dataset.diameterMm);
+  let isTrueScale = false;
 
-      $img.stop().animate(resetSize, 2000, function () {
-        $(this).parent().removeClass("ontop");
-      });
+  // ----------------------------
+  // Helpers
+  // ----------------------------
 
-      return;
+  function shouldPinButton() {
+    const rect = img.getBoundingClientRect();
+    return rect.height > window.innerHeight * 0.75;
+  }
+
+  function updateButton() {
+    button.setAttribute("aria-pressed", isTrueScale);
+
+    if (isTrueScale) {
+      button.textContent = `Showing true size · ${mm} mm — tap to shrink`;
+      button.classList.add("is-active");
+
+      if (shouldPinButton()) {
+        button.classList.add("is-pinned");
+      }
+    } else {
+      button.textContent = `Show true size (${mm} mm)`;
+      button.classList.remove("is-active", "is-pinned");
+    }
+  }
+
+  function updateOverlay() {
+    if (!overlay) return;
+
+    if (isTrueScale) {
+      overlay.textContent = `${mm} mm`;
+      overlay.classList.add("is-visible");
+    } else {
+      overlay.classList.remove("is-visible");
+    }
+  }
+
+  // ----------------------------
+  // Scale toggle
+  // ----------------------------
+
+  function toggleScale() {
+    const px = mmToPx(mm);
+    if (!px) return;
+
+    if (isTrueScale) {
+      // SCALE DOWN
+      img.style.width = "";
+      img.style.height = "";
+      img.classList.remove("is-scaled");
+      isTrueScale = false;
+    } else {
+      // SCALE UP
+      img.style.width = `${px}px`;
+      img.style.height = `${px}px`;
+      img.classList.add("is-scaled");
+      isTrueScale = true;
     }
 
-    $img.addClass("enlarged");
-    $(this).parent().addClass("ontop");
+    updateButton();
+    updateOverlay();
+  }
 
-    if (planet.type === "circle") {
-      const sizePx = mmToPx(planet.mm);
-      $img.stop().animate({ width: sizePx, height: sizePx }, 2000);
-      $pos.stop().animate({ height: sizePx }, 2000);
-    }
+  // ----------------------------
+  // Init
+  // ----------------------------
 
-    if (planet.type === "ellipse") {
-      const base = mmToPx(planet.equatorialMm) / planet.ringRatio;
-      const height = base / planet.polarRatio;
+  updateButton();
+  updateOverlay();
 
-      $img.stop().animate(
-        { width: height, height: base },
-        2000
-      );
-      $pos.stop().animate({ height: base }, 2000);
-    }
-  });
+  button.addEventListener("click", toggleScale);
 }

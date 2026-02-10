@@ -311,3 +311,21 @@ h2 {
   padding-bottom: 2rem;
   box-sizing: border-box;
 }
+
+.planet-scale-toggle.is-pinned {
+  position: fixed;
+  bottom: 1.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  max-width: calc(100vw - 2rem);
+}
+
+.planet-measurement-overlay {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.planet-measurement-overlay.is-visible {
+  opacity: 1;
+}
