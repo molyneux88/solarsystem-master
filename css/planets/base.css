@@ -95,8 +95,8 @@ h2 {
 }
 
 .planet-image {
-  width: 140px;
-  height: auto;
+  width: 150px;
+  height: 150px;
   transition:
     width 0.9s cubic-bezier(0.4, 0.0, 0.2, 1),
     height 0.9s cubic-bezier(0.4, 0.0, 0.2, 1);

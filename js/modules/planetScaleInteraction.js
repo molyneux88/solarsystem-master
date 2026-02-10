@@ -1,10 +1,10 @@
-import { PLANET_PHYSICS } from "./planetPhysicalData.js";
 import { mmToPx } from "./dpiToPx.js";
 
 export function bindPlanetScale(section) {
   const img = section.querySelector(".planet-image");
   const button = section.querySelector(".planet-scale-toggle");
-  const overlay = section.querySelector(".planet-measurement-overlay");
+  const initialWidth = img.offsetWidth + "px";
+  const initialHeight = img.offsetHeight + "px";
 
   if (!img || !button) return;
 
@@ -24,7 +24,7 @@ export function bindPlanetScale(section) {
     button.setAttribute("aria-pressed", isTrueScale);
 
     if (isTrueScale) {
-      button.textContent = `Showing true size · ${mm} mm — tap to shrink`;
+      button.textContent = `Showing true size · ${mm} mm — tap to reset`;
       button.classList.add("is-active");
 
       if (shouldPinButton()) {
@@ -36,29 +36,23 @@ export function bindPlanetScale(section) {
     }
   }
 
-  function updateOverlay() {
-    if (!overlay) return;
-
-    if (isTrueScale) {
-      overlay.textContent = `${mm} mm`;
-      overlay.classList.add("is-visible");
-    } else {
-      overlay.classList.remove("is-visible");
-    }
-  }
-
   // ----------------------------
   // Scale toggle
   // ----------------------------
+    
+    
+  
 
   function toggleScale() {
     const px = mmToPx(mm);
     if (!px) return;
 
+    img.getBoundingClientRect();
+
     if (isTrueScale) {
       // SCALE DOWN
-      img.style.width = "";
-      img.style.height = "";
+      img.style.width = initialWidth;
+      img.style.height = initialHeight;
       img.classList.remove("is-scaled");
       isTrueScale = false;
     } else {
@@ -70,7 +64,6 @@ export function bindPlanetScale(section) {
     }
 
     updateButton();
-    updateOverlay();
   }
 
   // ----------------------------
@@ -78,7 +71,6 @@ export function bindPlanetScale(section) {
   // ----------------------------
 
   updateButton();
-  updateOverlay();
 
   button.addEventListener("click", toggleScale);
 }
