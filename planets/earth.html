@@ -1,304 +1,128 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>CWSS - Earth</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-        <!--Link to uikit css-->
-        <link rel="stylesheet" type="text/css" href="/solarsystem-master/css/uikit.css" />
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Model Solar System – Planet</title>
 
-        <!--Link to uikit css-->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
-        
-        <!--Link to custom css-->
-        <link rel="stylesheet" type="text/css" href="/solarsystem-master/css/homePage.css" />  
-        <link rel="stylesheet" type="text/css" href="/solarsystem-master/css/planetsStylesheet.css" /> 
-        <link rel="stylesheet" type="text/css" href="/solarsystem-master/css/PlanetsColourSchemes/earth.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    </head>
-    <body>
-        
-        <!-- Start of Header-->
-        <div id="site-header"></div>
-        <!-- End of Header-->
-        
-        <div id="main" class="uk-align-center uk-margin-remove-bottom">
-            
-            <!-- Start of Slider-->
-            <div id="planet-slider"></div>
-            <!-- End of Slider-->
-   
-            <!-- Start of Planet Title Bar-->
-            <!-- Planet Title Bar PC-->
-            <div class="uk-grid-collapse uk-text-center uk-visible@s uk-visible@m" uk-grid uk-height-match="target: > div > *">
-                <div class="uk-width-1-5">
-                    <div class="uk-background-secondary uk-light uk-card-hover" type="button">
-                        <div class="uk-text-default">Last Stop</div>
-                        <div class="uk-text-bold uk-text-medium uk-text-emphasis">Venus</div>                        
-                    </div>
-                    <div uk-drop="animation: uk-animation-slide-top-small; duration: 1000; offset: 0; pos:bottom-justify;">
-                        <div class="uk-card uk-card-secondary uk-card-body" style="font-size:15px">
-                            <div>It is 108,110,000 kilometers from the Sun</div>
-                            <div class="uk-divider-icon"></div>
-                            <div>It is 44.68m southwards along Centurion Way</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="uk-inline uk-width-3-5">
-                    
-                    <div class=" uk-background-secondary uk-light">
-                        <a href="/solarsystem-master/planets/venus.html"><img class="uk-position-small uk-position-center-left " src="/solarsystem-master/images/backarrow.png" alt="Back Arrow" style="width:5vw; max-width:45px; min-width:30px;"></a>
-                        <div>
-                            
-                            <div id="tabletHeader" class="uk-text-bold uk-text-header-large uk-text-emphasis uk-position-center">Earth</div>     
-                                                         
-                        </div> 
-                        <a href="/solarsystem-master/planets/mars.html"><img class="uk-position-small uk-position-center-right" src="/solarsystem-master/images/forwardarrow.png" alt="Forward Arrow" style="width:5vw; max-width:45px; min-width:30px;"></a>
-                    </div>
-                    
-                </div>
-                <div class="uk-width-1-5">
-                    <div class="uk-background-secondary uk-light uk-card-hover" type="button">
-                        <div class="uk-text-default">Next Stop</div>
-                        <div class="uk-text-bold uk-text-medium uk-text-emphasis">Mars</div>                        
-                    </div>
-                    <div uk-drop="animation: uk-animation-slide-top-small; duration: 1000; offset: 0; pos:bottom-justify;">
-                        <div class="uk-card uk-card-secondary uk-card-body" style="font-size:15px">
-                            <div>It is 227,840,000 kilometers from the Sun</div>
-                            <div class="uk-divider-icon"></div>
-                            <div>It is 84.35m northwards along Centurion Way</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+  <!-- UIkit -->
+  <link rel="stylesheet" href="/solarsystem-master/css/uikit.css" />
 
-            <!-- Planet Title Bar Tablet-->
-            <div class="uk-grid-collapse uk-text-center uk-visible@s uk-hidden@m" uk-grid uk-height-match="target: > div > *">
-                <div id="lastPlanet" class="uk-width-1-5">
-                    <div class="uk-background-secondary uk-light uk-card-hover" type="button">
-                        <div class="uk-text-default">Last Stop</div>
-                        <div class="uk-text-bold uk-text-medium uk-text-emphasis">Venus</div>      
-                        <span id="lastIconPlus" uk-icon="icon: plus; ratio: 0.75"></span>
-                        <span id="lastIconMinus" uk-icon="icon: minus; ratio: 0.75" style="display:none"></span>                    
-                    </div>
-                </div>
-                <div class="uk-inline uk-width-3-5">
-                    
-                    <div class=" uk-background-secondary uk-light">
-                        <a href="/solarsystem-master/planets/venus.html"><img class="uk-position-small uk-position-center-left " src="/solarsystem-master/images/backarrow.png" alt="Back Arrow" style="width:3vw; max-width:60px; min-width:20px;"></a>
-                        <div>                            
-                            <div id="tabletHeader" class="uk-text-bold uk-text-header-large uk-text-emphasis uk-position-center">Earth</div>    
-                        </div> 
-                        <a href="/solarsystem-master/planets/mars.html"><img class="uk-position-small uk-position-center-right" src="/solarsystem-master/images/forwardarrow.png" alt="Forward Arrow" style="width:3vw; max-width:60px; min-width:20px;"></a>
-                    </div>
-                    
-                </div>
-                <div id="nextPlanet" class="uk-width-1-5">
-                    <div class="uk-background-secondary uk-light uk-card-hover" type="button">
-                        <div class="uk-text-default">Next Stop</div>
-                        <div class="uk-text-bold uk-text-medium uk-text-emphasis">Mars</div>
-                        <span id="nextIconPlus" uk-icon="icon: plus; ratio: 0.75"></span>
-                        <span id="nextIconMinus" uk-icon="icon: minus; ratio: 0.75" style="display:none"></span>                                 
-                    </div>
-                </div>
-            </div>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 
-            <!-- Planet Title Bar Mobile-->
-            <div id="mobileHeader" class="uk-grid-collapse uk-text-center uk-hidden@s" uk-grid  style="height: 10vw;">
-                <div class="uk-inline uk-width-1-1">
-                    <div class=" uk-background-secondary">
-                        <a href="/solarsystem-master/planets/venus.html"><img class="uk-position-small uk-position-center-left " src="/solarsystem-master/images/backarrow.png" alt="Back Arrow" style="width:3vw; max-width:60px; min-width:15px;"></a>
-                        <div>
-                            <div class="uk-text-bold uk-text-medium uk-position-center ">Earth</div>    
-                        </div> 
-                        <a href="/solarsystem-master/planets/mars.html"><img class="uk-position-small uk-position-center-right" src="/solarsystem-master/images/forwardarrow.png" alt="Forward Arrow" style="width:3vw; max-width:60px; min-width:15px;"></a>
-                    </div>
-                </div>
-            </div>
-            <!-- End of Planet Title Bar-->
+  <!-- Base styles -->
+  <link rel="stylesheet" href="/solarsystem-master/css/planets/base.css">
 
+  <!-- Planet theme (Earth for now) -->
+  <link rel="stylesheet" href="/solarsystem-master/css/planets/themes/earth.css">
+</head>
 
+<body class="planet-page" data-planet="earth">
 
-            <!-- Start of Planet Info-->
-            <!-- Planet Image PC & Tablet-->
-            <a id="ph" class="earthPictureHolder">
-                <div id="planetImageHolderNonMob" class="uk-flex uk-width-1-1 uk-visible@s" uk-height-match="target: > div > *">
-                    <span class="uk-inline-block uk-margin-remove" style="min-height:300px;width:20%">
-                        <div>  
-                            <div id="lastToggle" style="display:none">
-                                <div class="uk-card uk-card-secondary uk-card-body uk-text-center" style="font-size:15px">
-                                    <div>It is 108,110,000 kilometers from the Sun</div>
-                                    <div class="uk-divider-icon"></div>
-                                    <div>It is 44.68m southwards along Centurion Way</div>
-                                </div>
-                            </div>                   
-                        </div>
-                    </span>
-                    <span id="planetImageDisplayTablet" class="uk-inline uk-light uk-text-center " style="min-height:300px;width:60%">
-                        <div id="planetImageHolder">
-                            <div class="uk-text-emphasis uk-padding-small">To scale Earth is 13.7mm in diameter</div>
-                            <div class="uk-block imagePositioner"><img class="uk-position-center EarthImage" src="/solarsystem-master/images/earthPlanet.png" alt="Earth" style="width:150px;"></div>
-                            <div class="uk-position-relative uk-padding-small" id="planetImageIconPlus" uk-icon="icon: plus; ratio: 0.75">Tap to scale </div>
-                            <div class="uk-position-relative uk-padding-small" id="planetImageIconMinus" uk-icon="icon: minus; ratio: 0.75" style="display:none">Tap to reset </div>
-                        </div>
-                    </span>
-                    <span id="planetImageDisplayPC" class="uk-inline uk-light uk-text-center " style="min-height:300px;width:60%;display:none;">
-                        <div id="planetImageHolder">
-                            <div class="uk-text-emphasis uk-padding-small">To scale Earth would be 13.7mm in diameter</div>
-                            <div class="uk-block imagePositioner"><img class="uk-position-center EarthImage" src="/solarsystem-master/images/earthPlanet.png" alt="Earth" style="width:150px;"></div>
-                        </div>
-                    </span>
-                    <span class="uk-inline-block uk-text-center " style="min-height:300px;width:20%">
-                        <div>
-                            <div id="nextToggle" style="display:none">
-                                <div class="uk-card uk-card-secondary uk-card-body" style="font-size:15px">
-                                    <div>It is 227,840,000 kilometers from the Sun</div>
-                                    <div class="uk-divider-icon"></div>
-                                    <div>It is 84.35m northwards along Centurion Way</div>
-                                </div>
-                            </div>
-                        </div>
-                    </span>
-                </div>            
-            </a>
+  <!-- Site header -->
+  <header id="site-header"></header>
 
-                <!-- Planet Image Mob ******************ADD Mob to the mobile icon IMG Id's for all planets. Then you should be done with that bit-->
+  <!-- Planet selector slider -->
+  <section id="planet-slider"></section>
 
-            <a id="pho" class="earthPictureHolderMob">    
-                <div class="uk-text-center uk-hidden@s">
-                    <div class="uk-inline uk-width-1-1 uk-light">
-                        <div id="planetImageHolderMob">
-                            <div class="uk-text-emphasis uk-padding-small">To scale Earth is 13.7mm in diameter</div>
-                            <div class="uk-block imagePositionerMob"><img class="uk-position-center EarthImage" src="/solarsystem-master/images/earthPlanet.png" alt="Earth" style="width:25vw; max-width:1500px"></div>
-                            <div class="uk-position-bottom uk-light uk-padding-small" id="planetImageIconPlusMob" uk-icon="icon: plus; ratio: 0.75">Tap to scale </div>
-                            <div class="uk-position-bottom uk-light uk-padding-small" id="planetImageIconMinusMob" uk-icon="icon: minus; ratio: 0.75" style="display:none">Tap to reset </div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <!-- Did You Know Header -->
-            <div id="planetInfoHolder" class="uk-grid-collapse uk-text-left" uk-grid uk-height-match="target: > div > *">
-                <div class="uk-inline uk-width-1-1 uk-light">                     
-                    <div id="DYK" class="uk-text-emphasis uk-margin-left">Did you know?</div>
-                </div>
-            </div>
-            <!-- Did You Know Slider -->
-            <div class="uk-light" uk-slider="clsActivated: uk-transition-active; center: true">
-                <div class="uk-position-relative uk-visible-toggle" tabindex="1">
+  <!-- =========================
+       Planet Hero
+  ========================== -->
+  <section class="planet-hero uk-light">
+    <div class="uk-container uk-flex uk-flex-middle uk-flex-between">
 
-                <ul class="uk-slider-items uk-grid uk-text-center">
-                    <li class="uk-width-1-1">
-                        <div id="DYK1" class="uk-inline uk-width-1-1" style="height:132px;">
-                            <div class="uk-position-center uk-padding-large uk-text-bold">
-                                Earth is on average 149,598,262 kilometers from the Sun
-                            </div>
-                        </div>         
-                    </li>
-                    <li class="uk-width-1-1">
-                        <div id="DYK2" class="uk-inline uk-width-1-1" style="height:132px;">
-                            <div class="uk-position-center uk-padding-large uk-text-bold">
-                                Earth has 365.25 days in a year
-                            </div>
-                        </div>
-                    </li>
-                    <li class="uk-width-1-1">
-                        <div id="DYK3" class="uk-inline uk-width-1-1" style="height:132px;">
-                            <div class="uk-position-center uk-padding-large uk-text-bold">
-                                Earth is only the fifth largest planet in the solar system
-                            </div>
-                        </div>
-                    </li>
-                    <li class="uk-width-1-1">
-                        <div id="DYK1" class="uk-inline uk-width-1-1" style="height:132px;">
-                            <div class="uk-position-center uk-padding-large uk-text-bold">
-                                Earth is the only world in our solar system with liquid water on the surface
-                            </div>
-                        </div>         
-                    </li>
-                    <li class="uk-width-1-1">
-                        <div id="DYK2" class="uk-inline uk-width-1-1" style="height:132px;">
-                            <div class="uk-position-center uk-padding-large uk-text-bold">
-                                The name Earth is at least 1,000 years old. The name Earth is a Germanic word, which simply means “the ground.”
-                            </div>
-                        </div>
-                    </li>
-                    <li class="uk-width-1-1">
-                        <div id="DYK3" class="uk-inline uk-width-1-1" style="height:132px;">
-                            <div class="uk-position-center uk-padding-large uk-text-bold">
-                                Earth's atmosphere is 78 percent nitrogen, 21 percent oxygen and 1 percent other ingredients—the perfect balance to breathe and live.
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            
-                <a class="uk-position-center-left" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
-                <a class="uk-position-center-right" href="#" uk-slidenav-next uk-slider-item="next"></a>
-                </div>
-                <ul id="sliderBardyk" class="uk-slider-nav uk-dotnav uk-flex-center"></ul>
-            </div>
-            <!-- End of Planet Info Bar-->
+      <a href="venus.html" class="planet-nav-arrow" uk-icon="icon: chevron-left; ratio: 1.5"></a>
 
-            <!-- Start of Mobile Navigation Stops Bars-->
-            <!-- Next stop Bar. Mobile Only-->
-            <!-- Planet Title Bar Mobile-->
-            <div class="uk-section-default">
-                <div id="planetNavigationclass" class="uk-section uk-light uk-background-cover uk-padding-small uk-padding-remove-left uk-padding-remove-right" style="background-image: url(/solarsystem-master/images/starBackground.jpg);">
-                    <a href="/solarsystem-master/planets/mars.html">
-                        <div class="uk-container uk-margin-remove uk-padding-remove">
-                            <div class="uk-margin-remove" uk-grid>
-                                <div class="uk-width-1-5 uk-padding-remove uk-flex uk-flex-middle">
-                                    <img id="nextImageMobile"  src="/solarsystem-master/images/marsPlanet.png" alt="Mars" style="margin: auto;">
-                                </div>                            
-                                <div class="uk-inline uk-width-3-5 uk-padding-remove" style="min-height:80px">
-                                    <div class="uk-position-center uk-text-nowrap" style=" vertical-align:middle;">Mars is 84.35m northwards</div>
-                                </div>
-                                <div class="uk-inline uk-width-1-5 uk-padding-remove">
-                                    <div class="uk-position-center" uk-icon="icon: chevron-right; ratio: 2;"></div>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </a>
-                    <a href="/solarsystem-master/planets/venus.html">
-                        <div class="uk-container uk-margin-remove uk-padding-remove">
-                            <div class="uk-margin-remove" uk-grid>
-                                <div class="uk-inline uk-width-1-5 uk-padding-remove">
-                                    <div class="uk-position-center" uk-icon="icon: chevron-left; ratio: 2;"></div>
-                                </div>
-                                <div class="uk-inline uk-width-3-5 uk-padding-remove" style="min-height:80px">
-                                    <div class="uk-position-center uk-text-nowrap" style=" vertical-align:middle;">Venus is 44.68m southwards</div>
-                                </div>
-                                <div class="uk-width-1-5 uk-padding-remove  uk-flex uk-flex-middle">
-                                    <img id="nextImageMobile" src="/solarsystem-master/images/venusPlanet.png" alt="Earth" style="margin: auto;">
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <!-- End of Mobile Navigation Stops Bars-->
+      <h1 class="planet-name">Earth</h1>
+
+      <a href="mars.html" class="planet-nav-arrow" uk-icon="icon: chevron-right; ratio: 1.5"></a>
+
+    </div>
+  </section>
+
+  <!-- =========================
+       Scale Visual
+  ========================== -->
+    <section class="planet-scale-section">
+        <div class="planet-scale-frame">
+            <img
+            src="/solarsystem-master/images/earthPlanet.png"
+            alt="Earth"
+            class="planet-image"
+            data-planet="earth"
+            data-diameter-mm="13.7"
+            >
 
         </div>
 
+        <button class="planet-scale-toggle" aria-pressed="false">
+            Show true size (13.7 mm)
+        </button>
+    </section>
 
+  <!-- =========================
+       Did You Know
+  ========================== -->
+  <section class="planet-facts uk-section section-tight">
 
-        <!--Link to JQuery-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        
-        <!--Link to uikit js-->
-        <script type="text/javascript" src="/solarsystem-master/js/uikit.min.js"></script>
-        <script type="text/javascript" src="/solarsystem-master/js/uikit-icons.min.js"></script>
-        <script type="text/javascript" src="/solarsystem-master/js/customScripts.js"></script>
-        <script type="text/javascript" src="/solarsystem-master/js/planetSizing/earth.js"></script>
+    <h2 class="uk-text-center uk-margin-large-bottom">
+      Did you know?
+    </h2>
 
-        <!--Link to dpi js-->
-        <script type="module" src="/solarsystem-master/js/dpijs/calcDPI.js"></script>
+    <div uk-slider>
+      <ul class="uk-slider-items uk-child-width-1-1 uk-text-center">
+      </ul>
 
-        <!-- Partials loader -->
-        <script src="/solarsystem-master/js/partials.js"></script>
+      <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin-top"></ul>
+    </div>
 
-    </body>
+  </section>
+
+  <!-- =========================
+       Next / Previous Navigation
+  ========================== -->
+  <section class="planet-footer-nav uk-light">
+
+    <div class="uk-container uk-grid uk-child-width-1-2@s uk-text-center" uk-grid>
+
+    </div>
+
+  </section>
+
+  <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+  <script src="/solarsystem-master/js/uikit.min.js"></script>
+  <script src="/solarsystem-master/js/uikit-icons.min.js"></script>
+  <script src="/solarsystem-master/js/partials.js"></script>
+  <script type="module" src="/solarsystem-master/js/dpijs/calcDPI.js"></script>
+
+  <script type="module">
+    import { bindPlanetScale } from "/solarsystem-master/js/modules/planetScaleInteraction.js";
+
+    document.querySelectorAll(".planet-scale-section").forEach(section => {
+        bindPlanetScale(section);
+    });
+  </script>
+
+  <script type="module">
+    import { bindPlanetFacts } from "/solarsystem-master/js/modules/planetFacts.js";
+
+    bindPlanetFacts({
+        planetKey: "earth",
+        count: 5 // show 5 random facts
+    });
+  </script>
+
+  <script type="module">
+    import { buildPlanetFooter } from "/solarsystem-master/js/modules/planetNavigation.js";
+
+    buildPlanetFooter();
+  </script>
+
+</body>
 </html>
