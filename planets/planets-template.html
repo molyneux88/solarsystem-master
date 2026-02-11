@@ -75,25 +75,6 @@
 
     <div uk-slider>
       <ul class="uk-slider-items uk-child-width-1-1 uk-text-center">
-
-        <li>
-          <div class="fact-card fact-card--ocean">
-            Earth has 365.25 days in a year
-          </div>
-        </li>
-
-        <li>
-          <div class="fact-card fact-card--land">
-            Earth is the only planet with liquid water on its surface
-          </div>
-        </li>
-
-        <li>
-          <div class="fact-card fact-card--atmosphere">
-            Earth's atmosphere is 78% nitrogen
-          </div>
-        </li>
-
       </ul>
 
       <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin-top"></ul>
@@ -143,6 +124,15 @@
 
     document.querySelectorAll(".planet-scale-section").forEach(section => {
         bindPlanetScale(section);
+    });
+  </script>
+
+  <script type="module">
+    import { bindPlanetFacts } from "/solarsystem-master/js/modules/planetFacts.js";
+
+    bindPlanetFacts({
+        planetKey: "earth",
+        count: 5 // show 5 random facts
     });
   </script>
 
