@@ -21,6 +21,7 @@ export function buildPlanetFooter() {
 
   const prev = PLANETS[index - 1] || null;
   const next = PLANETS[index + 1] || null;
+  const current = PLANETS[index] || null;
 
   const container = footer.querySelector(".uk-grid");
   container.innerHTML = "";
@@ -43,7 +44,7 @@ export function buildPlanetFooter() {
       <a href="${next.key}.html" class="planet-footer-card planet-footer-next">
         <div class="planet-footer-text">
           <span class="planet-footer-name">${next.name}</span>
-          <span class="planet-footer-distance">${index.distance}m north</span>
+          <span class="planet-footer-distance">${current.distance}m north</span>
         </div>
         <img src="/solarsystem-master/images/${next.image}" alt="${next.name}">
         <span class="planet-footer-arrow">→</span>
