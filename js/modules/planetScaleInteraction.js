@@ -3,9 +3,9 @@ import { mmToPx } from "./dpiToPx.js";
 export function bindPlanetScale(section) {
   const img = section.querySelector(".planet-image");
   const button = section.querySelector(".planet-scale-toggle");
-  const initialWidth = img.offsetWidth + "px";
-  const initialHeight = img.offsetHeight + "px";
-  const aspectRatio = initialWidth / initialHeight;
+  let initialWidth;
+  let initialHeight;
+  let aspectRatio;
 
   if (!img || !button) return;
 
@@ -41,36 +41,51 @@ export function bindPlanetScale(section) {
   // Scale toggle
   // ----------------------------
     
-    
-  
 
-  function toggleScale() {
-    const px = mmToPx(mm);
-    if (!px) return;
 
-    img.getBoundingClientRect();
-
-    const targetHeight = px;                 // physical diameter in px
-    const targetWidth = px * aspectRatio;   // preserve shape
-
-    
-
-    if (isTrueScale) {
-      // SCALE DOWN
-      img.style.width = initialWidth;
-      img.style.height = initialHeight;
-      img.classList.remove("is-scaled");
-      isTrueScale = false;
-    } else {
-      // SCALE UP
-      img.style.height = `${targetHeight}px`;
-      img.style.width = `${targetWidth}px`;
-      img.classList.add("is-scaled");
-      isTrueScale = true;
+    function initDimensions() {
+    const rect = img.getBoundingClientRect();
+    initialWidth = rect.width;
+    initialHeight = rect.height;
+    aspectRatio = initialWidth / initialHeight;
     }
 
-    updateButton();
-  }
+    window.addEventListener("load", initDimensions);
+  
+
+    function toggleScale() {
+        const px = mmToPx(mm);
+        if (!px) return;
+
+        const targetHeight = px;
+        const targetWidth = px * aspectRatio;
+
+        if (!isTrueScale) {
+            // --- LOCK CURRENT SIZE FIRST ---
+            const rect = img.getBoundingClientRect();
+            img.style.width = rect.width + "px";
+            img.style.height = rect.height + "px";
+
+            // Force reflow
+            img.offsetHeight;
+
+            // --- SCALE UP ---
+            img.classList.add("is-scaled");
+            img.style.height = targetHeight + "px";
+            img.style.width = targetWidth + "px";
+
+            isTrueScale = true;
+        } else {
+            // --- SCALE DOWN ---
+            img.style.width = initialWidth + "px";
+            img.style.height = initialHeight + "px";
+
+            img.classList.remove("is-scaled");
+            isTrueScale = false;
+        }
+
+        updateButton();
+    }
 
   // ----------------------------
   // Init
