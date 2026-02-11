@@ -88,19 +88,23 @@ h2 {
 }
 
 .planet-scale-frame {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 220px;
+  overflow: visible;
 }
 
 .planet-image {
-  width: 150px;
-  height: 150px;
-  transition:
-    width 0.9s cubic-bezier(0.4, 0.0, 0.2, 1),
-    height 0.9s cubic-bezier(0.4, 0.0, 0.2, 1);
-  will-change: width, height;
+  width: auto;
+  height: auto;
+  transition: width 2s ease, height 2s ease;
+}
+
+.planet-image:not(.is-scaled) {
+  max-width: 150px;
+  max-height: 150px;
 }
 
 .planet-scale-toggle {
@@ -125,16 +129,6 @@ h2 {
   font-size: 0.85rem;
   opacity: 0.85;
 }
-
-.planet-scale-frame {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 220px;
-}
-
-
 
 .planet-measurement-overlay {
   position: absolute;

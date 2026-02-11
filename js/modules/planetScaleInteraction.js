@@ -5,6 +5,7 @@ export function bindPlanetScale(section) {
   const button = section.querySelector(".planet-scale-toggle");
   const initialWidth = img.offsetWidth + "px";
   const initialHeight = img.offsetHeight + "px";
+  const aspectRatio = initialWidth / initialHeight;
 
   if (!img || !button) return;
 
@@ -49,6 +50,11 @@ export function bindPlanetScale(section) {
 
     img.getBoundingClientRect();
 
+    const targetHeight = px;                 // physical diameter in px
+    const targetWidth = px * aspectRatio;   // preserve shape
+
+    
+
     if (isTrueScale) {
       // SCALE DOWN
       img.style.width = initialWidth;
@@ -57,8 +63,8 @@ export function bindPlanetScale(section) {
       isTrueScale = false;
     } else {
       // SCALE UP
-      img.style.width = `${px}px`;
-      img.style.height = `${px}px`;
+      img.style.height = `${targetHeight}px`;
+      img.style.width = `${targetWidth}px`;
       img.classList.add("is-scaled");
       isTrueScale = true;
     }
