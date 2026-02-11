@@ -10,9 +10,14 @@ export const planetFacts = {
   ],
 
   mars: [
-    { text: "Mars has the largest volcano in the solar system", theme: "land" },
-    { text: "A day on Mars is 24.6 hours", theme: "atmosphere" }
-  ]
+    { text: "Mars has the largest volcano in the solar system — Olympus Mons." },
+    { text: "A day on Mars lasts 24 hours and 37 minutes." },
+    { text: "Mars has two tiny moons: Phobos and Deimos." },
+    { text: "Mars appears red because of iron oxide (rust) on its surface." },
+    { text: "Mars has seasons similar to Earth." },
+    { text: "Mars once had flowing water on its surface." },
+    { text: "The tallest cliff on Mars is over 7km high." }
+  ],
 
   // Add more planets here
 };
