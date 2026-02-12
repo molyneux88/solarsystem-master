@@ -97,6 +97,7 @@ h2 {
 }
 
 .planet-image {
+  display: block;
   width: auto;
   height: auto;
   transition: width 2s ease, height 2s ease;
