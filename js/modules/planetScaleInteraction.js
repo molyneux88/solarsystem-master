@@ -75,13 +75,21 @@ export function bindPlanetScale(section) {
             img.style.width = targetWidth + "px";
 
             isTrueScale = true;
-        } else {
-            // --- SCALE DOWN ---
-            img.style.width = initialWidth + "px";
-            img.style.height = initialHeight + "px";
+        }  else {
+          // Animate down first
+          img.style.width = initialWidth + "px";
+          img.style.height = initialHeight + "px";
 
-            img.classList.remove("is-scaled");
-            isTrueScale = false;
+          // Wait for transition to finish before removing constraint
+          img.addEventListener(
+            "transitionend",
+            () => {
+              img.classList.remove("is-scaled");
+            },
+            { once: true }
+          );
+
+          isTrueScale = false;
         }
 
         updateButton();

@@ -96,6 +96,10 @@ h2 {
   overflow: visible;
 }
 
+.planet-scale-frame img.planet-image.is-scaled {
+  max-width: none;
+}
+
 .planet-image {
   display: block;
   width: auto;
