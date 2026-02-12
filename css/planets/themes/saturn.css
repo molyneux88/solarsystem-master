@@ -1,0 +1,43 @@
+:root {
+  --planet-primary: #c2a974;
+  --fact-accent: #e6d5a0;
+}
+
+/* Hero */
+.planet-hero {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(194,169,116,0.6), transparent 70%),
+    linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.95));
+  overflow: visible;
+}
+
+/* Fact cards */
+.fact-card {
+  border-left: 4px solid var(--fact-accent);
+  box-shadow:
+    0 4px 12px rgba(0,0,0,0.15),
+    0 0 0 1px rgba(230,213,160,0.3);
+}
+
+/* Section tint */
+.planet-facts {
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(194,169,116,0.15),
+      rgba(0,0,0,0)
+    );
+}
+
+/* Footer accents */
+.planet-footer-prev {
+  box-shadow: inset 6px 0 0 rgba(230,213,160,0.5);
+}
+
+.planet-footer-next {
+  box-shadow: inset -6px 0 0 rgba(230,213,160,0.5);
+}
+
+.planet-footer-card {
+  box-shadow: 0 0 0 1px rgba(230,213,160,0.3);
+}

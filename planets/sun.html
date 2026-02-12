@@ -1,473 +1,131 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>CWSS - The Sun</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-        <!--Link to uikit css-->
-        <link rel="stylesheet" type="text/css" href="/css/uikit.css" />
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Model Solar System – The Sun</title>
 
-        <!--Link to uikit css-->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
-        
-        <!--Link to custom css-->
-        <link rel="stylesheet" type="text/css" href="/css/homePage.css" />  
-        <link rel="stylesheet" type="text/css" href="/css/planetsStylesheet.css" />  
-        <link rel="stylesheet" type="text/css" href="/css/PlanetsColourSchemes/sun.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    </head>
-    <body>
-        
-        <!-- Start of Header-->
-        <nav class="uk-navbar-container" uk-navbar>
-            <div class="uk-navbar-left">
-                <a class="uk-navbar-item uk-logo uk-margin-large-left uk-visible@s" href="/"><img src="/images/Logo.png" width="200px"></a>
-                <ul class="uk-navbar-nav uk-visible@s">
-                    <li class="uk-active uk-visible@m uk-margin-large-left"><a href="#">The Sun</a></li>
-                    <li><a href="/">Home</a></li>
-                    <li>
-                        <a href="#">Planets</a>
-                        <div class="uk-navbar-dropdown">
-                            <ul class="uk-nav uk-navbar-dropdown-nav">
-                                <li class="uk-active"><a href="#">The Sun</a></li>
-                                <li><a href="/planets/mercury.html">Mercury</a></li>
-                                <li><a href="/planets/venus.html">Venus</a></li>
-                                <li><a href="/planets/earth.html">Earth</a></li>
-                                <li><a href="/planets/mars.html">Mars</a></li>
-                                <li><a href="/planets/jupiter.html">Jupiter</a></li>
-                                <li><a href="/planets/saturn.html">Saturn</a></li>
-                                <li><a href="/planets/uranus.html">Uranus</a></li>
-                                <li><a href="/planets/neptune.html">Neptune</a></li>
-                                <li><a href="/planets/pluto.html">Pluto</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li><a href="/route.html">Route</a></li>
-                </ul>
-                
-                <a href="#mobilemenu" class="uk-navbar-toggle uk-hidden@s" uk-navbar-toggle-icon uk-toggle></a>
-                <div class="uk-navbar-center uk-hidden@s">                    
-                    <div class="uk-navbar-center"><img src="/images/Logo.png" width="200px"></div>
-                </div> 
-            </div>
-        </nav>
-        
-        <div id="mobilemenu" uk-offcanvas="overlay: true">
-            <div class="uk-offcanvas-bar">
-                <button class="uk-offcanvas-close" type="button" uk-close></button>
-                <ul class="uk-nav uk-nav-primary uk-nav-left uk-margin-small-left uk-margin-auto-vertical">
-                    <li class="uk-active"><a href="#">The Sun</a></li>
-                    <li><a href="/">Home</a></li>
-                    <li class="uk-parent">
-                        <a href="#">Planets</a>
-                        <ul class="uk-nav uk-navbar-dropdown-nav">
-                            <li class="uk-active"><a href="#">The Sun</a></li>
-                            <li><a href="/planets/mercury.html">Mercury</a></li>
-                            <li><a href="/planets/venus.html">Venus</a></li>
-                            <li><a href="/planets/earth.html">Earth</a></li>
-                            <li><a href="/planets/mars.html">Mars</a></li>
-                            <li><a href="/planets/jupiter.html">Jupiter</a></li>
-                            <li><a href="/planets/saturn.html">Saturn</a></li>
-                            <li><a href="/planets/uranus.html">Uranus</a></li>
-                            <li><a href="/planets/neptune.html">Neptune</a></li>
-                            <li><a href="/planets/pluto.html">Pluto</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="/route.html">Route</a></li>
-                </ul>
-            </div>
-        </div>
-        
-        <!-- End of Header-->
-        
-        <div id="main" class="uk-align-center uk-margin-remove-bottom">
-            
-            <!-- Start of Slider-->
-             <!-- Slider Mob-->
-            <div class="uk-light" uk-slider="finite: true; index: 0">
-                <div class="uk-position-relative uk-visible-toggle uk-light uk-slider uk-slider-container uk-hidden@s" tabindex="-1">  
-                    <ul class="uk-slider-items">
-                        <li class="uk-transition-toggle" tabindex="0">
-                            <a href="#"><img src="/images/sunmob.png" width="90px"></a>
-                            <div class="uk-position-bottom-center uk-panel-scroll"><div class="uk-margin-xlarge-left uk-transition-slide-bottom uk-text-bold uk-text-medium uk-text-emphasis uk-text-bottom">The Sun</div></div>
-                        </li>
-                        <li class="uk-transition-toggle" tabindex="0">
-                            <a href="/planets/mercury.html"><img src="/images/mercurymob.png" width="44.5px"></a>
-                            <div class="uk-position-bottom-center uk-panel-scroll"><div class="uk-transition-slide-bottom uk-text-bold uk-text-medium uk-text-emphasis uk-text-bottom">Mercury</div></div>
-                        </li>
-                        <li class="uk-transition-toggle" tabindex="0">
-                            <a href="/planets/venus.html"><img src="/images/venusmob.png" width="36.75px"></a>
-                            <div class="uk-position-bottom-center uk-panel-scroll"><div class="uk-transition-slide-bottom uk-text-bold uk-text-medium uk-text-emphasis uk-text-bottom">Venus</div></div>
-                        </li>
-                        <li class="uk-transition-toggle" tabindex="0">
-                            <a href="/planets/earth.html"><img src="/images/earthmob.png" width="37.94px"></a>
-                            <div class="uk-position-bottom-center uk-panel-scroll"><div class="uk-transition-slide-bottom uk-text-bold uk-text-medium uk-text-emphasis uk-text-bottom">Earth</div></div>
-                        </li>
-                        <li class="uk-transition-toggle" tabindex="0">
-                            <a href="/planets/mars.html"><img src="/images/marsmob.png" width="45.1px"></a>
-                            <div class="uk-position-bottom-center uk-panel-scroll"><div class="uk-transition-slide-bottom uk-text-bold uk-text-medium uk-text-emphasis uk-text-bottom">Mars</div></div>
-                        </li>
-                        <li class="uk-transition-toggle" tabindex="0">
-                            <a href="/planets/jupiter.html"><img src="/images/jupitermob.png" width="106.66px"></a>
-                            <div class="uk-position-bottom-center uk-panel-scroll"><div class="uk-transition-slide-bottom uk-text-bold uk-text-medium uk-text-emphasis uk-text-bottom">Jupiter</div></div>
-                        </li>
-                        <li class="uk-transition-toggle" tabindex="0">
-                            <a href="/planets/saturn.html"><img src="/images/saturnmob.png" width="120.65px"></a>
-                            <div class="uk-position-bottom-center uk-panel-scroll"><div class="uk-transition-slide-bottom uk-text-bold uk-text-medium uk-text-emphasis uk-text-bottom">Saturn</div></div>
-                        </li>
-                        <li class="uk-transition-toggle" tabindex="0">
-                            <a href="/planets/uranus.html"><img src="/images/uranusmob.png" width="66.5px"></a>
-                            <div class="uk-position-bottom-center uk-panel-scroll"><div class="uk-transition-slide-bottom uk-text-bold uk-text-medium uk-text-emphasis uk-text-bottom">Uranus</div></div>
-                        </li>
-                        <li class="uk-transition-toggle" tabindex="0">
-                            <a href="/planets/neptune.html"><img src="/images/neptunemob.png" width="59.1px"></a>
-                            <div class="uk-position-bottom-center uk-panel-scroll" style="direction: rtl"><div class="uk-transition-slide-bottom uk-text-bold uk-text-medium uk-text-emphasis uk-text-bottom">Neptune</div></div>
-                        </li>
-                        <li class="uk-transition-toggle" tabindex="0">
-                            <a href="/planets/pluto.html"><img src="/images/plutomob.png" width="35.5px"></a>
-                            <div class="uk-position-bottom-center uk-panel-scroll" style="direction: rtl"><div class="uk-transition-slide-bottom uk-text-bold uk-text-medium uk-text-emphasis uk-text-bottom">Pluto</div></div>
-                        </li>
-                    </ul>
-                
-                    <a class="uk-position-center-left uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
-                    <a class="uk-position-center-right uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
-                </div>
-                <ul id="sliderBar" class="uk-slider-nav uk-dotnav uk-flex-center"></ul>
-            </div>
+  <!-- UIkit -->
+  <link rel="stylesheet" href="/solarsystem-master/css/uikit.css" />
 
-             <!-- Slider Tablet-->        
-            <div class="uk-light" uk-slider="finite: true; index: 0">
-                <div class="uk-position-relative uk-position-top-center uk-visible-toggle uk-slider uk-slider-container uk-visible@s uk-hidden@m" tabindex="-1">
-            
-                    <ul class="uk-slider-items">
-                        <li class="uk-transition-toggle" tabindex="0">
-                            <a href="#"><img src="/images/sunmob.png" width="121px"></a>
-                            <div class="uk-position-bottom-center uk-panel-scroll"><h1 class="uk-transition-slide-bottom-small">The Sun</h1></div>
-                        </li>
-                        <li class="uk-transition-toggle" tabindex="0">
-                            <a href="/planets/mercury.html"><img src="/images/mercurymob.png" width="59.8px">
-                            <div class="uk-position-bottom-center uk-panel-scroll"><h1 class="uk-transition-slide-bottom-small">Mercury</h1></div>
-                        </li>
-                        <li class="uk-transition-toggle" tabindex="0">
-                            <a href="/planets/venus.html"><img src="/images/venusmob.png" width="49.4px"></a>
-                            <div class="uk-position-bottom-center uk-panel-scroll"><h1 class="uk-transition-slide-bottom-small">Venus</h1></div>
-                        </li>
-                        <li class="uk-transition-toggle" tabindex="0">
-                            <a href="/planets/earth.html"><img src="/images/earthmob.png" width="51px"></a>
-                            <div class="uk-position-bottom-center uk-panel-scroll"><h1 class="uk-transition-slide-bottom-small">Earth</h1></div>
-                        </li>
-                        <li class="uk-transition-toggle" tabindex="0">
-                            <a href="/planets/mars.html"><img src="/images/marsmob.png" width="60.6px"></a>
-                            <div class="uk-position-bottom-center uk-panel-scroll"><h1 class="uk-transition-slide-bottom-small">Mars</h1></div>
-                        </li>
-                        <li class="uk-transition-toggle" tabindex="0">
-                            <a href="/planets/jupiter.html"><img src="/images/jupitermob.png" width="143.4px"></a>
-                            <div class="uk-position-bottom-center uk-panel-scroll"><h1 class="uk-transition-slide-bottom-small">Jupiter</h1></div>
-                        </li>
-                        <li class="uk-transition-toggle" tabindex="0">
-                            <a href="/planets/saturn.html"><img src="/images/saturnmob.png" width="162.2px"></a>
-                            <div class="uk-position-bottom-center uk-panel-scroll"><h1 class="uk-transition-slide-bottom-small">Saturn</h1></div>
-                        </li>
-                        <li class="uk-transition-toggle" tabindex="0">
-                            <a href="/planets/uranus.html"><img src="/images/uranusmob.png" width="89.4px"></a>
-                            <div class="uk-position-bottom-center uk-panel-scroll"><h1 class="uk-transition-slide-bottom-small">Uranus</h1></div>
-                        </li>
-                        <li class="uk-transition-toggle" tabindex="0">
-                            <a href="/planets/neptune.html"><img src="/images/neptunemob.png" width="79.4px"></a>
-                            <div class="uk-position-bottom-center uk-panel-scroll" style="direction: rtl"><h1 class="uk-transition-slide-bottom-small">Neptune</h1></div>
-                        </li>
-                        <li class="uk-transition-toggle" tabindex="0">
-                            <a href="/planets/pluto.html"><img src="/images/plutomob.png" width="47.6px"></a>
-                            <div class="uk-position-bottom-center uk-panel-scroll" style="direction: rtl"><h1 class="uk-transition-slide-bottom-small">Pluto</h1></div>
-                        </li>
-                    </ul>
-                
-                    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
-                    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
-                </div>
-                <ul id="sliderBar" class="uk-slider-nav uk-dotnav uk-flex-center"></ul>
-            </div>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 
-             <!-- Slider PC-->
-            <div class="uk-position-relative uk-position-top-center uk-visible-toggle uk-light uk-slider uk-slider-container uk-visible@s uk-visible@m" tabindex="-1" uk-slider="finite: true">
-            
-                <ul class="uk-slider-items">
-                    <li class="uk-transition-toggle" tabindex="0">
-                        <a href="#"><img src="/images/sunmob.png" width="181.5px"></a>
-                        <div class="uk-position-bottom-center uk-panel-scroll"><h1 class="uk-transition-slide-bottom-small">The Sun</h1></div>
-                    </li>
-                    <li class="uk-transition-toggle" tabindex="0">
-                        <a href="/planets/mercury.html"><img src="/images/mercurymob.png" width="89.7px"></a>
-                        <div class="uk-position-bottom-center uk-panel-scroll"><h1 class="uk-transition-slide-bottom-small">Mercury</h1></div>
-                    </li>
-                    <li class="uk-transition-toggle" tabindex="0">
-                        <a href="/planets/venus.html"><img src="/images/venusmob.png" width="74.1px"></a>
-                        <div class="uk-position-bottom-center uk-panel-scroll"><h1 class="uk-transition-slide-bottom-small">Venus</h1></div>
-                    </li>
-                    <li class="uk-transition-toggle" tabindex="0">
-                        <a href="/planets/earth.html"><img src="/images/earthmob.png" width="76.5px"></a>
-                        <div class="uk-position-bottom-center uk-panel-scroll"><h1 class="uk-transition-slide-bottom-small">Earth</h1></div>
-                    </li>
-                    <li class="uk-transition-toggle" tabindex="0">
-                        <a href="/planets/mars.html"><img src="/images/marsmob.png" width="90.9px"></a>
-                        <div class="uk-position-bottom-center uk-panel-scroll"><h1 class="uk-transition-slide-bottom-small">Mars</h1></div>
-                    </li>
-                    <li class="uk-transition-toggle" tabindex="0">
-                        <a href="/planets/jupiter.html"><img src="/images/jupitermob.png" width="215.1x"></a>
-                        <div class="uk-position-bottom-center uk-panel-scroll"><h1 class="uk-transition-slide-bottom-small">Jupiter</h1></div>
-                    </li>
-                    <li class="uk-transition-toggle" tabindex="0">
-                        <a href="/planets/saturn.html"><img src="/images/saturnmob.png" width="243.3px"></a>
-                        <div class="uk-position-bottom-center uk-panel-scroll"><h1 class="uk-transition-slide-bottom-small">Saturn</h1></div>
-                    </li>
-                    <li class="uk-transition-toggle" tabindex="0">
-                        <a href="/planets/uranus.html"><img src="/images/uranusmob.png" width="134.1px"></a>
-                        <div class="uk-position-bottom-center uk-panel-scroll"><h1 class="uk-transition-slide-bottom-small">Uranus</h1></div>
-                    </li>
-                    <li class="uk-transition-toggle" tabindex="0">
-                        <a href="/planets/neptune.html"><img src="/images/neptunemob.png" width="119.1px"></a>
-                        <div class="uk-position-bottom-center uk-panel-scroll" style="direction: rtl"><h1 class="uk-transition-slide-bottom-small">Neptune</h1></div>
-                    </li>
-                    <li class="uk-transition-toggle" tabindex="0">
-                        <a href="/planets/pluto.html"><img src="/images/plutomob.png" width="71.4px"></a>
-                        <div class="uk-position-bottom-center uk-panel-scroll" style="direction: rtl"><h1 class="uk-transition-slide-bottom-small">Pluto</h1></div>
-                    </li>
-                </ul>
-            
-                <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
-                <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
-            
-            </div>            
-            <!-- End of Slider-->
-            
+  <!-- Base styles -->
+  <link rel="stylesheet" href="/solarsystem-master/css/planets/base.css">
 
+  <!-- Planet theme (Earth for now) -->
+  <link rel="stylesheet" href="/solarsystem-master/css/planets/themes/sun.css">
+</head>
 
-            <!-- Start of Planet Title Bar-->
-            <!-- Planet Title Bar PC-->
-            <div class="uk-grid-collapse uk-text-center uk-visible@s uk-visible@m" uk-grid uk-height-match="target: > div > *">
-                <div class="uk-width-1-5">
-                    <div class="uk-background-secondary uk-light">
-                    </div>
-                </div>
-                <div class="uk-inline uk-width-3-5">
-                    <div class=" uk-background-secondary uk-light">
-                        <div>
-                            <div id="tabletHeader" class="uk-text-bold uk-text-header-large uk-text-emphasis uk-position-center">The Sun</div>     
-                        </div> 
-                        <a href="/planets/mercury.html"><img class="uk-position-small uk-position-center-right" src="/images/forwardarrow.png" alt="Forward Arrow" style="width:5vw; max-width:45px; min-width:30px;"></a>
-                    </div>
-                </div>
-                <div class="uk-width-1-5">
-                    <div class="uk-background-secondary uk-light uk-card-hover" type="button">
-                        <div class="uk-text-default">Next Stop</div>
-                        <div class="uk-text-bold uk-text-medium uk-text-emphasis">Mercury</div>                        
-                    </div>
-                    <div uk-drop="animation: uk-animation-slide-top-small; duration: 1000; offset: 0; pos:bottom-justify;">
-                        <div class="uk-card uk-card-secondary uk-card-body" style="font-size:15px">
-                            <div>It is 57,950,000 kilometers from the Sun</div>
-                            <div class="uk-divider-icon"></div>
-                            <div>It is 62.45m northwards along Centurion Way</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<body class="planet-page" data-planet="sun">
 
-            <!-- Planet Title Bar Tablet-->
-            <div class="uk-grid-collapse uk-text-center uk-visible@s uk-hidden@m" uk-grid uk-height-match="target: > div > *">
-                <div id="lastPlanet" class="uk-width-1-5">
-                    <div class="uk-background-secondary uk-light">               
-                    </div>
-                </div>
-                <div class="uk-inline uk-width-3-5">
-                    <div class=" uk-background-secondary uk-light">
-                        <div>                            
-                            <div id="tabletHeader" class="uk-text-bold uk-text-header-large uk-text-emphasis uk-position-center">The Sun</div>    
-                        </div> 
-                        <a href="/planets/mercury.html"><img class="uk-position-small uk-position-center-right" src="/images/forwardarrow.png" alt="Forward Arrow" style="width:3vw; max-width:60px; min-width:20px;"></a>
-                    </div>
-                </div>
-                <div id="nextPlanet" class="uk-width-1-5">
-                    <div class="uk-background-secondary uk-light uk-card-hover" type="button">
-                        <div class="uk-text-default">Next Stop</div>
-                        <div class="uk-text-bold uk-text-medium uk-text-emphasis">Mercury</div>
-                        <span id="nextIconPlus" uk-icon="icon: plus; ratio: 0.75"></span>
-                        <span id="nextIconMinus" uk-icon="icon: minus; ratio: 0.75" style="display:none"></span>                                 
-                    </div>
-                </div>
-            </div>
+  <!-- Site header -->
+  <header id="site-header"></header>
 
-            <!-- Planet Title Bar Mobile-->
-            <div id="mobileHeader" class="uk-grid-collapse uk-text-center uk-hidden@s" uk-grid  style="height: 10vw;">
-                <div class="uk-inline uk-width-1-1">
-                    <div class=" uk-background-secondary">
-                        <div>
-                            <div class="uk-text-bold uk-text-medium uk-position-center ">The Sun</div>    
-                        </div> 
-                        <a href="/planets/mercury.html"><img class="uk-position-small uk-position-center-right" src="/images/forwardarrow.png" alt="Forward Arrow" style="width:3vw; max-width:60px; min-width:15px;"></a>
-                    </div>
-                </div>
-            </div>
-            <!-- End of Planet Title Bar-->
+  <!-- Planet selector slider -->
+  <section id="planet-slider"></section>
 
+  <!-- =========================
+       Planet Hero
+  ========================== -->
+  <section class="planet-hero uk-light">
+    <div class="uk-container uk-flex uk-flex-middle uk-flex-between">
 
+      <h1 class="planet-name">The Sun</h1>
 
-            <!-- Start of Planet Info-->
-            <!-- Planet Image PC & Tablet-->
-            <a id="ph">
-                <div id="planetImageHolderNonMob" class="uk-flex uk-width-1-1 uk-visible@s" uk-height-match="target: > div > *">
-                <span class="uk-inline-block uk-margin-remove" style="min-height:300px;width:20%">
-                </span>
-                <span class="uk-block uk-light uk-text-center " style="min-height:300px;width:60%">
-                    <div>
-                        <div class="uk-text-emphasis uk-padding-small">To scale the Sun would be 1500mm in diameter</div>
-                        <img src="/images/sunPlanet.png" alt="The Sun" style="width:150px;">
-                        <div class="uk-text-emphasis uk-padding-small">
-                            This would be equal to:
-                            <br>
-                            <br>Ten standard Biro pens,
-                            <br>Five 30cm Rulers,
-                            <br>Four Bowling Pins,
-                            <br>One Ariana Grande
-                        </div>
-                    </div>
-                </span>
-                <span class="uk-inline-block uk-text-center " style="min-height:300px;width:20%">
-                    <div>
-                        <div id="nextToggle" style="display:none">
-                            <div class="uk-card uk-card-secondary uk-card-body" style="font-size:15px">
-                                <div>It is 57,950,000 kilometers from the Sun</div>
-                                <div class="uk-divider-icon"></div>
-                                <div>It is 62.45m northwards along Centurion Way</div>
-                            </div>
-                        </div>
-                    </div>
-                </span>
-                </div>
-            </a>
-            <!-- Planet Image Mob-->
-            <a id="pho">
-                <div class="uk-grid-collapse uk-text-center uk-hidden@s" uk-grid uk-height-match="target: > div > *">
-                <div class="uk-block uk-width-1-1 uk-light">
-                    <div id="planetImageHolderSun">
-                        <div class="uk-text-emphasis uk-padding-small">To scale the Sun would be 1500mm in diameter</div>
-                        <img  src="/images/sunPlanet.png" alt="The Sun" style="width:25vw; max-width:115px">
-                        <div class="uk-text-emphasis uk-padding-small">
-                            This would be equal to:
-                            <br>
-                            <br>Ten standard Biro pens,
-                            <br>Five 30cm Rulers,
-                            <br>Four Bowling Pins,
-                            <br>One Ariana Grande                            
-                        </div>
-                    </div>
-                </div>
-                </div>
-            </a>
+      <a href="mercury.html" class="planet-nav-arrow" uk-icon="icon: chevron-right; ratio: 1.5"></a>
 
-            <!-- Did You Know Header -->
-            <div id="planetInfoHolder" class="uk-grid-collapse uk-text-left" uk-grid uk-height-match="target: > div > *">
-                <div class="uk-inline uk-width-1-1 uk-light">                     
-                    <div id="DYK" class="uk-text-emphasis uk-margin-left">Did you know?</div>
-                </div>
-            </div>
-            <!-- Did You Know Slider -->
-            <div class="uk-light" uk-slider="clsActivated: uk-transition-active; center: true">
-                <div class="uk-position-relative uk-visible-toggle" tabindex="1">
+    </div>
+  </section>
 
-                <ul class="uk-slider-items uk-grid uk-text-center">
-                    <li class="uk-width-1-1">
-                        <div id="DYK1" class="uk-inline uk-width-1-1" style="height:132px;">
-                            <div class="uk-position-center uk-padding-large uk-text-bold">
-                                Our Sun is a 4.5 billion-year-old star.
-                            </div>
-                        </div>         
-                    </li>
-                    <li class="uk-width-1-1">
-                        <div id="DYK2" class="uk-inline uk-width-1-1" style="height:132px;">
-                            <div class="uk-position-center uk-padding-large uk-text-bold">
-                                Our Sun is made of hydrogen and helium at the centre of our solar system.
-                            </div>
-                        </div>
-                    </li>
-                    <li class="uk-width-1-1">
-                        <div id="DYK3" class="uk-inline uk-width-1-1" style="height:132px;">
-                            <div class="uk-position-center uk-padding-large uk-text-bold">
-                                The Sun is about 93 million miles (150 million kilometers) from Earth
-                            </div>
-                        </div>
-                    </li>
-                    <li class="uk-width-1-1">
-                        <div id="DYK1" class="uk-inline uk-width-1-1" style="height:132px;">
-                            <div class="uk-position-center uk-padding-large uk-text-bold">
-                                The Sun’s volume would need 1.3 million Earths to fill it
-                            </div>
-                        </div>         
-                    </li>
-                    <li class="uk-width-1-1">
-                        <div id="DYK2" class="uk-inline uk-width-1-1" style="height:132px;">
-                            <div class="uk-position-center uk-padding-large uk-text-bold">
-                                The hottest part of the Sun is its core, where temperatures top 15 million degrees Celsius
-                            </div>
-                        </div>
-                    </li>
-                    <li class="uk-width-1-1">
-                        <div id="DYK3" class="uk-inline uk-width-1-1" style="height:132px;">
-                            <div class="uk-position-center uk-padding-large uk-text-bold">
-                                The Sun doesn’t have moons, but it’s orbited by eight planets, at least five dwarf planets, tens of thousands of asteroids, and perhaps three trillion comets and icy bodies.
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            
-                <a class="uk-position-center-left" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
-                <a class="uk-position-center-right" href="#" uk-slidenav-next uk-slider-item="next"></a>
-                </div>
-                <ul id="sliderBardyk" class="uk-slider-nav uk-dotnav uk-flex-center"></ul>
-            </div>
-            <!-- End of Planet Info Bar-->
-
-            <!-- Start of Mobile Navigation Stops Bars-->
-            <!-- Next stop Bar. Mobile Only-->
-            <!-- Planet Title Bar Mobile-->
-            <div class="uk-section-default">
-                <div id="planetNavigationclass" class="uk-section uk-light uk-background-cover uk-padding-small uk-padding-remove-left uk-padding-remove-right" style="background-image: url(../../images/starBackground.jpg);">
-                    <a href="/planets/mercury.html">
-                        <div class="uk-container uk-margin-remove uk-padding-remove">
-                            <div class="uk-margin-remove" uk-grid>
-                                <div class="uk-width-1-5 uk-padding-remove uk-flex uk-flex-middle">
-                                    <img id="nextImageMobile"  src="/images/mercuryPlanet.png" alt="Mercury" style="margin: auto;">
-                                </div>                            
-                                <div class="uk-inline uk-width-3-5 uk-padding-remove" style="min-height:80px">
-                                    <div class="uk-position-center uk-text-nowrap" style=" vertical-align:middle;">Mercury is 62.45m northwards</div>
-                                </div>
-                                <div class="uk-inline uk-width-1-5 uk-padding-remove">
-                                    <div class="uk-position-center" uk-icon="icon: chevron-right; ratio: 2;"></div>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </a>
-                    
-                </div>
-            </div>
-            <!-- End of Mobile Navigation Stops Bars-->
-
+    <!-- =========================
+        Sun Model Info
+    ========================= -->
+    <section class="planet-scale-section sun-info">
+        <div class="planet-scale-frame">
+            <img
+            src="/solarsystem-master/images/sunPlanet.png"
+            alt="The Sun"
+            class="planet-image"
+            >
         </div>
 
+        <div class="sun-size-text">
+            <p>In our model, the Sun would be approximately <strong>1.5 meters wide</strong>.</p>
+            <p>That’s roughly equivalent to:</p>
+            <ul>
+            <li>22 Tennis balls</li>
+            <li>10 iPhone 15's</li>
+            <li>10 Samsung Galaxy S23s</li>
+            <li>156 LEGO bricks</li>
+            <li>1 Ariana Grande</li>
+            </ul>
+        </div>
+    </section>
 
+  <!-- =========================
+       Did You Know
+  ========================== -->
+  <section class="planet-facts uk-section section-tight">
 
-        <!--Link to JQuery-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        
-        <!--Link to uikit js-->
-        <script type="text/javascript" src="/js/uikit.min.js"></script>
-        <script type="text/javascript" src="/js/uikit-icons.min.js"></script>
-        <script type="text/javascript" src="/js/customScripts.js"></script>
+    <h2 class="uk-text-center uk-margin-large-bottom">
+      Did you know?
+    </h2>
 
-        <!--Link to dpi js-->
-        <script type="module" src="/js/dpijs/calcDPI.js"></script>
-    </body>
+    <div uk-slider>
+      <ul class="uk-slider-items uk-child-width-1-1 uk-text-center">
+      </ul>
+
+      <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin-top"></ul>
+    </div>
+
+  </section>
+
+  <!-- =========================
+       Next / Previous Navigation
+  ========================== -->
+  <section class="planet-footer-nav uk-light">
+
+    <div class="uk-container uk-grid uk-child-width-1-2@s uk-text-center" uk-grid>
+
+    </div>
+
+  </section>
+
+  <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+  <script src="/solarsystem-master/js/uikit.min.js"></script>
+  <script src="/solarsystem-master/js/uikit-icons.min.js"></script>
+  <script src="/solarsystem-master/js/partials.js"></script>
+  <script type="module" src="/solarsystem-master/js/dpijs/calcDPI.js"></script>
+
+  <script type="module">
+    import { bindPlanetScale } from "/solarsystem-master/js/modules/planetScaleInteraction.js";
+
+    document.querySelectorAll(".planet-scale-section").forEach(section => {
+        bindPlanetScale(section);
+    });
+  </script>
+
+  <script type="module">
+    import { bindPlanetFacts } from "/solarsystem-master/js/modules/planetFacts.js";
+
+    bindPlanetFacts({
+        planetKey: "sun",
+        count: 5 // show 5 random facts
+    });
+  </script>
+
+  <script type="module">
+    import { buildPlanetFooter } from "/solarsystem-master/js/modules/planetNavigation.js";
+
+    buildPlanetFooter();
+  </script>
+
+</body>
 </html>

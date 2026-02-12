@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Model Solar System – Saturn</title>
+  <title>Model Solar System – Planet</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -18,10 +18,10 @@
   <link rel="stylesheet" href="/solarsystem-master/css/planets/base.css">
 
   <!-- Planet theme (Earth for now) -->
-  <link rel="stylesheet" href="/solarsystem-master/css/planets/themes/saturn.css">
+  <link rel="stylesheet" href="/solarsystem-master/css/planets/themes/earth.css">
 </head>
 
-<body class="planet-page" data-planet="earth">
+<body class="planet-page">
 
   <!-- Site header -->
   <header id="site-header"></header>
@@ -35,11 +35,11 @@
   <section class="planet-hero uk-light">
     <div class="uk-container uk-flex uk-flex-middle uk-flex-between">
 
-      <a href="Jupiter.html" class="planet-nav-arrow" uk-icon="icon: chevron-left; ratio: 1.5"></a>
+      <a href="venus.html" class="planet-nav-arrow" uk-icon="icon: chevron-left; ratio: 1.5"></a>
 
-      <h1 class="planet-name">Saturn</h1>
+      <h1 class="planet-name">Earth</h1>
 
-      <a href="uranus.html" class="planet-nav-arrow" uk-icon="icon: chevron-right; ratio: 1.5"></a>
+      <a href="mars.html" class="planet-nav-arrow" uk-icon="icon: chevron-right; ratio: 1.5"></a>
 
     </div>
   </section>
@@ -50,17 +50,17 @@
     <section class="planet-scale-section">
         <div class="planet-scale-frame">
             <img
-            src="/solarsystem-master/images/saturnPlanet.png"
-            alt="Saturn"
+            src="/solarsystem-master/images/earthPlanet.png"
+            alt="Earth"
             class="planet-image"
-            data-planet="saturn"
-            data-diameter-mm="125.4"
+            data-planet="earth"
+            data-diameter-mm="13.7"
             >
 
         </div>
 
         <button class="planet-scale-toggle" aria-pressed="false">
-            Show true size (125.4 mm)
+            Show true size (13.7 mm)
         </button>
     </section>
 
@@ -89,6 +89,24 @@
 
     <div class="uk-container uk-grid uk-child-width-1-2@s uk-text-center" uk-grid>
 
+        <a href="venus.html" class="planet-footer-card planet-footer-prev">
+            <span class="planet-footer-arrow">←</span>
+            <img src="/solarsystem-master/images/venusPlanet.png" alt="Venus">
+            <div class="planet-footer-text">
+                <span class="planet-footer-name">Venus</span>
+                <span class="planet-footer-distance">44.68m south</span>
+            </div>
+        </a>
+
+        <a href="mars.html" class="planet-footer-card planet-footer-next">
+            <div class="planet-footer-text">
+                <span class="planet-footer-name">Mars</span>
+                <span class="planet-footer-distance">84.35m north</span>
+            </div>
+            <img src="/solarsystem-master/images/marsPlanet.png" alt="Mars">
+            <span class="planet-footer-arrow">→</span>
+        </a>
+
     </div>
 
   </section>
@@ -113,15 +131,9 @@
     import { bindPlanetFacts } from "/solarsystem-master/js/modules/planetFacts.js";
 
     bindPlanetFacts({
-        planetKey: "saturn",
+        planetKey: "earth",
         count: 5 // show 5 random facts
     });
-  </script>
-
-  <script type="module">
-    import { buildPlanetFooter } from "/solarsystem-master/js/modules/planetNavigation.js";
-
-    buildPlanetFooter();
   </script>
 
 </body>
