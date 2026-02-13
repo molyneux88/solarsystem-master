@@ -116,7 +116,7 @@ h2 {
   max-height: 150px;
 }
 
-.saturn {
+.saturn:not(.is-scaled) {
   max-width: 262.5px;
 }
 
