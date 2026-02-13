@@ -74,6 +74,10 @@ h2 {
   opacity: 0.8;
 }
 
+.planet-nav-arrow.invisible {
+  visibility: hidden;  /* takes up space but is not visible */
+}
+
 .planet-nav-arrow:hover {
   opacity: 1;
 }

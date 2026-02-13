@@ -96,6 +96,8 @@
   padding-left: 1rem;          /* space from container edge */
   margin: 0 auto;              /* center the whole list block horizontally */
   max-width: 360px;            /* optional: keep the list from being too wide */
+  justify-content: center;
+
 }
 
 .sun-comparison-list li {
@@ -103,4 +105,10 @@
   margin-bottom: 0.5rem;       /* space between bullets */
   line-height: 1.4;            /* slightly tighter spacing */
   color: #fff;                 /* white text for consistency */
+  
+}
+
+.sun-comparison-list li :marker {
+  color: #fdd835;                /* white text for consistency */
+  
 }
