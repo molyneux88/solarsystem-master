@@ -116,6 +116,10 @@ h2 {
   max-height: 150px;
 }
 
+.saturn {
+  max-width: 262.5px;
+}
+
 .planet-scale-toggle {
   margin-top: 1rem;
   padding: 0.6rem 1.4rem;
