@@ -89,3 +89,18 @@
   left: 0;
   top: 0.35rem;
 }
+
+.sun-comparison-list {
+  list-style: disc;            /* solid bullet points */
+  list-style-position: inside; /* bullet is inside the padding area */
+  padding-left: 1rem;          /* space from container edge */
+  margin: 0 auto;              /* center the whole list block horizontally */
+  max-width: 360px;            /* optional: keep the list from being too wide */
+}
+
+.sun-comparison-list li {
+  text-align: left;            /* text left-aligned */
+  margin-bottom: 0.5rem;       /* space between bullets */
+  line-height: 1.4;            /* slightly tighter spacing */
+  color: #fff;                 /* white text for consistency */
+}

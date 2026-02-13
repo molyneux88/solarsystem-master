@@ -1,5 +1,5 @@
 export const PLANETS = [
-  { key: "thesun", name: "Sun", image: "sunPlanet.png", distance: "62.45"  },
+  { key: "sun", name: "Sun", image: "sunPlanet.png", distance: "62.45"  },
   { key: "mercury", name: "Mercury", image: "mercuryPlanet.png", distance: "54.06"},
   { key: "venus", name: "Venus", image: "venusPlanet.png", distance: "44.68" },
   { key: "earth", name: "Earth", image: "earthPlanet.png", distance: "84.35" },
