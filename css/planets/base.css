@@ -90,6 +90,14 @@ h2 {
 .planet-scale-section {
   text-align: center;
   padding: 2rem 1rem 1.5rem;
+  background: url(/solarsystem-master/images/starBackground.jpg);
+  background-size: contain;
+-webkit-mask-image: radial-gradient(circle, 
+    rgba(0,0,0,1) 65%, 
+    rgba(0,0,0,0) 100%);
+  mask-image: radial-gradient(circle, 
+    rgba(0,0,0,1) 65%, 
+    rgba(0,0,0,0) 100%);
 }
 
 .planet-scale-frame {
@@ -99,8 +107,7 @@ h2 {
   align-items: center;
   min-height: 220px;
   overflow: visible;
-  background: url(/solarsystem-master/images/starBackground.jpg);
-  background-size: contain;
+  
 }
 
 .planet-scale-frame img.planet-image.is-scaled {
