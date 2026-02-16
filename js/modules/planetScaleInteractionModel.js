@@ -7,9 +7,9 @@ export function bindPlanetScale(section) {
   let initialHeight;
 
 
-  if (!img || !button) return;
+  if (!model || !button) return;
 
-  const mm = parseFloat(img.dataset.diameterMm);
+  const mm = parseFloat(model.dataset.diameterMm);
   let isTrueScale = false;
 
   // ----------------------------
@@ -44,7 +44,7 @@ export function bindPlanetScale(section) {
 
 
     function initDimensions() {
-    const rect = img.getBoundingClientRect();
+    const rect = model.getBoundingClientRect();
     initialWidth = rect.width;
     initialHeight = rect.height;
 
