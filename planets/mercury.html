@@ -49,13 +49,18 @@
   ========================== -->
     <section class="planet-scale-section">
         <div class="planet-scale-frame">
-            <img
-            src="/solarsystem-master/images/mercuryPlanet.png"
-            alt="Mercury"
-            class="planet-image"
-            data-planet="mercury"
-            data-diameter-mm="5.2"
-            >
+            <model-viewer
+              src="/solarsystem-master/models/mercury.glb"
+              alt="Mercury"
+              auto-rotate
+              camera-controls
+              disable-zoom
+              style="width: 75%; height: 400px;"
+              interaction-prompt="auto"
+              class="planet-model"
+              data-planet="mercury"
+              data-diameter-mm="5.2">
+            </model-viewer>
 
         </div>
 

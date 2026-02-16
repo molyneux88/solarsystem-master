@@ -47,21 +47,30 @@
   <!-- =========================
        Scale Visual
   ========================== -->
+<!-- =========================
+       Scale Visual
+  ========================== -->
     <section class="planet-scale-section">
-        <div class="planet-scale-frame">
-            <img
-            src="/solarsystem-master/images/earthPlanet.png"
-            alt="Earth"
-            class="planet-image"
-            data-planet="earth"
-            data-diameter-mm="13.7"
-            >
+      <div class="planet-scale-frame">
 
-        </div>
+        <model-viewer
+          src="/solarsystem-master/models/earth.glb"
+          alt="Earth"
+          auto-rotate
+          camera-controls
+          disable-zoom
+          style="width: 75%; height: 400px;"
+          interaction-prompt="auto"
+          class="planet-model"
+          data-planet="earth"
+          data-diameter-mm="13.7">
+        </model-viewer>
 
-        <button class="planet-scale-toggle" aria-pressed="false">
-            Show true size (13.7 mm)
-        </button>
+      </div>
+
+      <button class="planet-scale-toggle" aria-pressed="false">
+        Show true size (13.7 mm)
+      </button>
     </section>
 
   <!-- =========================

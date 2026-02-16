@@ -49,11 +49,18 @@
     ========================= -->
     <section class="planet-scale-section">
         <div class="planet-scale-frame">
-            <img
-            src="/solarsystem-master/images/sunPlanet.png"
-            alt="The Sun"
-            class="planet-image"
-            >
+            <model-viewer
+              src="/solarsystem-master/models/sun.glb"
+              alt="Sun"
+              auto-rotate
+              camera-controls
+              disable-zoom
+              style="width: 75%; height: 400px;"
+              interaction-prompt="auto"
+              class="planet-model"
+              data-planet="sun"
+              data-diameter-mm="154">
+            </model-viewer>
         </div>
 
         <p style="text-align: center; margin-top: 1rem;">

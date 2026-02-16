@@ -49,13 +49,18 @@
   ========================== -->
     <section class="planet-scale-section">
         <div class="planet-scale-frame">
-            <img
-            src="/solarsystem-master/images/saturnPlanet.png"
-            alt="Saturn"
-            class="planet-image saturn"
-            data-planet="saturn"
-            data-diameter-mm="125.4"
-            >
+            <model-viewer
+              src="/solarsystem-master/models/saturn.glb"
+              alt="Saturn"
+              auto-rotate
+              camera-controls
+              disable-zoom
+              style="width: 75%; height: 400px;"
+              interaction-prompt="auto"
+              class="planet-model"
+              data-planet="saturn"
+              data-diameter-mm="125.4">
+            </model-viewer>
 
         </div>
 

@@ -49,13 +49,18 @@
   ========================== -->
     <section class="planet-scale-section">
         <div class="planet-scale-frame">
-            <img
-            src="/solarsystem-master/images/marsPlanet.png"
-            alt="Mars"
-            class="planet-image"
-            data-planet="mars"
-            data-diameter-mm="7.3"
-            >
+            <model-viewer
+              src="/solarsystem-master/models/mars.glb"
+              alt="Mars"
+              auto-rotate
+              camera-controls
+              disable-zoom
+              style="width: 75%; height: 400px;"
+              interaction-prompt="auto"
+              class="planet-model"
+              data-planet="mars"
+              data-diameter-mm="7.3">
+            </model-viewer>
 
         </div>
 

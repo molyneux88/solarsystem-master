@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Model Solar System – Jupiter</title>
+  <title>Model Solar System – Earth</title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -18,10 +18,10 @@
   <link rel="stylesheet" href="/solarsystem-master/css/planets/base.css">
 
   <!-- Planet theme (Earth for now) -->
-  <link rel="stylesheet" href="/solarsystem-master/css/planets/themes/jupiter.css">
+  <link rel="stylesheet" href="/solarsystem-master/css/planets/themes/earth.css">
 </head>
 
-<body class="planet-page" data-planet="jupiter">
+<body class="planet-page" data-planet="earth">
 
   <!-- Site header -->
   <header id="site-header"></header>
@@ -35,11 +35,11 @@
   <section class="planet-hero uk-light">
     <div class="uk-container uk-flex uk-flex-middle uk-flex-between">
 
-      <a href="mars.html" class="planet-nav-arrow" uk-icon="icon: chevron-left; ratio: 1.5"></a>
+      <a href="venus.html" class="planet-nav-arrow" uk-icon="icon: chevron-left; ratio: 1.5"></a>
 
-      <h1 class="planet-name">Jupiter</h1>
+      <h1 class="planet-name">Earth</h1>
 
-      <a href="saturn.html" class="planet-nav-arrow" uk-icon="icon: chevron-right; ratio: 1.5"></a>
+      <a href="mars.html" class="planet-nav-arrow" uk-icon="icon: chevron-right; ratio: 1.5"></a>
 
     </div>
   </section>
@@ -47,27 +47,20 @@
   <!-- =========================
        Scale Visual
   ========================== -->
-
-  
     <section class="planet-scale-section">
         <div class="planet-scale-frame">
-            <model-viewer
-              src="/solarsystem-master/models/jupiter.glb"
-              alt="Jupiter"
-              auto-rotate
-              camera-controls
-              disable-zoom
-              style="width: 75%; height: 400px;"
-              interaction-prompt="auto"
-              class="planet-model"
-              data-planet="jupiter"
-              data-diameter-mm="154">
-            </model-viewer>
+            <img
+            src="/solarsystem-master/images/earthPlanet.png"
+            alt="Earth"
+            class="planet-image"
+            data-planet="earth"
+            data-diameter-mm="13.7"
+            >
 
         </div>
 
         <button class="planet-scale-toggle" aria-pressed="false">
-            Show true size (154 mm)
+            Show true size (13.7 mm)
         </button>
     </section>
 
@@ -120,7 +113,7 @@
     import { bindPlanetFacts } from "/solarsystem-master/js/modules/planetFacts.js";
 
     bindPlanetFacts({
-        planetKey: "jupiter",
+        planetKey: "earth",
         count: 5 // show 5 random facts
     });
   </script>
