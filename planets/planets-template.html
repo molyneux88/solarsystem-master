@@ -19,6 +19,8 @@
 
   <!-- Planet theme (Earth for now) -->
   <link rel="stylesheet" href="/solarsystem-master/css/planets/themes/earth.css">
+
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 
 <body class="planet-page" data-planet="earth">
@@ -48,20 +50,25 @@
        Scale Visual
   ========================== -->
     <section class="planet-scale-section">
-        <div class="planet-scale-frame">
-            <img
-            src="/solarsystem-master/images/earthPlanet.png"
-            alt="Earth"
-            class="planet-image"
-            data-planet="earth"
-            data-diameter-mm="13.7"
-            >
+      <div class="planet-scale-frame">
 
-        </div>
+        <model-viewer
+          src="/models/earth.glb"
+          alt="Earth"
+          auto-rotate
+          camera-controls
+          disable-zoom
+          style="width: 100%; height: 400px;"
+          class="planet-model"
+          data-planet="earth"
+          data-diameter-mm="13.7">
+        </model-viewer>
 
-        <button class="planet-scale-toggle" aria-pressed="false">
-            Show true size (13.7 mm)
-        </button>
+      </div>
+
+      <button class="planet-scale-toggle" aria-pressed="false">
+        Show true size (13.7 mm)
+      </button>
     </section>
 
   <!-- =========================
@@ -102,7 +109,7 @@
   <script type="module" src="/solarsystem-master/js/dpijs/calcDPI.js"></script>
 
   <script type="module">
-    import { bindPlanetScale } from "/solarsystem-master/js/modules/planetScaleInteraction.js";
+    import { bindPlanetScale } from "/solarsystem-master/js/modules/planetScaleInteractionModel.js";
 
     document.querySelectorAll(".planet-scale-section").forEach(section => {
         bindPlanetScale(section);
