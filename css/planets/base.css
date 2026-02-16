@@ -99,6 +99,8 @@ h2 {
   align-items: center;
   min-height: 220px;
   overflow: visible;
+  background: url(/images/starBackground.jpg);
+  background-size: contain;
 }
 
 .planet-scale-frame img.planet-image.is-scaled {
@@ -113,8 +115,9 @@ h2 {
 }
 
 .planet-model {
-  transition: width 0.6s ease, height 0.6s ease;
+  transition: width 2s ease, height 2s ease;
   display: block;
+  touch-action: pan-y;
 }
 
 .planet-image:not(.is-scaled) {
