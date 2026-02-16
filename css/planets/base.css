@@ -100,6 +100,15 @@ h2 {
     rgba(0,0,0,0) 100%);
 }
 
+.planet-scale-section {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+}
+
 .planet-scale-frame {
   position: relative;
   display: flex;
