@@ -145,9 +145,11 @@ h2 {
   display: block;
   height: 400px;
   transform-origin: center center;
-  transition: transform 2s ease;
+  transform: scale(1);   /* 🔥 Important */
+  transition: transform 1.6s cubic-bezier(.22,1,.36,1);
   touch-action: pan-y;
 }
+
 .saturn:not(.is-scaled) {
   max-width: 262.5px;
 }
