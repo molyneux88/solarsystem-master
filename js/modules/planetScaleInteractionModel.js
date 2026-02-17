@@ -59,38 +59,21 @@ export function bindPlanetScale(section) {
 
       if (!isTrueScale) {
         const rect = model.getBoundingClientRect();
+        const currentHeight = rect.height;
 
-        // Lock current size
-        model.style.width = rect.width + "px";
-        model.style.height = rect.height + "px";
+        // Calculate how much we need to scale visually
+        const scaleFactor = px / currentHeight;
 
-        model.offsetHeight; // force reflow
-
-        model.classList.add("is-scaled");
-
-        // Make it a square true-size container
-        model.style.width = px + "px";
-        model.style.height = px + "px";
+        model.style.transform = `scale(${scaleFactor})`;
 
         isTrueScale = true;
-
       } else {
-        model.style.width = initialWidth + "px";
-        model.style.height = initialHeight + "px";
-
-        model.addEventListener(
-          "transitionend",
-          () => {
-            model.classList.remove("is-scaled");
-          },
-          { once: true }
-        );
-
+        model.style.transform = "scale(1)";
         isTrueScale = false;
       }
 
       updateButton();
-    } 
+    }
 
   // ----------------------------
   // Init
