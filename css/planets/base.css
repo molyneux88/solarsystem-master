@@ -143,10 +143,12 @@ h2 {
 
 .planet-model {
   display: block;
-  transition: transform 1.6s;
+  width: 75%;
+  height: 400px;
+  transform-origin: center center;
+  transition: transform 2s ease;
   touch-action: pan-y;
 }
-
 .saturn:not(.is-scaled) {
   max-width: 262.5px;
 }
