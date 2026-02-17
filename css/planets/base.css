@@ -108,6 +108,8 @@ h2 {
   position: relative;
   width: 100vw;
   margin-left: calc(50% - 50vw);
+  transform: scale(1);   /* 🔥 Important */
+  transition: transform 1.6s cubic-bezier(.22,1,.36,1);
 }
 
 .planet-scale-frame {
@@ -118,6 +120,8 @@ h2 {
   min-height: 220px;
   overflow: visible;
   width: 100%;
+  transform: scale(1);   /* 🔥 Important */
+  transition: transform 1.6s cubic-bezier(.22,1,.36,1);
 }
 
 .planet-scale-frame {
