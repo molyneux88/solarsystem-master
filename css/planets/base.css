@@ -142,7 +142,7 @@ h2 {
 }
 
 .planet-model {
-  
+  display: block;
   transition: transform 1.6s;
   touch-action: pan-y;
 }
