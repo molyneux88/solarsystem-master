@@ -129,6 +129,11 @@ h2 {
   max-width: none;
 }
 
+.planet-image:not(.is-scaled) {
+  max-width: 150px;
+  max-height: 150px;
+}
+
 .planet-image {
   display: block;
   width: auto;
@@ -137,15 +142,10 @@ h2 {
 }
 
 .planet-model {
-  transform-origin: center center;
+  
   transition: transform 1.6s cubic-bezier(.22,1,.36,1);
   display: block;
   touch-action: pan-y;
-}
-
-.planet-image:not(.is-scaled) {
-  max-width: 150px;
-  max-height: 150px;
 }
 
 .saturn:not(.is-scaled) {
