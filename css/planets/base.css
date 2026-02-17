@@ -2,6 +2,10 @@
    Base Planet Layout
 ========================= */
 
+body {
+  overflow-x: visible;
+}
+
 body.planet-page {
   font-family: 'Roboto', sans-serif;
   background: #05060b;
@@ -89,7 +93,7 @@ h2 {
 
 .planet-scale-section {
   text-align: center;
-  padding: 2rem 1rem 1.5rem;
+  padding: 2rem 0 1.5rem;
   background: url(/solarsystem-master/images/starBackground.jpg);
   background-size: contain;
 -webkit-mask-image: radial-gradient(circle, 
@@ -102,11 +106,8 @@ h2 {
 
 .planet-scale-section {
   position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
   width: 100vw;
+  margin-left: calc(50% - 50vw);
 }
 
 .planet-scale-frame {
@@ -116,7 +117,12 @@ h2 {
   align-items: center;
   min-height: 220px;
   overflow: visible;
-  
+  width: 100%;
+}
+
+.planet-scale-frame {
+  overflow: visible;
+  width: 100%;
 }
 
 .planet-scale-frame img.planet-image.is-scaled {
