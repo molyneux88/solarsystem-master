@@ -52,38 +52,44 @@ export function bindPlanetScale(section) {
 
     window.addEventListener("load", initDimensions);
   
-
-    let baseHeight = null;
-
-    function cacheBaseHeight() {
-      const rect = model.getBoundingClientRect();
-      baseHeight = rect.height;
-    }
-
-    window.addEventListener("load", cacheBaseHeight);
-
     function toggleScale() {
       const px = mmToPx(mm);
-      if (!px || !baseHeight) return;
+      if (!px) return;
 
       if (!isTrueScale) {
-        const scaleFactor = px / baseHeight;
+        const rect = model.getBoundingClientRect();
 
-        requestAnimationFrame(() => {
-          model.style.transform = `scale(${scaleFactor})`;
-        });
+        // Lock current size
+        model.style.width = rect.width + "px";
+        model.style.height = rect.height + "px";
+
+        model.offsetHeight; // force reflow
+
+        model.classList.add("is-scaled");
+
+        // Make it a square true-size container
+        model.style.width = px + "px";
+        model.style.height = px + "px";
 
         isTrueScale = true;
+
       } else {
-        requestAnimationFrame(() => {
-          model.style.transform = "scale(1)";
-        });
+        model.style.width = initialWidth + "px";
+        model.style.height = initialHeight + "px";
+
+        model.addEventListener(
+          "transitionend",
+          () => {
+            model.classList.remove("is-scaled");
+          },
+          { once: true }
+        );
 
         isTrueScale = false;
       }
 
       updateButton();
-    }
+    } 
  
 
   // ----------------------------
