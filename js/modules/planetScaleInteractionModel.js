@@ -54,6 +54,12 @@ export function bindPlanetScale(section) {
   
     function toggleScale() {
       const px = mmToPx(mm);
+      const widthRatio = parseFloat(model.dataset.widthRatio) || 1;
+      const heightRatio = parseFloat(model.dataset.heightRatio) || 1;
+
+      const targetWidth = px * widthRatio;
+      const targetHeight = px * heightRatio;
+
       if (!px) return;
 
       if (!isTrueScale) {
@@ -68,8 +74,8 @@ export function bindPlanetScale(section) {
         model.classList.add("is-scaled");
 
         // Make it a square true-size container
-        model.style.width = px + "px";
-        model.style.height = px + "px";
+        model.style.width = targetWidth + "px";
+        model.style.height = targetHeight + "px";
 
         isTrueScale = true;
 
