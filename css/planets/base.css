@@ -112,41 +112,22 @@ h2 {
 
 .planet-scale-frame {
   position: relative;
-  display: grid;
+  display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 220px;
   overflow: visible;
-  width: 100%;
 }
 
-.planet-scale-frame {
-  overflow: visible;
-  width: 100%;
-}
-
-.planet-scale-frame img.planet-image.is-scaled {
-  max-width: none;
-}
-
-.planet-image:not(.is-scaled) {
-  max-width: 150px;
-  max-height: 150px;
-}
-
-.planet-image {
-  display: block;
-  width: auto;
-  height: auto;
-  transition: width 2s ease, height 2s ease;
+.planet-scale-inner {
+  transition: transform 1.6s cubic-bezier(.22,1,.36,1);
+  transform-origin: center center;
+  will-change: transform;
 }
 
 .planet-model {
   display: block;
   height: 400px;
   transform-origin: center center;
-  transition: transform 1.6s cubic-bezier(.22,1,.36,1);
-  will-change: transform;
   touch-action: pan-y;
 }
 
