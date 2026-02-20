@@ -118,21 +118,24 @@ h2 {
   overflow: visible;
 }
 
-.planet-scale-inner {
-  transition: transform 1.6s cubic-bezier(.22,1,.36,1);
-  transform-origin: center center;
-  will-change: transform;
-}
-
 .planet-model {
   display: block;
+  width: auto;
   height: 400px;
+  max-width: none;
+  transition: width 600ms ease, height 600ms ease;
   transform-origin: center center;
   touch-action: pan-y;
 }
 
-.saturn:not(.is-scaled) {
-  max-width: 262.5px;
+.planet-model {
+  display: block;
+  width: auto;
+  height: 400px;
+  max-width: none;
+  transition: width 600ms ease, height 600ms ease;
+  transform-origin: center center;
+  touch-action: pan-y;
 }
 
 .planet-scale-toggle {
