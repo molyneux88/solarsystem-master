@@ -59,7 +59,10 @@ export function bindPlanetScale(section) {
       const inner = section.querySelector(".planet-scale-inner");
 
       if (!isTrueScale) {
-        const scaleFactor = truePx / initialWidth;
+        const ratio = parseFloat(model.dataset.planetRatio) || 1;
+
+        const planetWidth = initialWidth * ratio;
+        const scaleFactor = truePx / planetWidth;
 
         inner.style.transform = `scale(${scaleFactor})`;
 
