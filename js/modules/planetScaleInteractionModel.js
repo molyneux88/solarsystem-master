@@ -53,49 +53,31 @@ export function bindPlanetScale(section) {
     window.addEventListener("load", initDimensions);
   
     function toggleScale() {
-      const px = mmToPx(mm);
-      const widthRatio = parseFloat(model.dataset.widthRatio) || 1;
-      const heightRatio = parseFloat(model.dataset.heightRatio) || 1;
-
-      const targetWidth = px * widthRatio;
-      const targetHeight = px * heightRatio;
-
-      if (!px) return;
+      const truePx = mmToPx(mm);
+      if (!truePx || !initialWidth) return;
 
       if (!isTrueScale) {
-        const rect = model.getBoundingClientRect();
+        // Lock current width so layout doesn’t reflow
+        model.style.width = initialWidth + "px";
 
-        // Lock current size
-        model.style.width = rect.width + "px";
-        model.style.height = rect.height + "px";
+        // Calculate scale factor relative to original width
+        const scaleFactor = truePx / initialWidth;
 
-        model.offsetHeight; // force reflow
+        model.style.transformOrigin = "center center";
+        model.style.transform = `scale(${scaleFactor})`;
 
         model.classList.add("is-scaled");
-
-        // Make it a square true-size container
-        model.style.width = targetWidth + "px";
-        model.style.height = targetHeight + "px";
-
         isTrueScale = true;
 
       } else {
-        model.style.width = initialWidth + "px";
-        model.style.height = initialHeight + "px";
-
-        model.addEventListener(
-          "transitionend",
-          () => {
-            model.classList.remove("is-scaled");
-          },
-          { once: true }
-        );
-
+        // Reset
+        model.style.transform = "scale(1)";
+        model.classList.remove("is-scaled");
         isTrueScale = false;
       }
 
       updateButton();
-    } 
+    }
  
 
   // ----------------------------
