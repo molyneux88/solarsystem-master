@@ -6,10 +6,10 @@ export function bindPlanetScale(section) {
   let initialWidth;
   let initialHeight;
 
-
   if (!model || !button) return;
 
   const mm = parseFloat(model.dataset.diameterMm);
+  const heightRatio = parseFloat(model.dataset.heightRatio); // optional, for Saturn
   let isTrueScale = false;
 
   // ----------------------------
@@ -38,58 +38,64 @@ export function bindPlanetScale(section) {
   }
 
   // ----------------------------
-  // Scale toggle
+  // Initialize base dimensions
   // ----------------------------
-    
-
-
-    function initDimensions() {
+  function initDimensions() {
     const rect = model.getBoundingClientRect();
     initialWidth = rect.width;
     initialHeight = rect.height;
 
-    }
+    // Lock the initial height for smooth transition
+    model.style.height = initialHeight + "px";
+    model.style.width = initialWidth + "px";
+  }
 
+  if (document.readyState === "complete") {
+    initDimensions();
+  } else {
     window.addEventListener("load", initDimensions);
-  
-    function toggleScale() {
-      const truePx = mmToPx(mm);
-      if (!truePx || !initialWidth) return;
+  }
 
-      const inner = section.querySelector(".planet-scale-inner");
+  // ----------------------------
+  // Scale toggle
+  // ----------------------------
+  function toggleScale() {
+    const truePx = mmToPx(mm);
+    if (!truePx) return;
 
-      if (!isTrueScale) {
-        const ratio = parseFloat(model.dataset.planetRatio) || 1;
+    if (!isTrueScale) {
+      // --- SCALE UP ---
+      const targetWidth = truePx;
+      const targetHeight = heightRatio ? truePx * heightRatio : truePx;
 
-        const planetWidth = initialWidth * ratio;
-        const scaleFactor = truePx / planetWidth;
+      model.style.width = targetWidth + "px";
+      model.style.height = targetHeight + "px";
 
-        inner.style.transform = `scale(${scaleFactor})`;
+      model.classList.add("is-scaled");
+      isTrueScale = true;
 
-        // Resize outer container so layout grows
-        section.querySelector(".planet-scale-frame").style.height =
-          initialHeight * scaleFactor + "px";
+    } else {
+      // --- SCALE DOWN ---
+      model.style.width = initialWidth + "px";
+      model.style.height = initialHeight + "px";
 
-        isTrueScale = true;
+      model.addEventListener(
+        "transitionend",
+        () => {
+          model.classList.remove("is-scaled");
+        },
+        { once: true }
+      );
 
-      } else {
-        inner.style.transform = "scale(1)";
-
-        section.querySelector(".planet-scale-frame").style.height =
-          initialHeight + "px";
-
-        isTrueScale = false;
-      }
-
-      updateButton();
+      isTrueScale = false;
     }
-    
+
+    updateButton();
+  }
 
   // ----------------------------
   // Init
   // ----------------------------
-
   updateButton();
-
   button.addEventListener("click", toggleScale);
 }
