@@ -4,6 +4,9 @@ export function bindPlanetScale(section) {
   const model = section.querySelector(".planet-model");
   const button = section.querySelector(".planet-scale-toggle");
 
+  let initialWidth;
+  let initialHeight;
+
   if (!model || !button) return;
 
   const mm = parseFloat(model.dataset.diameterMm);
@@ -23,6 +26,12 @@ export function bindPlanetScale(section) {
     // Lock the initial height for smooth transition
     model.style.height = initialHeight + "px";
     model.style.width = initialWidth + "px";
+  }
+
+  if (document.readyState === "complete") {
+    initDimensions();
+  } else {
+    window.addEventListener("load", initDimensions);
   }
 
   function updateButton() {
