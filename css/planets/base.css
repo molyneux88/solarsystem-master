@@ -118,14 +118,11 @@ h2 {
   overflow: visible;
 }
 
-.planet-model {
-  display: block;
-  width: auto;
-  height: 400px;
-  max-width: none;
-  transition: width 600ms ease, height 600ms ease;
-  transform-origin: center center;
-  touch-action: pan-y;
+.planet-scale-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
 }
 
 .planet-model {
