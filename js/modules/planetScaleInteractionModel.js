@@ -52,14 +52,15 @@ export function bindPlanetScale(section) {
 
     if (!isTrueScale) {
 
-      // Compensate for Saturn ring padding
       const compensation = 1 / bodyRatio;
 
+      // Width compensated for ring padding
       const targetWidth = truePx * compensation;
 
+      // Height based on real physical size only
       const targetHeight = heightRatio
-        ? targetWidth * heightRatio
-        : targetWidth;
+        ? truePx * heightRatio
+        : truePx;
 
       model.style.width = `${targetWidth}px`;
       model.style.height = `${targetHeight}px`;
