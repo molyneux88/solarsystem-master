@@ -108,10 +108,12 @@ h2 {
   position: relative;
   width: 100vw;
   margin-left: calc(50% - 50vw);
+  overflow: visible;
+  mask-image: none;
+  -webkit-mask-image: none;
 }
 
 .planet-scale-frame {
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -127,8 +129,8 @@ h2 {
 
 .planet-model {
   display: block;
+  height: 400px;     /* keeps it visible initially */
   width: auto;
-  height: 400px;
   max-width: none;
   transition: width 600ms ease, height 600ms ease;
   transform-origin: center center;
