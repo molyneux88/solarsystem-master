@@ -106,9 +106,8 @@ h2 {
 
 .planet-scale-section {
   position: relative;
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  overflow: visible;
+  width: 100%;
+  overflow-x: visible;
   mask-image: none;
   -webkit-mask-image: none;
 }
