@@ -8,8 +8,22 @@ export function bindPlanetScale(section) {
 
   const mm = parseFloat(model.dataset.diameterMm);
   const heightRatio = parseFloat(model.dataset.heightRatio);
+  const bodyRatio = parseFloat(model.dataset.bodyRatio) || 1; // Saturn only
 
   let isTrueScale = false;
+
+// ----------------------------
+  // Initialize base dimensions
+  // ----------------------------
+  function initDimensions() {
+    const rect = model.getBoundingClientRect();
+    initialWidth = rect.width;
+    initialHeight = rect.height;
+
+    // Lock the initial height for smooth transition
+    model.style.height = initialHeight + "px";
+    model.style.width = initialWidth + "px";
+  }
 
   function updateButton() {
     button.setAttribute("aria-pressed", isTrueScale);
@@ -28,18 +42,25 @@ export function bindPlanetScale(section) {
     if (!truePx) return;
 
     if (!isTrueScale) {
-      const targetWidth = truePx;
+
+      // Compensate for Saturn ring padding
+      const compensation = 1 / bodyRatio;
+
+      const targetWidth = truePx * compensation;
+
       const targetHeight = heightRatio
-        ? truePx * heightRatio
-        : truePx;
+        ? targetWidth * heightRatio
+        : targetWidth;
 
       model.style.width = `${targetWidth}px`;
       model.style.height = `${targetHeight}px`;
 
       isTrueScale = true;
+
     } else {
-      model.style.width = "";
-      model.style.height = "400px";
+
+      model.style.width = `${initialWidth}px`;   // restore stable base
+      model.style.height = `${initialHeight}px`;
 
       isTrueScale = false;
     }
@@ -47,8 +68,9 @@ export function bindPlanetScale(section) {
     updateButton();
   }
 
-  // Ensure base height always exists
-  model.style.height = "400px";
+  // Stable base size (important for model-viewer)
+    model.style.width = `${initialWidth}px`;   // restore stable base
+    model.style.height = `${initialHeight}px`;
 
   updateButton();
   button.addEventListener("click", toggleScale);

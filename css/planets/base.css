@@ -129,7 +129,7 @@ h2 {
 .planet-model {
   display: block;
   height: 400px;     /* keeps it visible initially */
-  width: auto;
+  width: 300px;
   max-width: none;
   transition: width 600ms ease, height 600ms ease;
   transform-origin: center center;
