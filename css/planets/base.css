@@ -124,13 +124,15 @@ h2 {
   justify-content: center;
   align-items: center;
   overflow: visible;
-  transition: width 600ms ease, height 600ms ease;
 }
 
 .planet-model {
   display: block;
-  height: 100%;     /* keeps it visible initially */
-  width: 100%;
+  height: 400px;     /* keeps it visible initially */
+  width: 300px;
+  max-width: none;
+  transition: width 600ms ease, height 600ms ease;
+  transform-origin: center center;
   touch-action: pan-y;
 }
 
