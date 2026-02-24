@@ -11,7 +11,7 @@ export function bindPlanetScale(section) {
   if (!model || !button) return;
 
   const mm = parseFloat(model.dataset.diameterMm);
-  const saturnPlanet = parseFloat(model.dataset.saturn) || false;
+  const saturnPlanet = model.hasAttribute("data-saturn");
   const bodyRatio = parseFloat(model.dataset.bodyRatio) || 1; // Saturn only
 
   let isTrueScale = false;
