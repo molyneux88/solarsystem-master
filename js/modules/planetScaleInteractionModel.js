@@ -11,7 +11,7 @@ export function bindPlanetScale(section) {
   if (!model || !button) return;
 
   const mm = parseFloat(model.dataset.diameterMm);
-  const saturnPlanet = parseFloat(model.dataset.saturn) || "false";
+  const saturnPlanet = parseFloat(model.dataset.saturn) || false;
   const bodyRatio = parseFloat(model.dataset.bodyRatio) || 1; // Saturn only
 
   let isTrueScale = false;
@@ -64,7 +64,8 @@ export function bindPlanetScale(section) {
       model.style.height = `${targetHeight}px`;
 
       if(saturnPlanet){
-        inner.style.height = `850px`;
+        const innerHeight = targetWidth * bodyRatio
+        inner.style.height = `${innerHeight}px`;
       }
 
       isTrueScale = true;
