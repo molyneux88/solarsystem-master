@@ -3,6 +3,9 @@ import { mmToPx } from "./dpiToPx.js";
 export function bindPlanetScale(section) {
   const model = section.querySelector(".planet-model");
   const button = section.querySelector(".planet-scale-toggle");
+  const inner = section.querySelector(".planet-scale-inner");
+
+
 
   let initialWidth;
   let initialHeight;
@@ -61,15 +64,15 @@ export function bindPlanetScale(section) {
         ? targetWidth * heightRatio
         : targetWidth;
 
-      model.style.width = `${targetWidth}px`;
-      model.style.height = `${targetHeight}px`;
+      inner.style.width = `${targetWidth}px`;
+      inner.style.height = `${targetHeight}px`;
 
       isTrueScale = true;
 
     } else {
 
-      model.style.width = `${initialWidth}px`;   // restore stable base
-      model.style.height = `${initialHeight}px`;
+      inner.style.width = `${initialWidth}px`;   // restore stable base
+      inner.style.height = `${initialHeight}px`;
 
       isTrueScale = false;
     }
@@ -78,8 +81,8 @@ export function bindPlanetScale(section) {
   }
 
   // Stable base size (important for model-viewer)
-    model.style.width = `${initialWidth}px`;   // restore stable base
-    model.style.height = `${initialHeight}px`;
+    inner.style.width = `${initialWidth}px`;   // restore stable base
+    inner.style.height = `${initialHeight}px`;
 
   updateButton();
   button.addEventListener("click", toggleScale);
