@@ -3,6 +3,7 @@ import { mmToPx } from "./dpiToPx.js";
 export function bindPlanetScale(section) {
   const model = section.querySelector(".planet-model");
   const button = section.querySelector(".planet-scale-toggle");
+  const inner = section.querySelector(".planet-scale-inner");
 
   let initialWidth;
   let initialHeight;
@@ -10,7 +11,7 @@ export function bindPlanetScale(section) {
   if (!model || !button) return;
 
   const mm = parseFloat(model.dataset.diameterMm);
-  const heightRatio = parseFloat(model.dataset.heightRatio);
+  const saturnPlanet = parseFloat(model.dataset.saturn) || "false";
   const bodyRatio = parseFloat(model.dataset.bodyRatio) || 1; // Saturn only
 
   let isTrueScale = false;
@@ -57,12 +58,14 @@ export function bindPlanetScale(section) {
 
       const targetWidth = truePx * compensation;
 
-      const targetHeight = heightRatio
-        ? targetWidth * heightRatio
-        : targetWidth;
+      const targetHeight = targetWidth
 
       model.style.width = `${targetWidth}px`;
       model.style.height = `${targetHeight}px`;
+
+      if(saturnPlanet){
+        inner.style.height = `850px`;
+      }
 
       isTrueScale = true;
 
@@ -70,6 +73,10 @@ export function bindPlanetScale(section) {
 
       model.style.width = `${initialWidth}px`;   // restore stable base
       model.style.height = `${initialHeight}px`;
+
+      if(saturnPlanet){
+        inner.style.height = `auto`;
+      }
 
       isTrueScale = false;
     }
