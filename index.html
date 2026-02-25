@@ -5,13 +5,11 @@
 <title>Centurion Way Solar System</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="prefetch" href="planets/sun.html">
-
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/intro.css">
 </head>
 
-<body>
+<body class="fade-in">
 
 <section class="intro">
 
@@ -20,43 +18,44 @@
 
     <div class="solar-system" id="solarSystem">
 
-        <!-- Orbits -->
-        <div class="orbit" style="width:120px;height:120px;animation-duration:6s;">
+        <!-- Orbits (Mercury pushed out slightly) -->
+        <div class="orbit" data-speed="6" style="width:150px;height:150px;">
             <img src="images/mercuryPlanet.png" class="planet" style="width:10px;">
         </div>
 
-        <div class="orbit" style="width:170px;height:170px;animation-duration:8s;">
+        <div class="orbit" data-speed="8" style="width:200px;height:200px;">
             <img src="images/venusPlanet.png" class="planet" style="width:16px;">
         </div>
 
-        <div class="orbit" style="width:220px;height:220px;animation-duration:10s;">
+        <div class="orbit" data-speed="10" style="width:250px;height:250px;">
             <img src="images/earthPlanet.png" class="planet" style="width:18px;">
         </div>
 
-        <div class="orbit" style="width:270px;height:270px;animation-duration:12s;">
+        <div class="orbit" data-speed="12" style="width:300px;height:300px;">
             <img src="images/marsPlanet.png" class="planet" style="width:14px;">
         </div>
 
-        <div class="orbit" style="width:340px;height:340px;animation-duration:18s;">
+        <div class="orbit" data-speed="18" style="width:370px;height:370px;">
             <img src="images/jupiterPlanet.png" class="planet" style="width:40px;">
         </div>
 
-        <div class="orbit" style="width:410px;height:410px;animation-duration:22s;">
+        <div class="orbit" data-speed="22" style="width:440px;height:440px;">
             <img src="images/saturnPlanet.png" class="planet" style="width:36px;">
         </div>
 
-        <div class="orbit" style="width:480px;height:480px;animation-duration:26s;">
+        <div class="orbit" data-speed="26" style="width:510px;height:510px;">
             <img src="images/uranusPlanet.png" class="planet" style="width:26px;">
         </div>
 
-        <div class="orbit" style="width:550px;height:550px;animation-duration:30s;">
+        <div class="orbit" data-speed="30" style="width:580px;height:580px;">
             <img src="images/neptunePlanet.png" class="planet" style="width:24px;">
         </div>
 
-        <div class="orbit" style="width:600px;height:600px;animation-duration:34s;">
+        <div class="orbit" data-speed="34" style="width:640px;height:640px;">
             <img src="images/plutoPlanet.png" class="planet" style="width:8px;">
         </div>
 
+        <!-- Smaller Sun -->
         <img src="images/sunPlanet.png" class="sun" id="sunTrigger">
 
     </div>
