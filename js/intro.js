@@ -2,8 +2,19 @@ const starfield = document.getElementById("starfield");
 const shootingStar = document.getElementById("shootingStar");
 const solarSystem = document.getElementById("solarSystem");
 const sun = document.getElementById("sunTrigger");
+const introText = document.querySelector(".intro-text");
 
-/* Generate random stars */
+let nextPageHTML = null;
+
+// 1️⃣ Preload the next page in memory
+fetch("planets/sun.html")
+    .then(response => response.text())
+    .then(html => {
+        nextPageHTML = html;
+        console.log("Next page preloaded.");
+    });
+
+// 2️⃣ Generate stars
 for (let i = 0; i < 120; i++) {
     let star = document.createElement("div");
     star.classList.add("star");
@@ -13,28 +24,51 @@ for (let i = 0; i < 120; i++) {
     starfield.appendChild(star);
 }
 
-/* Shooting star every 10s */
+// 3️⃣ Shooting star every 10s
 setInterval(() => {
     shootingStar.classList.remove("shoot");
     void shootingStar.offsetWidth;
     shootingStar.classList.add("shoot");
 }, 10000);
 
-/* Smooth zoom without jump */
+// 4️⃣ Smooth transition on Sun click
 sun.addEventListener("click", () => {
+    // Add fade out
+    document.body.style.transition = "opacity 0.8s ease";
+    document.body.style.opacity = 0;
+    introText.style.opacity = 0;
 
-    solarSystem.style.transform += " scale(2.5)";
-    document.querySelector(".intro-text").style.opacity = "0";
+    // Slight zoom on solar system
+    solarSystem.style.transition = "transform 0.8s ease";
+    solarSystem.style.transform += " scale(1.3)";
 
     setTimeout(() => {
-        window.location.href = "planets/sun.html";
-    }, 1000);
+        if (nextPageHTML) {
+            // Replace document content with preloaded page
+            document.open();
+            document.write(nextPageHTML);
+            document.close();
+
+            // Optional: fade in new page
+            document.body.style.opacity = 0;
+            document.body.style.transition = "opacity 0.8s ease";
+            requestAnimationFrame(() => {
+                document.body.style.opacity = 1;
+            });
+        } else {
+            // fallback if preloading failed
+            window.location.href = "planets/sun.html";
+        }
+    }, 800);
 });
 
-/* Parallax tilt */
+// 5️⃣ Parallax tilt
 document.addEventListener("mousemove", (e) => {
     let x = (e.clientX / window.innerWidth - 0.5) * 8;
     let y = (e.clientY / window.innerHeight - 0.5) * 8;
-
     solarSystem.style.transform = `rotateX(${-y}deg) rotateY(${x}deg)`;
+});
+
+window.addEventListener("load", () => {
+    document.body.classList.add("loaded");
 });
