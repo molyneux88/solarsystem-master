@@ -92,8 +92,28 @@ body.fade-in {
     border-radius:50%;
     top:50%;
     left:50%;
-    transform:translate(-50%,-50%);
+    width:150px; /* or inline style from HTML */
+    height:150px;
+    transform:translate(-50%,-50%); /* always center */
+}
+
+.orbit-inner {
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    transform-origin:50% 50%; /* rotate around center */
     animation: rotate linear infinite;
+}
+
+.intro-text {
+    position:absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    z-index:10;
+    text-align:center;
 }
 
 @keyframes rotate {

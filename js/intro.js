@@ -23,11 +23,11 @@ for (let i = 0; i < 120; i++) {
 
 /* Random starting orbit rotation */
 document.querySelectorAll(".orbit").forEach(orbit => {
+    const inner = orbit.querySelector(".orbit-inner");
     const randomStart = Math.random() * 360;
     const speed = orbit.dataset.speed;
-    orbit.style.animationDuration = speed + "s";
-    orbit.style.transform =
-        `translate(-50%,-50%) rotate(${randomStart}deg)`;
+    inner.style.transform = `rotate(${randomStart}deg)`;
+    inner.style.animationDuration = speed + "s";
 });
 
 /* Shooting star every 10s */
