@@ -5,7 +5,9 @@
     <title>Centurion Way Solar System</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Google Font -->
+    <!-- Preload next page -->
+    <link rel="prefetch" href="planets/sun.html">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
 
@@ -15,38 +17,33 @@
 
 <section class="intro">
 
-    <!-- Star background -->
+    <!-- Twinkling star layers -->
     <div class="stars"></div>
+    <div class="twinkle"></div>
+    <div class="shooting-star"></div>
 
-    <!-- Solar system -->
-    <div class="solar-system">
+    <div class="solar-system" id="solarSystem">
 
-        <!-- Orbit 1 -->
         <div class="orbit orbit1">
-            <div class="planet mercury"></div>
+            <img src="images/mercuryPlanet.png" class="planet">
         </div>
 
-        <!-- Orbit 2 -->
         <div class="orbit orbit2">
-            <div class="planet venus"></div>
+            <img src="images/venusPlanet.png" class="planet">
         </div>
 
-        <!-- Orbit 3 -->
         <div class="orbit orbit3">
-            <div class="planet earth"></div>
+            <img src="images/earthPlanet.png" class="planet">
         </div>
 
-        <!-- Orbit 4 -->
         <div class="orbit orbit4">
-            <div class="planet mars"></div>
+            <img src="images/marsPlanet.png" class="planet">
         </div>
 
-        <!-- Sun -->
         <img src="images/sunPlanet.png" class="sun" id="sunTrigger" alt="Sun">
 
     </div>
 
-    <!-- Text -->
     <div class="intro-text">
         <h1>Centurion Way Solar System</h1>
         <p>Tap the Sun to begin your space adventure ☀️</p>
