@@ -110,6 +110,7 @@ h2 {
   overflow-x: visible;
   mask-image: none;
   -webkit-mask-image: none;
+  z-index: 0;
 }
 
 .planet-scale-frame {
@@ -117,7 +118,7 @@ h2 {
   justify-content: center;
   align-items: center;
   overflow: visible;
-  pointer-events: none;
+  
 }
 
 .planet-scale-inner {
@@ -134,7 +135,7 @@ h2 {
   max-width: none;
   transition: width 600ms ease, height 600ms ease;
   transform-origin: center center;
-  pointer-events: auto;
+
 }
 
 .planet-scale-toggle {
@@ -346,4 +347,9 @@ h2 {
 
 .planet-measurement-overlay.is-visible {
   opacity: 1;
+}
+
+body > *:not(.planet-scale-section) {
+  position: relative;
+  z-index: 5;
 }
