@@ -1,144 +1,105 @@
 body {
-    margin: 0;
-    overflow: hidden;
-    font-family: 'Roboto', sans-serif;
+    margin:0;
+    overflow:hidden;
     background: radial-gradient(circle at center, #0a0a1a 0%, #000 100%);
-    color: white;
+    font-family: 'Roboto', sans-serif;
+    color:white;
 }
 
-/* Layout */
 .intro {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    text-align: center;
-    overflow: hidden;
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    position:relative;
 }
 
-/* ===== STARS ===== */
-
-.stars, .twinkle {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-repeat: repeat;
-    z-index: 0;
+/* STARFIELD */
+.starfield {
+    position:absolute;
+    width:100%;
+    height:100%;
+    z-index:0;
 }
 
-.stars {
-    background-image: url('../images/starBackground.jpg');
-    background-size: cover;
-    opacity: 0.4;
-}
-
-.twinkle {
-    background-image: radial-gradient(white 1px, transparent 1px);
-    background-size: 3px 3px;
-    animation: twinkle 4s infinite alternate;
-    opacity: 0.2;
+.star {
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:white;
+    border-radius:50%;
+    animation: twinkle 3s infinite ease-in-out alternate;
 }
 
 @keyframes twinkle {
-    from { opacity: 0.15; }
-    to   { opacity: 0.35; }
+    from {opacity:0.2;}
+    to {opacity:1;}
 }
 
 /* Shooting star */
 .shooting-star {
-    position: absolute;
-    top: -10%;
-    left: -10%;
-    width: 2px;
-    height: 100px;
-    background: linear-gradient(white, transparent);
-    opacity: 0;
-    transform: rotate(45deg);
-}
-
-.shooting {
-    animation: shoot 1s linear forwards;
+    position:absolute;
+    width:120px;
+    height:2px;
+    background:linear-gradient(to right, white, transparent);
+    top:20%;
+    left:-150px;
+    opacity:0;
+    transform:rotate(20deg);
 }
 
 @keyframes shoot {
-    0% {
-        opacity: 1;
-        top: -10%;
-        left: -10%;
-    }
-    100% {
-        opacity: 0;
-        top: 110%;
-        left: 110%;
-    }
+    0% { transform: translateX(0) translateY(0) rotate(20deg); opacity:1; }
+    100% { transform: translateX(120vw) translateY(40vh) rotate(20deg); opacity:0; }
 }
 
-/* Solar system */
+.shoot {
+    animation: shoot 1s linear forwards;
+}
+
+/* Solar System */
 .solar-system {
-    position: relative;
-    width: 400px;
-    height: 400px;
-    margin-bottom: 40px;
-    transition: transform 0.2s ease-out;
+    position:relative;
+    width:600px;
+    height:600px;
+    transition: transform 1s ease-in-out;
 }
 
-/* Sun */
 .sun {
-    position: absolute;
-    width: 150px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    cursor: pointer;
-    z-index: 5;
-    animation: sunPulse 4s ease-in-out infinite;
+    position:absolute;
+    width:160px;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    z-index:5;
+    cursor:pointer;
+    filter:drop-shadow(0 0 40px orange);
 }
 
-@keyframes sunPulse {
-    0% { filter: drop-shadow(0 0 20px orange); }
-    50% { filter: drop-shadow(0 0 45px orange); }
-    100% { filter: drop-shadow(0 0 20px orange); }
-}
-
-/* Orbits */
 .orbit {
-    position: absolute;
-    border: 1px dashed rgba(255,255,255,0.08);
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position:absolute;
+    border:1px dashed rgba(255,255,255,0.08);
+    border-radius:50%;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
     animation: rotate linear infinite;
 }
 
-.orbit1 { width: 200px; height: 200px; animation-duration: 8s; }
-.orbit2 { width: 260px; height: 260px; animation-duration: 12s; }
-.orbit3 { width: 320px; height: 320px; animation-duration: 18s; }
-.orbit4 { width: 380px; height: 380px; animation-duration: 24s; }
-
 @keyframes rotate {
-    from { transform: translate(-50%, -50%) rotate(0deg); }
-    to   { transform: translate(-50%, -50%) rotate(360deg); }
+    from { transform:translate(-50%,-50%) rotate(0deg); }
+    to { transform:translate(-50%,-50%) rotate(360deg); }
 }
 
-/* Planets (image-based now) */
 .planet {
-    width: 30px;
-    position: absolute;
-    top: -15px;
-    left: 50%;
-    transform: translateX(-50%);
+    position:absolute;
+    top:-15px;
+    left:50%;
+    transform:translateX(-50%);
 }
 
-/* Text */
 .intro-text {
-    z-index: 10;
-    animation: fadeIn 2s ease forwards;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to   { opacity: 1; transform: translateY(0); }
+    margin-top:30px;
+    z-index:10;
 }
