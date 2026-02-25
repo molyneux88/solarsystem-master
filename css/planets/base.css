@@ -117,6 +117,7 @@ h2 {
   justify-content: center;
   align-items: center;
   overflow: visible;
+  pointer-events: none;
 }
 
 .planet-scale-inner {
@@ -133,7 +134,7 @@ h2 {
   max-width: none;
   transition: width 600ms ease, height 600ms ease;
   transform-origin: center center;
-  touch-action: pan-y;
+  pointer-events: auto;
 }
 
 .planet-scale-toggle {
