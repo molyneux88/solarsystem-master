@@ -105,7 +105,103 @@ body.loaded {
     transform:translateX(-50%);
 }
 
+/* =====================================
+   Intro Text – Polished Version
+===================================== */
+
 .intro-text {
-    margin-top:30px;
-    z-index:10;
+    position: absolute;
+    bottom: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 10;
+    width: 90%;
+    max-width: 650px;
+    pointer-events: none;
+
+    opacity: 0;
+    animation: textFadeIn 1.2s ease forwards 0.8s,
+               floatText 6s ease-in-out infinite 2s;
+}
+
+/* Heading */
+.intro-text h1 {
+    margin: 0;
+    font-size: 2.4rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: #ffffff;
+
+    animation: glowPulse 4s ease-in-out infinite;
+}
+
+/* Sub text */
+.intro-text p {
+    margin-top: 12px;
+    font-size: 1.05rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.85);
+}
+
+/* ================= Animations ================= */
+
+/* Fade in separately */
+@keyframes textFadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, 10px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+/* Gentle floating */
+@keyframes floatText {
+    0%   { transform: translate(-50%, 0px); }
+    50%  { transform: translate(-50%, -6px); }
+    100% { transform: translate(-50%, 0px); }
+}
+
+/* Soft glow pulse */
+@keyframes glowPulse {
+    0% {
+        text-shadow: 0 0 8px rgba(255,255,255,0.3);
+    }
+    50% {
+        text-shadow: 0 0 18px rgba(255,255,255,0.6);
+    }
+    100% {
+        text-shadow: 0 0 8px rgba(255,255,255,0.3);
+    }
+}
+
+/* ================= Responsive ================= */
+
+@media (max-width: 768px) {
+
+    .intro-text {
+        bottom: 6%;
+    }
+
+    .intro-text h1 {
+        font-size: 1.8rem;
+    }
+
+    .intro-text p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .intro-text h1 {
+        font-size: 1.5rem;
+    }
+
+    .intro-text p {
+        font-size: 0.9rem;
+    }
 }
