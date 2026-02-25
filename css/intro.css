@@ -4,16 +4,15 @@ body {
     background: radial-gradient(circle at center, #0a0a1a 0%, #000 100%);
     font-family: 'Roboto', sans-serif;
     color:white;
-    opacity:0;
-    transition: opacity 0.6s ease;
 }
 
-body.fade-in {
-    opacity:1;
-}
-
-.fade-out {
-    opacity:0 !important;
+.intro {
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    position:relative;
 }
 
 /* STARFIELD */
@@ -38,46 +37,38 @@ body.fade-in {
     to {opacity:1;}
 }
 
-/* SHOOTING STAR (Diagonal Wave Style) */
+/* Shooting star */
 .shooting-star {
     position:absolute;
-    width:200px;
-    height:4px;
-    background:linear-gradient(to left, white, rgba(255,255,255,0));
-    filter:blur(1px);
-    transform:rotate(135deg);
-    top:-200px;
-    left:-200px;
+    width:120px;
+    height:2px;
+    background:linear-gradient(to right, white, transparent);
+    top:20%;
+    left:-150px;
     opacity:0;
+    transform:rotate(20deg);
 }
 
 @keyframes shoot {
-    0% {
-        transform: translate(-10vw,-10vh) rotate(135deg);
-        opacity:1;
-    }
-    100% {
-        transform: translate(120vw,120vh) rotate(135deg);
-        opacity:0;
-    }
+    0% { transform: translateX(0) translateY(0) rotate(20deg); opacity:1; }
+    100% { transform: translateX(120vw) translateY(40vh) rotate(20deg); opacity:0; }
 }
 
 .shoot {
-    animation: shoot 1.2s linear forwards;
+    animation: shoot 1s linear forwards;
 }
 
-/* Solar system */
+/* Solar System */
 .solar-system {
     position:relative;
-    width:650px;
-    height:650px;
+    width:600px;
+    height:600px;
     transition: transform 1s ease-in-out;
 }
 
-/* Smaller Sun */
 .sun {
     position:absolute;
-    width:120px;
+    width:160px;
     top:50%;
     left:50%;
     transform:translate(-50%,-50%);
@@ -92,28 +83,8 @@ body.fade-in {
     border-radius:50%;
     top:50%;
     left:50%;
-    width:150px; /* or inline style from HTML */
-    height:150px;
-    transform:translate(-50%,-50%); /* always center */
-}
-
-.orbit-inner {
-    position:absolute;
-    width:100%;
-    height:100%;
-    top:0;
-    left:0;
-    transform-origin:50% 50%; /* rotate around center */
+    transform:translate(-50%,-50%);
     animation: rotate linear infinite;
-}
-
-.intro-text {
-    position:absolute;
-    top: 50%;
-    left:50%;
-    transform: translate(-50%, -50%);
-    z-index:10;
-    text-align:center;
 }
 
 @keyframes rotate {
@@ -126,4 +97,9 @@ body.fade-in {
     top:-15px;
     left:50%;
     transform:translateX(-50%);
+}
+
+.intro-text {
+    margin-top:30px;
+    z-index:10;
 }

@@ -3,14 +3,6 @@ const shootingStar = document.getElementById("shootingStar");
 const solarSystem = document.getElementById("solarSystem");
 const sun = document.getElementById("sunTrigger");
 
-/* Fade in */
-window.addEventListener("load", () => {
-    document.body.classList.add("fade-in");
-});
-
-/* Real preload */
-fetch("planets/sun.html");
-
 /* Generate random stars */
 for (let i = 0; i < 120; i++) {
     let star = document.createElement("div");
@@ -21,15 +13,6 @@ for (let i = 0; i < 120; i++) {
     starfield.appendChild(star);
 }
 
-/* Random starting orbit rotation */
-document.querySelectorAll(".orbit").forEach(orbit => {
-    const inner = orbit.querySelector(".orbit-inner");
-    const randomStart = Math.random() * 360;
-    const speed = orbit.dataset.speed;
-    inner.style.transform = `rotate(${randomStart}deg)`;
-    inner.style.animationDuration = speed + "s";
-});
-
 /* Shooting star every 10s */
 setInterval(() => {
     shootingStar.classList.remove("shoot");
@@ -37,13 +20,21 @@ setInterval(() => {
     shootingStar.classList.add("shoot");
 }, 10000);
 
-/* Smooth zoom + fade transition */
+/* Smooth zoom without jump */
 sun.addEventListener("click", () => {
 
-    solarSystem.style.transform = "scale(2.5)";
-    document.body.classList.add("fade-out");
+    solarSystem.style.transform += " scale(2.5)";
+    document.querySelector(".intro-text").style.opacity = "0";
 
     setTimeout(() => {
         window.location.href = "planets/sun.html";
-    }, 700);
+    }, 1000);
+});
+
+/* Parallax tilt */
+document.addEventListener("mousemove", (e) => {
+    let x = (e.clientX / window.innerWidth - 0.5) * 8;
+    let y = (e.clientY / window.innerHeight - 0.5) * 8;
+
+    solarSystem.style.transform = `rotateX(${-y}deg) rotateY(${x}deg)`;
 });
