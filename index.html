@@ -1,93 +1,59 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>CWSS - Home</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-        <!--Link to uikit css-->
-        <link rel="stylesheet" type="text/css" href="css/uikit.css" />
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Centurion Way Solar System</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <!--Link to uikit css-->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
-        
-        <!--Link to custom css-->
-        <link rel="stylesheet" type="text/css" href="css/homePage.css" />
-        <link rel="stylesheet" type="text/css" href="css/planetsStylesheet.css" />
-        <link rel="stylesheet" type="text/css" href="css/PlanetsColourSchemes/mars.css" />
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
 
-    </head>
-    <body>
-        
-        <!-- Start of Header-->
-        <div id="site-header"></div>
-        <!-- End of Header-->
-        
-        <div class="mainTakeOff uk-align-center uk-margin-remove-bottom" uk-height-viewport="expand: true">
-            <div class="background" uk-height-viewport="expand: true">
-                <img id="bgone" class="backgroundimg bgone" src="images/grad1.png">
-                <img id="bgtwo" class="backgroundimg bgtwo" src="images/grad2.png">
-                <img id="bgthree" class="backgroundimg bgthree" src="images/grad3.png">
-                <img id="bgfour" class="backgroundimg bgfour" src="images/grad4.png">
-                <img id="bgfive" class="backgroundimg bgfive" src="images/grad5.png">
-                <img id="bgsix" class="backgroundimg bgsix" src="images/starBackground.jpg">
-            </div>
-            <div id="rocketButton" class="uk-position-relative uk-block uk-text-center uk-padding" style="z-index: 50;">
-                <a class='rocketBtn' href="#" title=''>Start</a> 
-            </div>
-            <div><img id="launchpad" src="images/launchpad.png" width="300px"></div>
-            <div><img id="smoke" src="images/smoke.png" width="300px"></div>
-            <div><img id="rocketOne" src="images/rocket.png" width="200px"></div>
-            <div><img id="rocketTwo" src="images/rocket2.png" width="200px"></div>
-            <div><img id="sun" src="images/sunPlanet.png" width="150px"></div>
-            <div><img id="ground" src="images/ground.png" width="100%"></div>
-            <div><img id="cloud" class="cloudOne" src="images/clouds/Png/1.png" width="100px" style="left:15%; bottom:54%;"></div>
-            <div><img id="cloud" class="cloudTwo"src="images/clouds/Png/2.png" width="150px" style="left:32%; bottom:62%;"></div>
-            <div><img id="cloud" class="cloudThree"src="images/clouds/Png/3.png" width="110px" style="left:48%; bottom:60%;"></div>
-            <div><img id="cloud" class="cloudFour"src="images/clouds/Png/4.png" width="175px" style="left:70%; bottom:64%;"></div>
-            <div><img id="cloud" class="cloudFive"src="images/clouds/Png/5.png" width="95px" style="left:70%; bottom:56%;"></div>
-            <div><img id="cloud" class="cloudSix"src="images/clouds/Png/6.png" width="130px" style="left:90%; bottom:59%;"></div>
-            <div><img id="satelliteOne" class="satelliteOne" src="images/satellite.png" width="75px" style="left:120%;"></div>
-            <div><img id="satelliteTwo" class="satelliteTwo" src="images/iss.png" width="130px" style="left:-20%;"></div>
-            <div class="uk-position-center "> 
-                <div class="arrivedText uk-padding uk-text-center">We have arrived at our destination. Click next to begin the journey along the Centurion Way Model Solar System</div>
-                <div class="arrivedText uk-block uk-text-center uk-padding"><a class='continueBtn' href="planets/sun.html" title=''>Next</a></div>
-            </div>
-            <div class="uk-block uk-text-center">
-                <span class='color color--blue' data-value='1'></span>
-                <span class='color color--orange' data-value='1'></span>
-                <span class='color color--grey' data-value='1'></span>
-                <span class='color color--white' data-value='1'></span>
-                
-            </div>   
-            
-            <div class="uk-text-center">
-                <div id="one" class="boTextDesign">3</div>
-                <div id="two" class="boTextDesign">2</div>
-                <div id="three" class="boTextDesign">1</div>
-                <div id="four" class="boTextDesign">Go!</div>
-            </div>
-            <div class="skipBtnDiv uk-block uk-text-center uk-position-bottom uk-padding"><a class='skipBtn' href="planets/sun.html" title=''>Skip >>></a></div>
-            
+    <link rel="stylesheet" href="css/intro.css">
+</head>
+<body>
+
+<section class="intro">
+
+    <!-- Star background -->
+    <div class="stars"></div>
+
+    <!-- Solar system -->
+    <div class="solar-system">
+
+        <!-- Orbit 1 -->
+        <div class="orbit orbit1">
+            <div class="planet mercury"></div>
         </div>
 
+        <!-- Orbit 2 -->
+        <div class="orbit orbit2">
+            <div class="planet venus"></div>
+        </div>
 
+        <!-- Orbit 3 -->
+        <div class="orbit orbit3">
+            <div class="planet earth"></div>
+        </div>
 
+        <!-- Orbit 4 -->
+        <div class="orbit orbit4">
+            <div class="planet mars"></div>
+        </div>
 
-        <!--Link to JQuery-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        
-        <!--Link to uikit js-->
-        <script type="text/javascript" src="js/uikit.min.js"></script>
-        <script type="text/javascript" src="js/uikit-icons.min.js"></script>
-        <script type="text/javascript" src="js/homePageAnimation.js"></script>
+        <!-- Sun -->
+        <img src="images/sunPlanet.png" class="sun" id="sunTrigger" alt="Sun">
 
-        <!--Link to dpi js-->
-        <script type="module" src="js/dpijs/androidDeviceFinder.js"></script>
+    </div>
 
-        <!--Link to header js-->
-        <script src="js/include.js"></script>
-    </body>
+    <!-- Text -->
+    <div class="intro-text">
+        <h1>Centurion Way Solar System</h1>
+        <p>Tap the Sun to begin your space adventure ☀️</p>
+    </div>
+
+</section>
+
+<script src="js/intro.js"></script>
+</body>
 </html>
