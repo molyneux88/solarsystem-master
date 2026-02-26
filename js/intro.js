@@ -72,3 +72,11 @@ document.addEventListener("mousemove", (e) => {
 window.addEventListener("load", () => {
     document.body.classList.add("loaded");
 });
+
+function lockViewportHeight() {
+    document.documentElement.style
+        .setProperty('--vh', `${window.innerHeight * 0.01}px`);
+}
+
+lockViewportHeight();
+window.addEventListener('resize', lockViewportHeight);
