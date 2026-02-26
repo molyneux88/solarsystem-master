@@ -94,24 +94,42 @@ body.loaded {
 
 .orbit {
     position:absolute;
-    border:1px dashed rgba(255,255,255,0.08);
-    border-radius:50%;
     top:50%;
     left:50%;
-    transform:translate(-50%,-50%);
-    animation: rotate linear infinite;
+
+    border:1px dashed rgba(255,255,255,0.12);
+    border-radius:50%;
+
+    transform:translate(-50%, -50%);
+    animation: orbitRotate linear infinite;
 }
 
-@keyframes rotate {
-    from { transform:translate(-50%,-50%) rotate(0deg); }
-    to { transform:translate(-50%,-50%) rotate(360deg); }
+.orbit-arm {
+    position:absolute;
+    top:50%;
+    left:50%;
+
+    width:50%;
+    height:1px;
+
+    transform-origin:left center;
+}
+
+@keyframes orbitRotate {
+    from {
+        transform:translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform:translate(-50%, -50%) rotate(360deg);
+    }
 }
 
 .planet {
     position:absolute;
-    top:-15px;
-    left:50%;
-    transform:translateX(-50%);
+    right:0;
+    top:50%;
+
+    transform:translate(50%, -50%);
 }
 
 /* =====================================

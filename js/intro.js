@@ -80,3 +80,9 @@ function lockViewportHeight() {
 
 lockViewportHeight();
 window.addEventListener('resize', lockViewportHeight);
+
+document.querySelectorAll(".orbit").forEach(orbit => {
+    const start = Math.random() * 360;
+    orbit.style.animationDelay = `-${start / 360 *
+        parseFloat(getComputedStyle(orbit).animationDuration)}s`;
+});
