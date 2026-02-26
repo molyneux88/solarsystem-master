@@ -358,3 +358,7 @@ body > *:not(.planet-scale-section) {
   position: relative;  /* required for z-index to work */
   z-index: 6;
 }
+
+.indexed-footer{
+  background: #05060b;
+}
