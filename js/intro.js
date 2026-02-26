@@ -32,34 +32,29 @@ setInterval(() => {
 }, 10000);
 
 // 4️⃣ Smooth transition on Sun click
-sun.addEventListener("click", () => {
-    // Add fade out
-    document.body.style.transition = "opacity 0.8s ease";
-    document.body.style.opacity = 0;
-    introText.style.opacity = 0;
+const zoomWrapper = document.getElementById("solarZoom");
 
-    // Slight zoom on solar system
-    solarSystem.style.transition = "transform 0.8s ease";
-    solarSystem.style.transform += " scale(1.3)";
+sun.addEventListener("click", () => {
+
+    document.body.classList.add("fade-out");
+    document.querySelector(".intro-text").style.opacity = "0";
+
+    /* smooth zoom INTO sun */
+    zoomWrapper.style.transform =
+        "translate(-50%, -50%) scale(6)";
+
+    /* flash */
+    const flash = document.createElement("div");
+    flash.className = "sun-flash";
+    document.body.appendChild(flash);
 
     setTimeout(() => {
-        if (nextPageHTML) {
-            // Replace document content with preloaded page
-            document.open();
-            document.write(nextPageHTML);
-            document.close();
+        flash.classList.add("active");
+    }, 200);
 
-            // Optional: fade in new page
-            document.body.style.opacity = 0;
-            document.body.style.transition = "opacity 0.8s ease";
-            requestAnimationFrame(() => {
-                document.body.style.opacity = 1;
-            });
-        } else {
-            // fallback if preloading failed
-            window.location.href = "planets/sun.html";
-        }
-    }, 800);
+    setTimeout(() => {
+        window.location.href = "planets/sun.html";
+    }, 1200);
 });
 
 // 5️⃣ Parallax tilt
