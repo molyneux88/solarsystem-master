@@ -11,6 +11,7 @@ body.planet-page {
   background: #05060b;
   color: #e6e6eb;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
 /* Sections */
