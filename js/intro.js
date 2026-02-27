@@ -1,91 +1,118 @@
+document.addEventListener("DOMContentLoaded", () => {
+
 const starfield = document.getElementById("starfield");
-// const shootingStar = document.getElementById("shootingStar");
 const solarSystem = document.getElementById("solarSystem");
 const sun = document.getElementById("sunTrigger");
+const zoomWrapper = document.getElementById("solarZoom");
 const introText = document.querySelector(".intro-text");
 
 let nextPageHTML = null;
 
-// 1️⃣ Preload the next page in memory
+
+/* ===============================
+   Preload next page
+================================ */
 fetch("planets/sun.html")
-    .then(response => response.text())
+    .then(r => r.text())
     .then(html => {
         nextPageHTML = html;
-        console.log("Next page preloaded.");
+        console.log("Next page preloaded");
     });
 
-// 2️⃣ Generate stars
-for (let i = 0; i < 120; i++) {
-    let star = document.createElement("div");
-    star.classList.add("star");
-    star.style.top = Math.random() * 100 + "%";
-    star.style.left = Math.random() * 100 + "%";
-    star.style.animationDelay = Math.random() * 3 + "s";
-    starfield.appendChild(star);
+
+/* ===============================
+   Generate stars
+================================ */
+if (starfield) {
+    for (let i = 0; i < 120; i++) {
+        const star = document.createElement("div");
+        star.classList.add("star");
+        star.style.top = Math.random() * 100 + "%";
+        star.style.left = Math.random() * 100 + "%";
+        star.style.animationDelay = Math.random() * 3 + "s";
+        starfield.appendChild(star);
+    }
 }
 
-// 4️⃣ Smooth transition on Sun click
-const zoomWrapper = document.getElementById("solarZoom");
 
-sun.addEventListener("click", () => {
+/* ===============================
+   Sun click transition
+================================ */
+if (sun && zoomWrapper) {
 
-    document.body.classList.add("fade-out");
-    document.querySelector(".intro-text").style.opacity = "0";
+    sun.addEventListener("click", () => {
 
-    /* smooth zoom INTO sun */
-    zoomWrapper.style.transform =
-        "translate(-50%, -50%) scale(6)";
+        document.body.classList.add("fade-out");
+        if (introText) introText.style.opacity = "0";
 
-    /* flash */
-    const flash = document.createElement("div");
-    flash.className = "sun-flash";
-    document.body.appendChild(flash);
+        zoomWrapper.style.transform =
+            "translate(-50%, -50%) scale(6)";
 
-    setTimeout(() => {
-        flash.classList.add("active");
-    }, 200);
+        const flash = document.createElement("div");
+        flash.className = "sun-flash";
+        document.body.appendChild(flash);
 
-    setTimeout(() => {
-        window.location.href = "planets/sun.html";
-    }, 1200);
-});
+        setTimeout(() => flash.classList.add("active"), 200);
 
-// 5️⃣ Parallax tilt
+        setTimeout(() => {
+            window.location.href = "planets/sun.html";
+        }, 1200);
+    });
+}
+
+
+/* ===============================
+   Parallax (desktop only)
+================================ */
 let targetX = 0;
 let targetY = 0;
 
-document.addEventListener("pointermove", (e) => {
+document.addEventListener("pointermove", e => {
 
-    /* ignore touches */
     if (e.pointerType === "touch") return;
 
     targetX = (e.clientX / window.innerWidth - 0.5) * 6;
     targetY = (e.clientY / window.innerHeight - 0.5) * 6;
 });
 
-/* smooth animation loop */
 function animateParallax() {
 
-    solarSystem.style.transform =
-        `translate(-50%, -50%)
-         rotateX(${-targetY}deg)
-         rotateY(${targetX}deg)`;
+    if (solarSystem) {
+        solarSystem.style.transform =
+            `translate(-50%, -50%)
+             rotateX(${-targetY}deg)
+             rotateY(${targetX}deg)`;
+    }
 
     requestAnimationFrame(animateParallax);
 }
 
 animateParallax();
 
+
+/* ===============================
+   Mobile viewport lock
+================================ */
 function lockViewportHeight() {
     document.documentElement.style
         .setProperty('--vh', `${window.innerHeight * 0.01}px`);
 }
 
 lockViewportHeight();
-window.addEventListener('resize', lockViewportHeight);
+window.addEventListener("resize", lockViewportHeight);
 
+
+/* ===============================
+   Random orbit start
+================================ */
 document.querySelectorAll(".orbit").forEach(orbit => {
+
     const start = Math.random() * 360;
-    orbit.style.animationDelay = `-${start / 360 *
-        parseFloat(getComputedStyle(orbit).animationDuration)}s`;
+    const duration =
+        parseFloat(getComputedStyle(orbit).animationDuration);
+
+    orbit.style.animationDelay =
+        `-${(start / 360) * duration}s`;
+});
+
 });
