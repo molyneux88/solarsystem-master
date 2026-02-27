@@ -1,5 +1,5 @@
 const starfield = document.getElementById("starfield");
-const shootingStar = document.getElementById("shootingStar");
+// const shootingStar = document.getElementById("shootingStar");
 const solarSystem = document.getElementById("solarSystem");
 const sun = document.getElementById("sunTrigger");
 const introText = document.querySelector(".intro-text");
@@ -23,13 +23,6 @@ for (let i = 0; i < 120; i++) {
     star.style.animationDelay = Math.random() * 3 + "s";
     starfield.appendChild(star);
 }
-
-// 3️⃣ Shooting star every 10s
-setInterval(() => {
-    shootingStar.classList.remove("shoot");
-    void shootingStar.offsetWidth;
-    shootingStar.classList.add("shoot");
-}, 10000);
 
 // 4️⃣ Smooth transition on Sun click
 const zoomWrapper = document.getElementById("solarZoom");
