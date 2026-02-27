@@ -3,7 +3,7 @@
 ========================= */
 
 html {
-  overflow-x: visible;
+  overflow-x: hidden;
 }
 
 body.planet-page {
