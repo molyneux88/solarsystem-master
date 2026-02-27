@@ -58,15 +58,30 @@ sun.addEventListener("click", () => {
 });
 
 // 5️⃣ Parallax tilt
-document.addEventListener("mousemove", (e) => {
-    let x = (e.clientX / window.innerWidth - 0.5) * 8;
-    let y = (e.clientY / window.innerHeight - 0.5) * 8;
-    solarSystem.style.transform = `rotateX(${-y}deg) rotateY(${x}deg)`;
+let targetX = 0;
+let targetY = 0;
+
+document.addEventListener("pointermove", (e) => {
+
+    /* ignore touches */
+    if (e.pointerType === "touch") return;
+
+    targetX = (e.clientX / window.innerWidth - 0.5) * 6;
+    targetY = (e.clientY / window.innerHeight - 0.5) * 6;
 });
 
-window.addEventListener("load", () => {
-    document.body.classList.add("loaded");
-});
+/* smooth animation loop */
+function animateParallax() {
+
+    solarSystem.style.transform =
+        `translate(-50%, -50%)
+         rotateX(${-targetY}deg)
+         rotateY(${targetX}deg)`;
+
+    requestAnimationFrame(animateParallax);
+}
+
+animateParallax();
 
 function lockViewportHeight() {
     document.documentElement.style
