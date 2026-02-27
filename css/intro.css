@@ -310,3 +310,52 @@ header,
 .uk-offcanvas-container .intro {
     transform: none !important;
 }
+
+/* =================================
+   Intro Page Header Banner
+================================= */
+
+.intro-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    height: 80px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0,0,0,0.35);
+    backdrop-filter: blur(6px);
+
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+
+    z-index: 50;
+}
+
+/* Logo */
+.intro-logo {
+    height: 48px;
+    width: auto;
+}
+
+/* Smaller phones */
+@media (max-width: 600px) {
+    .intro-header {
+        height: 65px;
+    }
+
+    .intro-logo {
+        height: 38px;
+    }
+}
+
+.intro {
+    padding-top: 80px;
+}
+
+.intro-header {
+    box-shadow: 0 0 25px rgba(255,180,60,0.15);
+}
