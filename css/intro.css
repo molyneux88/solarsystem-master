@@ -359,3 +359,41 @@ header,
 .intro-header {
     box-shadow: 0 0 25px rgba(255,180,60,0.15);
 }
+
+.orbit.collapse {
+    animation: orbitCollapse 0.8s ease-in forwards;
+}
+
+@keyframes orbitCollapse {
+    to {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.3);
+    }
+}
+
+.sun.sun-expand {
+    animation: sunExplode 1s ease-in forwards;
+}
+
+@keyframes sunExplode {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        filter: drop-shadow(0 0 40px orange);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(2.5);
+        filter: drop-shadow(0 0 120px orange);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(6);
+        filter: drop-shadow(0 0 220px white);
+    }
+}
+
+body.transitioning .starfield {
+    animation: fadeStars 1s ease forwards;
+}
+
+@keyframes fadeStars {
+    to { opacity: 0; }
+}

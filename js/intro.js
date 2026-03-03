@@ -42,21 +42,30 @@ if (sun && zoomWrapper) {
 
     sun.addEventListener("click", () => {
 
-        document.body.classList.add("fade-out");
-        if (introText) introText.style.opacity = "0";
+        document.body.classList.add("transitioning");
 
+        /* collapse animation */
+        document.querySelectorAll(".orbit").forEach(o => {
+            o.classList.add("collapse");
+        });
+
+        /* zoom entire system */
         zoomWrapper.style.transform =
-            "translate(-50%, -50%) scale(6)";
+            "translate(-50%, -50%) scale(3)";
 
+        /* intensify sun */
+        sun.classList.add("sun-expand");
+
+        /* flash */
         const flash = document.createElement("div");
         flash.className = "sun-flash";
         document.body.appendChild(flash);
 
-        setTimeout(() => flash.classList.add("active"), 200);
+        setTimeout(() => flash.classList.add("active"), 800);
 
         setTimeout(() => {
             window.location.href = "planets/sun.html";
-        }, 1200);
+        }, 1400);
     });
 }
 
