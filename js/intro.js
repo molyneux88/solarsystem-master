@@ -49,10 +49,6 @@ if (sun && zoomWrapper) {
             o.classList.add("collapse");
         });
 
-        /* zoom entire system */
-        zoomWrapper.style.transform =
-            "translate(-50%, -50%) scale(3)";
-
         /* intensify sun */
         sun.classList.add("sun-expand");
 
@@ -61,11 +57,11 @@ if (sun && zoomWrapper) {
         flash.className = "sun-flash";
         document.body.appendChild(flash);
 
-        setTimeout(() => flash.classList.add("active"), 800);
+        setTimeout(() => flash.classList.add("active"), 1100);
 
         setTimeout(() => {
             window.location.href = "planets/sun.html";
-        }, 1400);
+        }, 2200);
     });
 }
 

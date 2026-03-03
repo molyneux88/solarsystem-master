@@ -147,7 +147,7 @@ body.loaded {
     background:white;
     opacity:0;
     pointer-events:none;
-    transition:opacity 0.6s ease;
+    transition: opacity 1s ease;
     z-index:9999;
 }
 
@@ -361,7 +361,13 @@ header,
 }
 
 .orbit.collapse {
-    animation: orbitCollapse 0.8s ease-in forwards;
+    animation: orbitFadeOut 1.2s ease forwards;
+}
+
+@keyframes orbitFadeOut {
+    to {
+        opacity: 0;
+    }
 }
 
 @keyframes orbitCollapse {
@@ -375,23 +381,23 @@ header,
     animation: sunExplode 1s ease-in forwards;
 }
 
-@keyframes sunExplode {
-    0% {
-        transform: translate(-50%, -50%) scale(1);
-        filter: drop-shadow(0 0 40px orange);
-    }
-    50% {
-        transform: translate(-50%, -50%) scale(2.5);
-        filter: drop-shadow(0 0 120px orange);
-    }
-    100% {
-        transform: translate(-50%, -50%) scale(6);
-        filter: drop-shadow(0 0 220px white);
-    }
+.sun {
+    transition: transform 1.8s cubic-bezier(.22,.8,.2,1),
+                filter 1.8s cubic-bezier(.22,.8,.2,1);
+}
+
+.sun.sun-expand {
+    transform: translate(-50%, -50%) scale(7);
+    filter: drop-shadow(0 0 180px orange)
+            drop-shadow(0 0 300px rgba(255,255,255,0.6));
+}
+
+.starfield {
+    transition: opacity 1.5s ease;
 }
 
 body.transitioning .starfield {
-    animation: fadeStars 1s ease forwards;
+    opacity: 0;
 }
 
 @keyframes fadeStars {
