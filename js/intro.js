@@ -44,23 +44,33 @@ if (sun && zoomWrapper) {
 
         document.body.classList.add("transitioning");
 
-        /* collapse animation */
+        const bloom = document.createElement("div");
+        bloom.className = "sun-bloom";
+        document.body.appendChild(bloom);
+
         document.querySelectorAll(".orbit").forEach(o => {
             o.classList.add("collapse");
         });
 
-        /* intensify sun */
+        solarSystem.classList.add("pull-in");
         sun.classList.add("sun-expand");
 
-        /* flash */
-        const flash = document.createElement("div");
-        flash.className = "sun-flash";
-        document.body.appendChild(flash);
-
-        setTimeout(() => flash.classList.add("active"), 1100);
+        setTimeout(() => {
+            bloom.classList.add("active");
+        }, 1000);
 
         setTimeout(() => {
-            window.location.href = "planets/sun.html";
+
+            if (nextPageHTML) {
+
+                document.open();
+                document.write(nextPageHTML);
+                document.close();
+
+            } else {
+                window.location.href = "planets/sun.html";
+            }
+
         }, 2200);
     });
 }

@@ -5,7 +5,7 @@ body {
     font-family: 'Roboto', sans-serif;
     color:white;
     opacity:0;
-    transition: opacity 0.8s ease;
+    transition: opacity 0.6s ease;
 }
 
 body.loaded {
@@ -21,6 +21,11 @@ body.loaded {
 
     overflow:hidden;
     z-index:0;
+
+    padding-top: 80px;
+
+    perspective: 1200px;
+    transform-style: preserve-3d;
 }
 
 /* STARFIELD */
@@ -29,6 +34,11 @@ body.loaded {
     width:100%;
     height:100%;
     z-index:0;
+    transition: opacity 1.8s ease;
+}
+
+body.transitioning .starfield {
+    opacity: 0;
 }
 
 .star {
@@ -45,27 +55,6 @@ body.loaded {
     to {opacity:1;}
 }
 
-/* Shooting star */
-.shooting-star {
-    position:absolute;
-    width:120px;
-    height:2px;
-    background:linear-gradient(to right, white, transparent);
-    top:20%;
-    left:-150px;
-    opacity:0;
-    transform:rotate(20deg);
-}
-
-@keyframes shoot {
-    0% { transform: translateX(0) translateY(0) rotate(20deg); opacity:1; }
-    100% { transform: translateX(120vw) translateY(40vh) rotate(20deg); opacity:0; }
-}
-
-.shoot {
-    animation: shoot 1s linear forwards;
-}
-
 /* Solar System */
 .solar-system {
     position:absolute;
@@ -75,8 +64,20 @@ body.loaded {
     width:min(85vmin, 650px);
     height:min(85vmin, 650px);
 
-    transform:translate(-50%, -50%);
-    transition: transform 1s ease-in-out;
+    transform:translate(-50%, -50%) translateZ(0);
+    transform-style: preserve-3d;
+
+    transition: transform 2.2s cubic-bezier(.22,.8,.2,1),
+                opacity 1.5s ease;
+
+    z-index: 1;
+}
+
+.solar-system.pull-in {
+    transform:
+        translate(-50%, -50%)
+        translateZ(300px)
+        scale(1.4);
 }
 
 .sun {
@@ -92,6 +93,10 @@ body.loaded {
     cursor:pointer;
 
     filter:drop-shadow(0 0 40px orange);
+
+    transition:
+        transform 2.2s cubic-bezier(.22,.8,.2,1),
+        filter 2.2s cubic-bezier(.22,.8,.2,1);
 }
 
 .orbit {
@@ -153,10 +158,6 @@ body.loaded {
 
 .sun-flash.active {
     opacity:1;
-}
-
-body {
-    transition: opacity 0.6s ease;
 }
 
 body.fade-out {
@@ -278,25 +279,6 @@ html, body {
     touch-action: none;            /* prevents swipe scroll */
 }
 
-/* Prevent UIKit containers creating scroll */
-.intro {
-    position: fixed;
-    inset: 0;
-    overflow: hidden;
-}
-
-.starfield {
-    z-index: 0;
-}
-
-.solar-system {
-    z-index: 1;
-}
-
-.intro-text {
-    z-index: 10;
-}
-
 .intro-page.uk-offcanvas-page {
     transform: none !important;
 }
@@ -333,6 +315,8 @@ header,
     border-bottom: 1px solid rgba(255,255,255,0.08);
 
     z-index: 50;
+
+    box-shadow: 0 0 25px rgba(255,180,60,0.15);
 }
 
 /* Logo */
@@ -352,16 +336,8 @@ header,
     }
 }
 
-.intro {
-    padding-top: 80px;
-}
-
-.intro-header {
-    box-shadow: 0 0 25px rgba(255,180,60,0.15);
-}
-
 .orbit.collapse {
-    animation: orbitFadeOut 1.2s ease forwards;
+    animation: orbitFadeOut 1.5s ease forwards;
 }
 
 @keyframes orbitFadeOut {
@@ -381,25 +357,45 @@ header,
     animation: sunExplode 1s ease-in forwards;
 }
 
-.sun {
-    transition: transform 1.8s cubic-bezier(.22,.8,.2,1),
-                filter 1.8s cubic-bezier(.22,.8,.2,1);
-}
 
 .sun.sun-expand {
-    transform: translate(-50%, -50%) scale(7);
-    filter: drop-shadow(0 0 180px orange)
-            drop-shadow(0 0 300px rgba(255,255,255,0.6));
+    transform:
+        translate(-50%, -50%)
+        scale(8);
+
+    filter:
+        drop-shadow(0 0 200px orange)
+        drop-shadow(0 0 400px rgba(255,255,255,0.7));
 }
 
-.starfield {
-    transition: opacity 1.5s ease;
-}
 
-body.transitioning .starfield {
-    opacity: 0;
-}
 
 @keyframes fadeStars {
     to { opacity: 0; }
+}
+
+.sun-bloom {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at center,
+            rgba(255,255,255,0.9) 0%,
+            rgba(255,200,100,0.6) 25%,
+            rgba(255,150,50,0.4) 40%,
+            transparent 65%);
+    opacity: 0;
+    transition: opacity 1.5s ease;
+    z-index: 9000;
+}
+
+.sun-bloom.active {
+    opacity: 1;
+}
+
+.sun,
+.solar-system,
+.starfield,
+.orbit {
+    will-change: transform, opacity;
 }
