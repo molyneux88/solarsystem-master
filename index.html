@@ -17,6 +17,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/intro.css">
+
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 
 
@@ -73,16 +75,20 @@
                         <div class="orbit-arm"><img src="images/plutoPlanet.png" class="planet" style="width:8px;"></div>
                     </div>
 
+                    <div class="sun-stage" id="sunStage">
+
                     <model-viewer
-                    class="sun"
-                    id="sunTrigger"
-                    src="models/sun.glb"
-                    alt="Sun"
-                    auto-rotate
-                    disable-zoom
-                    camera-controls="false"
-                    class="sun-model-intro">
+                        id="sunModelIntro"
+                        src="models/sun.glb"
+                        alt="Sun"
+                        auto-rotate
+                        camera-controls="false"
+                        disable-zoom
+                        interaction-prompt="none"
+                        class="sun-model">
                     </model-viewer>
+
+                    </div>
 
                 </div>
             </div>

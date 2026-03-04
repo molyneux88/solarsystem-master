@@ -470,3 +470,47 @@ body.planet-page {
 body.planet-ready {
   opacity: 1;
 }
+
+/* === SUN STAGE WRAPPER === */
+
+.sun-stage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: clamp(100px, 18vmin, 160px);
+    height: clamp(100px, 18vmin, 160px);
+
+    transform: translate(-50%, -50%);
+    transform-origin: center center;
+
+    cursor: pointer;
+    z-index: 5;
+
+    transition:
+        width 3.8s cubic-bezier(.77,0,.18,1),
+        height 3.8s cubic-bezier(.77,0,.18,1),
+        transform 3.8s cubic-bezier(.77,0,.18,1);
+}
+
+.sun-model {
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* === ENTER SUN TRANSITION === */
+
+body.enter-sun .orbit,
+body.enter-sun .starfield,
+body.enter-sun .intro-text {
+    opacity: 0;
+    transition: opacity 1.2s ease;
+}
+
+body.enter-sun .sun-stage {
+    width: 300px;   /* match .planet-model width */
+    height: 400px;  /* match .planet-model height */
+
+    transform: translate(-50%, -35%);
+}

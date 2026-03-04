@@ -103,40 +103,23 @@ window.addEventListener("load", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    const sun = document.getElementById("sunTrigger");
+    const sunStage = document.getElementById("sunStage");
     const body = document.body;
 
-    sun.addEventListener("click", () => {
+    sunStage.addEventListener("click", () => {
 
-        if (body.classList.contains("leaving")) return;
-        body.classList.add("leaving");
+        if (body.classList.contains("enter-sun")) return;
+        body.classList.add("enter-sun");
 
-        // Pause orbits
+        // Pause orbit animations
         document.querySelectorAll(".orbit").forEach(o => {
             o.style.animationPlayState = "paused";
         });
 
-        // Grow sun
-        sun.style.transition = "transform 2.5s cubic-bezier(.77,0,.18,1)";
-        sun.style.transform = "translate(-50%, -50%) scale(6)";
-
-        // Fade everything else
-        document.querySelectorAll(".orbit, .starfield, .intro-text")
-            .forEach(el => {
-                el.style.transition = "opacity 1.2s ease";
-                el.style.opacity = "0";
-            });
-
-        // Fade screen to black
-        setTimeout(() => {
-            document.body.style.transition = "opacity 1s ease";
-            document.body.style.opacity = "0";
-        }, 2200);
-
-        // Navigate after fade
+        // Navigate after animation completes
         setTimeout(() => {
             window.location.href = "planets/sun.html";
-        }, 3200);
+        }, 3800);
 
     });
 
