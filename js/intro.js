@@ -112,15 +112,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
         body.classList.add("enter-sun");
 
-        // Pause orbit animations smoothly
-        document.querySelectorAll(".orbit").forEach(orbit => {
-            orbit.style.animationPlayState = "paused";
+        // Pause orbit animations
+        document.querySelectorAll(".orbit").forEach(o => {
+            o.style.animationPlayState = "paused";
         });
 
-        // Transition after full animation
+        // Wait for model expansion to finish
         setTimeout(() => {
             window.location.href = "planets/sun.html";
-        }, 4500);
+        }, 4200);
 
     });
 

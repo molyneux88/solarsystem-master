@@ -20,8 +20,9 @@
 </head>
 
 
-<div class="sun-transition" id="sunTransition"></div>
+
 <body class="intro-page">
+<div class="sun-transition" id="sunTransition"></div>
 
   <!-- Site header -->
   <header id="site-header"></header>
@@ -71,6 +72,15 @@
             </div>
 
             <img src="images/sunPlanet.png" class="sun" id="sunTrigger">
+            <model-viewer
+            id="sunModelIntro"
+            src="/solarsystem-master/models/sun.glb"
+            alt="Sun"
+            auto-rotate
+            disable-zoom
+            camera-controls="false"
+            class="sun-model-intro">
+            </model-viewer>
 
         </div>
     </div>

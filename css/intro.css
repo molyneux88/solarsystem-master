@@ -417,3 +417,47 @@ body.enter-sun .sun {
         transform 4.5s cubic-bezier(.77,0,.18,1),
         filter 4.5s ease;
 }
+
+/* Hide model initially */
+.sun-model-intro {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    width: clamp(90px, 18vmin, 160px);
+    height: clamp(90px, 18vmin, 160px);
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition:
+        width 3.5s cubic-bezier(.77,0,.18,1),
+        height 3.5s cubic-bezier(.77,0,.18,1),
+        transform 3.5s cubic-bezier(.77,0,.18,1),
+        opacity 0.6s ease;
+}
+
+/* When entering sun */
+body.enter-sun .sun-model-intro {
+    opacity: 1;
+
+    width: 300px;   /* matches .planet-model width */
+    height: 400px;  /* matches .planet-model height */
+
+    transform: translate(-50%, -35%);
+}
+
+/* Hide original sun image */
+body.enter-sun .sun {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+/* Fade everything else */
+body.enter-sun .orbit,
+body.enter-sun .starfield,
+body.enter-sun .intro-text {
+    opacity: 0;
+    transition: opacity 1.2s ease;
+}
