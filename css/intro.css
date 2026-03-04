@@ -399,3 +399,50 @@ header,
 .orbit {
     will-change: transform, opacity;
 }
+
+/* Smooth GPU acceleration */
+.solar-zoom,
+.solar-system,
+.sun,
+.orbit {
+    will-change: transform, opacity;
+}
+
+/* Transition overlay */
+.sun-transition {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at center, 
+        rgba(255,190,80,0.9) 0%, 
+        rgba(255,140,0,0.95) 40%, 
+        rgba(0,0,0,1) 100%);
+    opacity: 0;
+    pointer-events: none;
+    z-index: 9999;
+    transition: opacity 1.5s ease;
+}
+
+/* Triggered states */
+.zooming .solar-system {
+    transform: scale(6);
+    transition: transform 4.5s cubic-bezier(.77,0,.18,1);
+}
+
+.zooming .orbit {
+    opacity: 0;
+    transition: opacity 1.5s ease;
+}
+
+.zooming .intro-text {
+    opacity: 0;
+    transition: opacity 1.5s ease;
+}
+
+.zooming .sun {
+    transform: scale(1.3);
+    transition: transform 4.5s cubic-bezier(.77,0,.18,1);
+}
+
+.zooming .sun-transition {
+    opacity: 1;
+}

@@ -38,42 +38,7 @@ if (starfield) {
 /* ===============================
    Sun click transition
 ================================ */
-if (sun && zoomWrapper) {
 
-    sun.addEventListener("click", () => {
-
-        document.body.classList.add("transitioning");
-
-        const bloom = document.createElement("div");
-        bloom.className = "sun-bloom";
-        document.body.appendChild(bloom);
-
-        document.querySelectorAll(".orbit").forEach(o => {
-            o.classList.add("collapse");
-        });
-
-        solarSystem.classList.add("pull-in");
-        sun.classList.add("sun-expand");
-
-        setTimeout(() => {
-            bloom.classList.add("active");
-        }, 1000);
-
-        setTimeout(() => {
-
-            if (nextPageHTML) {
-
-                document.open();
-                document.write(nextPageHTML);
-                document.close();
-
-            } else {
-                window.location.href = "planets/sun.html";
-            }
-
-        }, 2200);
-    });
-}
 
 
 /* ===============================
@@ -134,4 +99,29 @@ document.querySelectorAll(".orbit").forEach(orbit => {
 
 window.addEventListener("load", () => {
     document.body.classList.add("loaded");
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const sun = document.getElementById("sunTrigger");
+    const body = document.body;
+
+    sun.addEventListener("click", () => {
+
+        // Prevent multiple clicks
+        if (body.classList.contains("zooming")) return;
+
+        body.classList.add("zooming");
+
+        // Optional: stop orbit animations
+        document.querySelectorAll(".orbit").forEach(orbit => {
+            orbit.style.animationPlayState = "paused";
+        });
+
+        // Redirect after animation completes
+        setTimeout(() => {
+            window.location.href = "planets/sun.html";
+        }, 4500); // 4.5 seconds
+    });
+
 });
