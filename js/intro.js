@@ -108,20 +108,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     sun.addEventListener("click", () => {
 
-        // Prevent multiple clicks
-        if (body.classList.contains("zooming")) return;
+        if (body.classList.contains("enter-sun")) return;
 
-        body.classList.add("zooming");
+        body.classList.add("enter-sun");
 
-        // Optional: stop orbit animations
+        // Pause orbit animations smoothly
         document.querySelectorAll(".orbit").forEach(orbit => {
             orbit.style.animationPlayState = "paused";
         });
 
-        // Redirect after animation completes
+        // Transition after full animation
         setTimeout(() => {
             window.location.href = "planets/sun.html";
-        }, 4500); // 4.5 seconds
+        }, 4500);
+
     });
 
 });
