@@ -363,3 +363,12 @@ body > *:not(.planet-scale-section) {
 .indexed-footer{
   background: #05060b;
 }
+
+body.planet-page {
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
+body.planet-loaded {
+  opacity: 1;
+}

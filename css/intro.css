@@ -461,3 +461,12 @@ body.enter-sun .intro-text {
     opacity: 0;
     transition: opacity 1.2s ease;
 }
+
+body.planet-page {
+  opacity: 0;
+  transition: opacity 1.4s ease;
+}
+
+body.planet-ready {
+  opacity: 1;
+}

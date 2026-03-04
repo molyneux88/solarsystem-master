@@ -105,55 +105,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const sun = document.getElementById("sunTrigger");
     const body = document.body;
-    const container = document.getElementById("pageContainer");
 
-    sun.addEventListener("click", async () => {
+    sun.addEventListener("click", () => {
 
-        if (body.classList.contains("entering")) return;
-        body.classList.add("entering");
+        if (body.classList.contains("leaving")) return;
+        body.classList.add("leaving");
 
-        // Fade out intro elements
-        document.querySelectorAll(".orbit, .starfield, .intro-text")
-            .forEach(el => el.style.opacity = "0");
-
-        // Animate sun scale
-        const sunImg = document.getElementById("sunTrigger");
-        sunImg.style.transition = "transform 2.5s cubic-bezier(.77,0,.18,1)";
-        sunImg.style.transform = "translate(-50%, -50%) scale(4)";
-
-        // Wait for animation
-        await new Promise(res => setTimeout(res, 2500));
-
-        // Fetch sun.html
-        const response = await fetch("planets/sun.html");
-        const text = await response.text();
-
-        // Parse HTML
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(text, "text/html");
-
-        // Replace container content with new page body
-        container.innerHTML = doc.body.innerHTML;
-
-        // Load any scripts manually
-        doc.querySelectorAll("script").forEach(oldScript => {
-            const newScript = document.createElement("script");
-            if (oldScript.src) {
-                newScript.src = oldScript.src;
-            } else {
-                newScript.textContent = oldScript.textContent;
-            }
-            document.body.appendChild(newScript);
+        // Pause orbits
+        document.querySelectorAll(".orbit").forEach(o => {
+            o.style.animationPlayState = "paused";
         });
 
-        // Fade in new page
-        document.body.style.opacity = "0";
-        document.body.offsetHeight; // force reflow
-        document.body.style.transition = "opacity 1.2s ease";
-        document.body.style.opacity = "1";
+        // Grow sun
+        sun.style.transition = "transform 2.5s cubic-bezier(.77,0,.18,1)";
+        sun.style.transform = "translate(-50%, -50%) scale(6)";
 
-        body.classList.remove("intro-page");
-        body.classList.add("planet-page");
+        // Fade everything else
+        document.querySelectorAll(".orbit, .starfield, .intro-text")
+            .forEach(el => {
+                el.style.transition = "opacity 1.2s ease";
+                el.style.opacity = "0";
+            });
+
+        // Fade screen to black
+        setTimeout(() => {
+            document.body.style.transition = "opacity 1s ease";
+            document.body.style.opacity = "0";
+        }, 2200);
+
+        // Navigate after fade
+        setTimeout(() => {
+            window.location.href = "planets/sun.html";
+        }, 3200);
 
     });
 
