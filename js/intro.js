@@ -105,22 +105,55 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const sun = document.getElementById("sunTrigger");
     const body = document.body;
+    const container = document.getElementById("pageContainer");
 
-    sun.addEventListener("click", () => {
+    sun.addEventListener("click", async () => {
 
-        if (body.classList.contains("enter-sun")) return;
+        if (body.classList.contains("entering")) return;
+        body.classList.add("entering");
 
-        body.classList.add("enter-sun");
+        // Fade out intro elements
+        document.querySelectorAll(".orbit, .starfield, .intro-text")
+            .forEach(el => el.style.opacity = "0");
 
-        // Pause orbit animations
-        document.querySelectorAll(".orbit").forEach(o => {
-            o.style.animationPlayState = "paused";
+        // Animate sun scale
+        const sunImg = document.getElementById("sunTrigger");
+        sunImg.style.transition = "transform 2.5s cubic-bezier(.77,0,.18,1)";
+        sunImg.style.transform = "translate(-50%, -50%) scale(4)";
+
+        // Wait for animation
+        await new Promise(res => setTimeout(res, 2500));
+
+        // Fetch sun.html
+        const response = await fetch("planets/sun.html");
+        const text = await response.text();
+
+        // Parse HTML
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(text, "text/html");
+
+        // Replace container content with new page body
+        container.innerHTML = doc.body.innerHTML;
+
+        // Load any scripts manually
+        doc.querySelectorAll("script").forEach(oldScript => {
+            const newScript = document.createElement("script");
+            if (oldScript.src) {
+                newScript.src = oldScript.src;
+            } else {
+                newScript.textContent = oldScript.textContent;
+            }
+            document.body.appendChild(newScript);
         });
 
-        // Wait for model expansion to finish
-        setTimeout(() => {
-            window.location.href = "planets/sun.html";
-        }, 4200);
+        // Fade in new page
+        document.body.style.opacity = "0";
+        document.body.offsetHeight; // force reflow
+        document.body.style.transition = "opacity 1.2s ease";
+        document.body.style.opacity = "1";
+
+        body.classList.remove("intro-page");
+        body.classList.add("planet-page");
 
     });
 
