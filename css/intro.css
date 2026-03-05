@@ -528,3 +528,13 @@ body.fade-out-index #indexContent {
   opacity: 0;
   transition: opacity 3s ease;
 }
+
+body.enter-sun .intro-text{
+    opacity:0 !important;
+    animation:none !important;
+    transition: opacity 1.5s ease;
+}
+
+#sunFrame{
+    background:black;
+}

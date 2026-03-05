@@ -153,12 +153,23 @@
   </script>
 
   <script>
-  const model = document.getElementById("sunModel");
+      window.addEventListener("load", () => {
 
-  model.addEventListener("load", () => {
-    // tell the parent page the model is ready
-    window.parent.postMessage({ type: "sunModelReady" }, "*");
-  });
+        const model = document.querySelector("model-viewer");
+
+        if(model){
+
+            model.addEventListener("load", () => {
+
+                window.parent.postMessage({
+                    type: "sunModelReady"
+                }, "*");
+
+            });
+
+        }
+
+    });
   </script>
 
 </body>

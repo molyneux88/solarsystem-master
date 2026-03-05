@@ -104,22 +104,21 @@ window.addEventListener("load", () => {
 document.addEventListener("DOMContentLoaded", () => {
 
     const sunStage = document.getElementById("sunStage");
+    const sunFrame = document.getElementById("sunFrame");
     const body = document.body;
 
     sunStage.addEventListener("click", () => {
 
         if (body.classList.contains("enter-sun")) return;
+
         body.classList.add("enter-sun");
 
-        // Pause orbit animations
         document.querySelectorAll(".orbit").forEach(o => {
             o.style.animationPlayState = "paused";
         });
 
-        // Navigate after animation completes
-        setTimeout(() => {
-            window.location.href = "planets/sun.html";
-        }, 3800);
+        // start loading sun page in iframe
+        sunFrame.src = "planets/sun.html";
 
     });
 
