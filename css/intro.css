@@ -505,7 +505,7 @@ body.enter-sun .orbit,
 body.enter-sun .starfield,
 body.enter-sun .intro-text {
     opacity: 0;
-    transition: opacity 1.2s ease;
+    transition: opacity 3s ease;
 }
 
 body.enter-sun .sun-stage {
@@ -517,7 +517,7 @@ body.enter-sun .sun-stage {
 
 #sunFrame {
   opacity: 0;
-  transition: opacity 1s ease;
+  transition: opacity 3s ease;
 }
 
 #sunFrame.visible {
@@ -526,5 +526,5 @@ body.enter-sun .sun-stage {
 
 body.fade-out-index #indexContent {
   opacity: 0;
-  transition: opacity 1s ease;
+  transition: opacity 3s ease;
 }
