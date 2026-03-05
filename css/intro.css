@@ -517,7 +517,13 @@ body.enter-sun .sun-stage {
 
 #sunFrame {
   opacity: 0;
+  pointer-events: none;   /* prevents blocking clicks */
   transition: opacity 3s ease;
+}
+
+#sunFrame.visible {
+  opacity: 1;
+  pointer-events: auto;   /* re-enable interaction */
 }
 
 #sunFrame.visible {
