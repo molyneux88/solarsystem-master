@@ -514,3 +514,17 @@ body.enter-sun .sun-stage {
 
     transform: translate(-50%, -35%);
 }
+
+#sunFrame {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+#sunFrame.visible {
+  opacity: 1;
+}
+
+body.fade-out-index #indexContent {
+  opacity: 0;
+  transition: opacity 1s ease;
+}

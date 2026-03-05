@@ -52,6 +52,7 @@
     <section class="planet-scale-section">
         <div class="planet-scale-frame">
             <model-viewer
+              id="sunModel"
               src="/solarsystem-master/models/sun.glb"
               alt="Sun"
               auto-rotate
@@ -148,6 +149,15 @@
   <script>
   window.addEventListener("load", () => {
     document.body.classList.add("planet-ready");
+  });
+  </script>
+
+  <script>
+  const model = document.getElementById("sunModel");
+
+  model.addEventListener("load", () => {
+    // tell the parent page the model is ready
+    window.parent.postMessage({ type: "sunModelReady" }, "*");
   });
   </script>
 

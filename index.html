@@ -102,6 +102,27 @@
             <script src="js/uikit-icons.min.js"></script>
             <script src="js/intro.js"></script>
             <script src="js/partials.js"></script>
+            <script>
+                const sunFrame = document.getElementById("sunFrame");
+
+                window.addEventListener("message", (event) => {
+
+                if (event.data?.type === "sunModelReady") {
+
+                    console.log("Sun model fully loaded");
+
+                    // small delay for safety / smoothness
+                    setTimeout(() => {
+
+                    document.body.classList.add("fade-out-index");
+                    sunFrame.classList.add("visible");
+
+                    }, 300);
+
+                }
+
+                });
+            </script>
 
     </div>
 </body>
