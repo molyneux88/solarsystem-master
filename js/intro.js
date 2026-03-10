@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         // start loading sun page in iframe
-        sunFrame.src = "planets/sun.html";
+        sunFrame.src = "/solarsystem-master/planets/sun.html";
 
     });
 
