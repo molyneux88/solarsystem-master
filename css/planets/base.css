@@ -364,11 +364,6 @@ body > *:not(.planet-scale-section) {
   background: #05060b;
 }
 
-body.planet-page {
-  opacity: 0;
-  transition: opacity 1.2s ease;
-}
-
-body.planet-loaded {
-  opacity: 1;
+body {
+  background: black;
 }
