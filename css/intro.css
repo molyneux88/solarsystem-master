@@ -552,7 +552,3 @@ body.enter-sun .intro-text{
     animation:none !important;
     transition: opacity 1.5s ease;
 }
-
-#sunFrame{
-    background:black;
-}

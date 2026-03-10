@@ -120,22 +120,19 @@
 
                 window.addEventListener("message", (event) => {
 
-                if (event.data?.type === "sunModelReady") {
+                    if (event.data?.type === "sunModelReady") {
 
-                    console.log("Sun model fully loaded");
+                        console.log("Sun model fully loaded");
 
-                    // small delay for safety / smoothness
-                    setTimeout(() => {
+                        setTimeout(() => {
 
-                    document.body.classList.add("fade-out-index");
+                            document.body.classList.add("fade-out-index");
 
-                    setTimeout(() => {
-                        sunFrame.classList.add("visible");
-                    }, 1200);
+                            sunFrame.classList.add("visible");
 
-                    }, 1000);
+                        }, 1000);
 
-                }
+                    }
 
                 });
             </script>
