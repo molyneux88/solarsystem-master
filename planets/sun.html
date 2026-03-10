@@ -153,23 +153,24 @@
   </script>
 
   <script>
-      window.addEventListener("load", () => {
+  document.addEventListener("DOMContentLoaded", () => {
 
-        const model = document.querySelector("model-viewer");
+    const model = document.querySelector("model-viewer");
 
-        if(model){
+    if (!model) return;
 
-            model.addEventListener("load", () => {
+    model.addEventListener("load", () => {
 
-                window.parent.postMessage({
-                    type: "sunModelReady"
-                }, "*");
+      console.log("Sun model loaded");
 
-            });
-
-        }
+      // notify index page iframe parent
+      window.parent.postMessage({
+        type: "sunModelReady"
+      }, "*");
 
     });
+
+  });
   </script>
 
 </body>
