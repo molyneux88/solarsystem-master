@@ -515,24 +515,36 @@ body.enter-sun .sun-stage {
     transform: translate(-50%, -35%);
 }
 
-#sunFrame {
-  opacity: 0;
-  pointer-events: none;   /* prevents blocking clicks */
-  transition: opacity 3s ease;
+#sunFrame{
+    position:fixed;
+    inset:0;
+
+    width:100%;
+    height:100%;
+
+    border:none;
+    background:black;
+
+    opacity:0;
+    pointer-events:none;
+
+    z-index:9998;
+
+    transition:opacity 2s ease;
 }
 
-#sunFrame.visible {
-  opacity: 1;
-  pointer-events: auto;   /* re-enable interaction */
+#sunFrame.visible{
+    opacity:1;
+    pointer-events:auto;
 }
 
-#sunFrame.visible {
+#indexContent {
   opacity: 1;
+  transition: opacity 2s ease;
 }
 
 body.fade-out-index #indexContent {
   opacity: 0;
-  transition: opacity 3s ease;
 }
 
 body.enter-sun .intro-text{
