@@ -112,12 +112,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         document.body.classList.add("enter-sun");
 
-        // stop planet orbit
         document.querySelectorAll(".orbit").forEach(o=>{
             o.style.animationPlayState="paused";
         });
 
-        // after zoom animation
         setTimeout(()=>{
 
             pageFade.classList.add("active");
