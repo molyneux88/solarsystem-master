@@ -367,3 +367,9 @@ body > *:not(.planet-scale-section) {
 body {
   background: black;
 }
+
+/* Disable internal fade when inside iframe transition */
+body.in-iframe-transition {
+  opacity: 1 !important;
+  transition: none !important;
+}

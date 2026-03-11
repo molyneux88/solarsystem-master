@@ -21,6 +21,13 @@
   <link rel="stylesheet" href="/solarsystem-master/css/planets/themes/sun.css">
 
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+  <script>
+  if (window.self !== window.top) {
+    document.documentElement.classList.add("in-iframe-transition");
+    document.body.classList.add("in-iframe-transition");
+  }
+  </script>
 </head>
 
 <body class="planet-page" data-planet="sun">
