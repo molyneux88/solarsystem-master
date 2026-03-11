@@ -142,25 +142,7 @@
 
   <script>
   window.addEventListener("load", () => {
-
-    console.log("Sun page fully loaded");
-
-    /* make the page visible */
-    document.body.classList.add("planet-ready");
-
-    /* give model-viewer a moment to render */
-    setTimeout(() => {
-
-      /* tell the index page we are ready */
-      if (window.parent && window.parent !== window) {
-        window.parent.postMessage(
-          { type: "sunModelReady" },
-          "*"
-        );
-      }
-
-    }, 600); // small buffer for model-viewer render
-
+      document.body.classList.add("planet-ready");
   });
   </script>
 

@@ -104,21 +104,29 @@ window.addEventListener("load", () => {
 document.addEventListener("DOMContentLoaded", () => {
 
     const sunStage = document.getElementById("sunStage");
-    const sunFrame = document.getElementById("sunFrame");
-    const body = document.body;
+    const pageFade = document.getElementById("pageFade");
 
     sunStage.addEventListener("click", () => {
 
-        if (body.classList.contains("enter-sun")) return;
+        if (document.body.classList.contains("enter-sun")) return;
 
-        body.classList.add("enter-sun");
+        document.body.classList.add("enter-sun");
 
-        document.querySelectorAll(".orbit").forEach(o => {
-            o.style.animationPlayState = "paused";
+        // stop planet orbit
+        document.querySelectorAll(".orbit").forEach(o=>{
+            o.style.animationPlayState="paused";
         });
 
-        // start loading sun page in iframe
-        sunFrame.src = "/solarsystem-master/planets/sun.html";
+        // after zoom animation
+        setTimeout(()=>{
+
+            pageFade.classList.add("active");
+
+            setTimeout(()=>{
+                window.location.href="planets/sun.html";
+            },1200);
+
+        },3000);
 
     });
 
