@@ -104,28 +104,50 @@ window.addEventListener("load", () => {
 document.addEventListener("DOMContentLoaded", () => {
 
     const sunStage = document.getElementById("sunStage");
-    const pageFade = document.getElementById("pageFade");
+const sunLoader = document.getElementById("sunLoader");
+const pageFade = document.getElementById("pageFade");
 
-    sunStage.addEventListener("click", () => {
+let sunLoaded = false;
 
-        if (document.body.classList.contains("enter-sun")) return;
+sunStage.addEventListener("click", () => {
 
-        document.body.classList.add("enter-sun");
+    if (document.body.classList.contains("enter-sun")) return;
 
-        document.querySelectorAll(".orbit").forEach(o=>{
-            o.style.animationPlayState="paused";
-        });
+    document.body.classList.add("enter-sun");
 
-        setTimeout(()=>{
-
-            pageFade.classList.add("active");
-
-            setTimeout(()=>{
-                window.location.href="planets/sun.html";
-            },1200);
-
-        },3000);
-
+    // stop orbit animation
+    document.querySelectorAll(".orbit").forEach(o=>{
+        o.style.animationPlayState="paused";
     });
 
+    // start loading the page immediately
+    sunLoader.src = "planets/sun.html";
+
+    sunLoader.onload = () => {
+        sunLoaded = true;
+        console.log("Sun page preloaded");
+    };
+
+    // after the zoom animation
+    setTimeout(()=>{
+
+        const waitForLoad = setInterval(()=>{
+
+            if(sunLoaded){
+
+                clearInterval(waitForLoad);
+
+                pageFade.classList.add("active");
+
+                setTimeout(()=>{
+                    window.location.href = "planets/sun.html";
+                },1200);
+
+            }
+
+        },100);
+
+    },4500);
+
+});
 });

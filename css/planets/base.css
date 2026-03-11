@@ -373,3 +373,12 @@ body.in-iframe-transition {
   opacity: 1 !important;
   transition: none !important;
 }
+
+body.planet-page{
+    opacity:0;
+    transition:opacity 1.4s ease;
+}
+
+body.planet-ready{
+    opacity:1;
+}
