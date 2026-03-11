@@ -16,3 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     load("planet-slider", `${root}/partials/planet-slider.html`);
   }
 });
+
+window.addEventListener("load", () => {
+  document.body.classList.add("planet-ready");
+});
